@@ -18,7 +18,7 @@ async function loadCities() {
   const containerEl = document.getElementById('locations-container');
   
   try {
-    const response = await fetch('/status.json');
+    const response = await fetch('status.json');
     
     if (!response.ok) {
       throw new Error(`Status API error: ${response.status}`);
@@ -98,7 +98,7 @@ function getCityEmoji(cityName) {
 
 async function loadStatus() {
   try {
-    const response = await fetch('/status.json');
+    const response = await fetch('status.json');
     
     if (!response.ok) {
       throw new Error(`Status API error: ${response.status}`);
@@ -112,7 +112,7 @@ async function loadStatus() {
     
     // Fallback: try to get last modified from calendar file
     try {
-      const calResponse = await fetch('/calendars/toronto.ics', { method: 'HEAD' });
+      const calResponse = await fetch('calendars/toronto.ics', { method: 'HEAD' });
       if (calResponse.ok) {
         const lastModified = calResponse.headers.get('last-modified');
         if (lastModified) {

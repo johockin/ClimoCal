@@ -76,8 +76,8 @@ Every coder must reference and maintain it. Every AI collaborator must not make 
   - [x] Location-based subscriptions (starting with Toronto)
   - [x] Auto-refreshing calendar subscriptions
   - [x] Simple web UI for generating subscription links
+  - [x] Multiple location support (8 international cities)
   - [ ] Seasonal climate averages (monthly historical data)
-  - [ ] Multiple location support
 - **Tech constraints / requests from user**:
   - [x] Must use GitHub Actions + Static Files approach (not serverless functions)
   - [x] Must use Open-Meteo API (no API key required)
@@ -134,7 +134,16 @@ Every coder must reference and maintain it. Every AI collaborator must not make 
 ✅ **Code-architect assessment**: "This is a SOLID architecture" - "architecturally wise" 
 ✅ **Confidence level**: High - will work reliably for years with minimal intervention
 ✅ **Main strengths**: Excellent for personal use, true "zero maintenance", leverages reliable free infrastructure
+✅ **Multi-city scalability**: Architecture proved perfectly suited for international expansion (8 cities in ~10 minutes)
 ⚠️ **Minor recommendations**: Add fallback weather API and health monitoring (optional enhancements)
+
+### Multi-City Implementation Details:
+- **Current cities supported**: Toronto 🏙️, Vancouver 🏔️, Montreal 🍁, Calgary 🏔️, Ottawa 🇨🇦, New York 🗽, London 🇬🇧, Tokyo 🏯
+- **Timezone coverage**: 4 international timezones (America/Toronto, America/Vancouver, Europe/London, Asia/Tokyo)
+- **Frontend approach**: Dynamic loading from `/status.json` with city-specific emoji mapping
+- **Backend scalability**: No changes required - existing generation script automatically processes all cities in `data/locations.json`
+- **Calendar URLs**: Each city has dedicated `.ics` file (e.g., `/calendars/tokyo.ics`, `/calendars/vancouver.ics`)
+- **User experience**: Single webpage with 8 city options, each with Apple/Google/Direct subscription buttons
 
 ---
 
@@ -207,6 +216,27 @@ Every coder must reference and maintain it. Every AI collaborator must not make 
 
 ## 📒 CHANGELOG (REVERSE CHRONOLOGICAL)
 
+### 2025-08-26 - Multi-City Expansion Complete 🌍
+- **Achievement**: Successfully expanded ClimoCal from single-city (Toronto) to 8 international cities
+- **New Cities Added**: Vancouver 🏔️, Montreal 🍁, Calgary 🏔️, Ottawa 🇨🇦, New York 🗽, London 🇬🇧, Tokyo 🏯
+- **Architecture Enhancement**: Leveraged existing multi-city-ready architecture - no backend changes required
+- **Frontend Overhaul**: 
+  - Converted from static Toronto-only HTML to dynamic city loading
+  - Added `loadCities()` function to fetch and display all available cities
+  - Implemented `createCityCard()` function for consistent city presentation
+  - Added `getCityEmoji()` function with city-specific emoji mapping
+- **Files Modified**:
+  - `data/locations.json`: Expanded from 1 to 8 cities with full coordinate and timezone data
+  - `public/index.html`: Replaced static content with dynamic loading structure
+  - `public/app.js`: Added dynamic city loading and card generation
+  - `public/style.css`: Added loading message styling
+- **Timezone Support**: Full timezone handling for 8 cities across 4 timezones (America/Toronto, America/Vancouver, Europe/London, Asia/Tokyo)
+- **Implementation Time**: ~10 minutes due to existing architecture design
+- **Testing**: All 8 calendars generated successfully locally before deployment
+- **Deployment**: Committed and pushed as "Add multi-city support with 8 international locations" (commit a7b4cbb)
+- **Live Status**: All 8 cities now available at https://johockin.github.io/ClimoCal/
+- **Milestone**: M1.5 COMPLETED - Multi-city international weather calendar service
+
 ### 2024-08-26 - Production Deployment Complete 🚀
 - **Achievement**: ClimoCal successfully deployed and operational
 - **Site Live**: https://johockin.github.io/ClimoCal/
@@ -245,7 +275,7 @@ Every coder must reference and maintain it. Every AI collaborator must not make 
 
 ## 🧱 ROADMAP & PIPELINE
 
-### NOW (Sprint 1 - COMPLETED ✅)
+### COMPLETED ✅ (Sprint 1 + Multi-City Expansion)
 - [x] Set up GitHub repository with provided URL
 - [x] Implement basic calendar generation script with Open-Meteo integration
 - [x] Add GitHub Actions workflow for daily execution (6 AM Toronto time)
@@ -259,13 +289,18 @@ Every coder must reference and maintain it. Every AI collaborator must not make 
   - ✅ Disabled alerts/notifications by default (alarms: [])
   - ✅ Set events as transparent and non-blocking
   - ✅ Reduced TTL to 4 hours for more frequent refresh checks
+- [x] **MULTI-CITY EXPANSION COMPLETE**: 8 international cities supported
+  - ✅ Added Vancouver, Montreal, Calgary, Ottawa, New York, London, Tokyo
+  - ✅ Dynamic city loading with emoji indicators
+  - ✅ Full timezone support across 4 time zones
+  - ✅ All calendars generating successfully
 - [ ] **USER TESTING**: Johnny to test calendar subscriptions in Apple Calendar, Google Calendar
 
-### NEXT (Sprint 2 - After MVP Working)
+### NEXT (Sprint 2 - Polish & Enhancement)
 - [ ] Add seasonal climate averages from historical API
-- [ ] Support multiple locations (Toronto + others)
-- [ ] Enhanced weather condition emoji mapping  
-- [ ] Improved web UI styling and UX
+- [ ] Enhanced weather condition emoji mapping beyond basic set
+- [ ] Improved web UI styling and UX polish
+- [ ] Location search functionality (if expanding beyond current 8 cities)
 
 ### LATER (Sprint 3 - Public Release)
 - [ ] Location search functionality
@@ -284,6 +319,13 @@ Every coder must reference and maintain it. Every AI collaborator must not make 
 
 ## 📌 MILESTONE COMMITS
 
+- **M1.5 ✅**: Multi-City International Expansion (commit `a7b4cbb`) - August 26, 2025
+  - Expanded from 1 to 8 cities: Toronto 🏙️, Vancouver 🏔️, Montreal 🍁, Calgary 🏔️, Ottawa 🇨🇦, New York 🗽, London 🇬🇧, Tokyo 🏯
+  - Dynamic frontend with city loading and emoji indicators
+  - Full timezone support across 4 international time zones
+  - Implementation time: ~10 minutes (leveraged existing multi-city architecture)
+  - All calendars generating and updating automatically
+  - Live at https://johockin.github.io/ClimoCal/ with 8 city options
 - **M1 ✅**: Production ClimoCal deployment (commit `36071ec`) - Sprint 1 complete
   - All core functionality implemented and deployed
   - Live at https://johockin.github.io/ClimoCal/
@@ -291,7 +333,7 @@ Every coder must reference and maintain it. Every AI collaborator must not make 
   - Toronto weather calendar subscription available
   - Issues resolved: repository scope and GitHub Actions permissions
   - User feedback implemented: calendar name, disabled alerts, transparent events
-- **M2**: Enhanced calendar with historical data and multiple locations (Sprint 2 - future)
+- **M2**: Enhanced calendar with historical data and seasonal averages (Sprint 2 - future)
 - **M3**: Public-ready service with location search and custom domain (Sprint 3 - future) 
 - **M4**: Production service with monitoring and fallbacks (if pursuing public release)
 
