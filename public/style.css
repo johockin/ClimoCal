@@ -33,37 +33,24 @@ html {
 }
 
 body {
-  font-family: var(--active-font);
+  font-family: var(--font-mono);
   color: var(--color-black);
   background: var(--color-white);
-  padding: var(--grid-quarter);
-  cursor: crosshair;
+  padding: 10px;
+  cursor: default;
 }
 
 /* Typography */
 h1 {
-  font-family: var(--active-font);
-  font-size: 24px;
-  font-weight: 700;
-  line-height: var(--grid-quarter);
-  margin-bottom: var(--grid-quarter);
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0 0 20px 0;
 }
 
-h3 {
-  font-family: var(--active-font);
-  font-size: 18px;
-  font-weight: 700;
-  line-height: var(--grid-eighth);
-  margin-bottom: var(--grid-eighth);
-  text-transform: uppercase;
-}
-
-p, div, span {
-  font-family: var(--active-font);
+p {
   font-size: 14px;
-  line-height: var(--grid-eighth);
+  margin: 0 0 10px 0;
+  line-height: 1.3;
 }
 
 /* Links */
@@ -79,75 +66,49 @@ a:hover {
   color: var(--color-white);
 }
 
-/* Layout - Left Aligned, Mathematical Grid */
+/* Layout */
 main {
-  width: 100%;
-  max-width: calc(var(--grid-base) * 4);
-  padding: 0;
-  margin: 0;
+  max-width: 600px;
 }
 
-.subtitle {
-  margin-bottom: var(--grid-half);
+/* Continents */
+.continent-header {
+  font-size: 12px;
   color: var(--color-gray);
+  margin: 15px 0 5px 0;
   text-transform: uppercase;
-  font-size: 12px;
-  letter-spacing: 0.5px;
 }
 
-/* Location Cards */
-.location-card {
-  border: 1px solid var(--color-black);
-  margin-bottom: var(--grid-quarter);
-  padding: var(--grid-eighth);
-  background: var(--color-white);
+.continent-header:first-child {
+  margin-top: 0;
 }
 
-.location-card h3 {
-  border-bottom: 1px solid var(--color-gray);
-  padding-bottom: var(--grid-eighth);
-  margin-bottom: var(--grid-eighth);
+/* Cities */
+.city {
+  margin-bottom: 2px;
+  cursor: pointer;
+  padding: 2px 0;
 }
 
-/* Buttons - Functional Only */
-.subscribe-buttons {
-  display: block;
-}
-
-.btn {
-  display: block;
-  width: 100%;
-  padding: var(--grid-eighth);
-  margin-bottom: var(--grid-eighth);
-  background: var(--color-white);
-  color: var(--color-black);
-  border: 1px solid var(--color-black);
-  text-decoration: none;
-  font-family: var(--active-font);
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  cursor: crosshair;
-}
-
-.btn:hover {
-  background: var(--color-black);
+.city:hover {
+  background: var(--color-gray);
   color: var(--color-white);
 }
 
-.btn-apple,
-.btn-google,
-.btn-download {
-  background: var(--color-white);
-  color: var(--color-black);
-  border: 1px solid var(--color-black);
+.city-controls {
+  display: none;
+  margin: 2px 0 5px 0;
+  font-size: 12px;
 }
 
-.btn-apple:hover,
-.btn-google:hover,
-.btn-download:hover {
-  background: var(--color-black);
-  color: var(--color-white);
+.city.active .city-controls {
+  display: block;
+}
+
+/* Links */
+.city-controls a {
+  display: inline;
+  margin-right: 10px;
 }
 
 /* Details/Summary - Documentation Style */
@@ -193,15 +154,13 @@ details li {
 
 /* Footer */
 footer {
-  margin-top: var(--grid-half);
-  border-top: 1px solid var(--color-black);
-  padding-top: var(--grid-eighth);
+  margin-top: 30px;
   font-size: 12px;
   color: var(--color-gray);
 }
 
 footer p {
-  margin-bottom: var(--grid-eighth);
+  margin-bottom: 5px;
 }
 
 /* Status Indicator */
@@ -221,38 +180,22 @@ footer p {
   background: var(--color-black);
 }
 
-/* Loading States */
-.loading {
+/* Loading */
+#locations-loading {
   color: var(--color-gray);
-  font-style: normal;
-  text-transform: uppercase;
   font-size: 12px;
 }
 
-.loading-message {
-  margin: var(--grid-half) 0;
-  font-size: 12px;
-  color: var(--color-gray);
-  text-transform: uppercase;
-}
-
-.loading-message p {
-  margin: 0;
-  font-size: 12px;
-}
-
-/* Font Toggle (for future implementation) */
+/* Font Toggle */
 .font-toggle {
   position: fixed;
-  top: var(--grid-eighth);
-  right: var(--grid-eighth);
+  top: 10px;
+  right: 10px;
   background: var(--color-white);
   border: 1px solid var(--color-black);
-  padding: var(--grid-eighth);
-  font-family: var(--active-font);
+  padding: 2px 5px;
   font-size: 10px;
-  text-transform: uppercase;
-  cursor: crosshair;
+  cursor: pointer;
 }
 
 .font-toggle:hover {

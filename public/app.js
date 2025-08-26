@@ -32,23 +32,41 @@ async function loadCities() {
     // Hide loading message
     loadingEl.style.display = 'none';
     
-    // Create city cards
+    // Group cities by continent
+    const continents = {};
     status.locations.forEach(location => {
-      const cityCard = createCityCard(location);
-      containerEl.appendChild(cityCard);
+      const continent = location.continent || 'other';
+      if (!continents[continent]) {
+        continents[continent] = [];
+      }
+      continents[continent].push(location);
     });
     
-    console.log(`🌍 Loaded ${status.locations.length} cities`);
+    // Display cities grouped by continent
+    Object.keys(continents).sort().forEach(continent => {
+      if (continent !== 'other') {
+        const continentHeader = document.createElement('div');
+        continentHeader.className = 'continent-header';
+        continentHeader.textContent = continent;
+        containerEl.appendChild(continentHeader);
+      }
+      
+      continents[continent].forEach(location => {
+        const cityCard = createCityCard(location);
+        containerEl.appendChild(cityCard);
+      });
+    });
+    
+    console.log(`loaded ${status.locations.length} cities`);
     
   } catch (error) {
     console.warn('Could not load cities:', error.message);
     
-    // Fallback: show just Toronto
+    // Fallback: show just toronto
     loadingEl.style.display = 'none';
     const fallbackLocation = {
-      name: 'Toronto',
-      slug: 'toronto',
-      calendarUrl: 'https://johockin.github.io/ClimoCal/calendars/toronto.ics'
+      name: 'toronto',
+      slug: 'toronto'
     };
     
     const cityCard = createCityCard(fallbackLocation);
@@ -58,28 +76,27 @@ async function loadCities() {
 
 function createCityCard(location) {
   const card = document.createElement('div');
-  card.className = 'location-card';
-  
-  // Determine city emoji based on name
-  const cityEmoji = getCityEmoji(location.name);
+  card.className = 'city';
   
   card.innerHTML = `
-    <h3>${cityEmoji} ${location.name}</h3>
-    <div class="subscribe-buttons">
-      <a href="webcal://johockin.github.io/ClimoCal/calendars/${location.slug}.ics" 
-         class="btn btn-apple">
-        🍎 Add to Apple Calendar
-      </a>
-      <a href="https://calendar.google.com/calendar/r?cid=webcal://johockin.github.io/ClimoCal/calendars/${location.slug}.ics" 
-         class="btn btn-google" target="_blank" rel="noopener">
-        📅 Add to Google Calendar
-      </a>
-      <a href="https://johockin.github.io/ClimoCal/calendars/${location.slug}.ics" 
-         class="btn btn-download" download="ClimoCal-${location.name}.ics">
-        ⬇️ Download Calendar File
-      </a>
+    <div class="city-name">${location.name}</div>
+    <div class="city-controls">
+      <a href="webcal://johockin.github.io/ClimoCal/calendars/${location.slug}.ics">apple</a>
+      <a href="https://calendar.google.com/calendar/r?cid=webcal://johockin.github.io/ClimoCal/calendars/${location.slug}.ics" target="_blank" rel="noopener">google</a>
+      <a href="https://johockin.github.io/ClimoCal/calendars/${location.slug}.ics" download="ClimoCal-${location.name}.ics">download</a>
     </div>
   `;
+  
+  // Toggle controls on click
+  card.addEventListener('click', () => {
+    const wasActive = card.classList.contains('active');
+    // Close all other cities
+    document.querySelectorAll('.city.active').forEach(c => c.classList.remove('active'));
+    // Toggle this one
+    if (!wasActive) {
+      card.classList.add('active');
+    }
+  });
   
   return card;
 }

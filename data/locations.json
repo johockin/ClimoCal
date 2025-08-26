@@ -1,58 +1,50 @@
 [
   {
-    "name": "Toronto",
+    "name": "toronto",
     "slug": "toronto",
     "lat": 43.6532,
     "lon": -79.3832,
-    "timezone": "America/Toronto"
+    "timezone": "America/Toronto",
+    "continent": "north america"
   },
   {
-    "name": "Vancouver",
+    "name": "vancouver",
     "slug": "vancouver",
     "lat": 49.2827,
     "lon": -123.1207,
-    "timezone": "America/Vancouver"
+    "timezone": "America/Vancouver",
+    "continent": "north america"
   },
   {
-    "name": "Montreal",
+    "name": "montreal",
     "slug": "montreal",
     "lat": 45.5017,
     "lon": -73.5673,
-    "timezone": "America/Toronto"
+    "timezone": "America/Toronto",
+    "continent": "north america"
   },
   {
-    "name": "Calgary",
-    "slug": "calgary",
-    "lat": 51.0447,
-    "lon": -114.0719,
-    "timezone": "America/Edmonton"
-  },
-  {
-    "name": "Ottawa",
-    "slug": "ottawa",
-    "lat": 45.4215,
-    "lon": -75.6972,
-    "timezone": "America/Toronto"
-  },
-  {
-    "name": "New York",
+    "name": "new york",
     "slug": "new-york",
     "lat": 40.7128,
     "lon": -74.0060,
-    "timezone": "America/New_York"
+    "timezone": "America/New_York",
+    "continent": "north america"
   },
   {
-    "name": "London",
+    "name": "london",
     "slug": "london",
     "lat": 51.5074,
     "lon": -0.1278,
-    "timezone": "Europe/London"
+    "timezone": "Europe/London",
+    "continent": "europe"
   },
   {
-    "name": "Tokyo",
+    "name": "tokyo",
     "slug": "tokyo",
     "lat": 35.6762,
     "lon": 139.6503,
-    "timezone": "Asia/Tokyo"
+    "timezone": "Asia/Tokyo",
+    "continent": "asia"
   }
 ]
