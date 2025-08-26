@@ -147,6 +147,49 @@ Every coder must reference and maintain it. Every AI collaborator must not make 
 
 ---
 
+## 🎨 DESIGN PHILOSOPHY: RAW DOCUMENTATION AESTHETIC
+
+### Core Ethos: Function Over Polish
+ClimoCal embodies raw documentation over visual polish. This isn't minimalism for trends—it's documentary minimalism with purpose. Every design decision serves authentic utility rather than visual appeal, following Tom Sachs' systematic, unapologetically utilitarian approach.
+
+### Typography System
+- **Primary**: Courier Prime (monospace) - signals "this is technical documentation"
+- **Alternative**: Helvetica Neue - pure information delivery when toggled
+- **Sizes**: 13-16px for information density over comfortable distant reading
+- **Philosophy**: Both fonts serve content, neither is decorative
+
+### Mathematical Grid System  
+- **Base Unit**: 180px grid with systematic relationships
+- **Spacing**: 180px, 90px, 45px intervals - no arbitrary padding
+- **Constraint**: Content adapts to grid, not grid to content
+- **Result**: Engineered feel rather than designed aesthetic
+
+### Color Strategy: Functional Only
+- **Text**: Black (#000000)
+- **Background**: White (#ffffff) 
+- **Secondary**: Gray (#666666)
+- **Links**: Standard Blue (#0066cc) - function over brand colors
+- **Philosophy**: Focus attention on content, not visual styling
+
+### Layout Principles
+- **Alignment**: Always left-aligned, never centered
+- **Hierarchy**: Natural information flow over visual balance
+- **Approach**: Content on the web, formatted for utility over impact
+
+### Interactive Design
+- **Custom Elements**: 32x32px cursor with precise hotspot positioning
+- **Link Treatment**: Custom underlines positioned exactly -1px below baseline
+- **Hover States**: Color shifts for immediate feedback, no animations
+- **Goal**: Professional software feel over lifestyle website browsing
+
+### Content Presentation
+- **Voice**: Raw technical documentation, not marketing copy
+- **Style**: Authentic working notes rather than polished blog posts
+- **Structure**: Information architecture made visible through systematic organization
+- **Meta-message**: "This person thinks systematically, values function over form"
+
+---
+
 ## 🎯 CORE FEATURES
 
 ### MVP Features (Sprint 1 - Personal Use)
@@ -296,10 +339,17 @@ Every coder must reference and maintain it. Every AI collaborator must not make 
   - ✅ All calendars generating successfully
 - [ ] **USER TESTING**: Johnny to test calendar subscriptions in Apple Calendar, Google Calendar
 
-### NEXT (Sprint 2 - Polish & Enhancement)
+### NEXT (Sprint 2 - Reskin & Enhancement) 
+- [ ] **DESIGN OVERHAUL**: Reskin to match Johnny Hockin site aesthetic
+  - [ ] Implement raw documentation design philosophy over polished UI
+  - [ ] Typography: Courier Prime (monospace) as default, Helvetica Neue toggle
+  - [ ] 180px mathematical grid system with systematic spacing
+  - [ ] Color palette: Black (#000000), White (#ffffff), Gray (#666666), Link Blue (#0066cc)
+  - [ ] Left-aligned layout, never centered content
+  - [ ] Custom interactive elements: 32x32px cursor, -1px link underlines
+  - [ ] Raw technical documentation feel over friendly marketing
 - [ ] Add seasonal climate averages from historical API
 - [ ] Enhanced weather condition emoji mapping beyond basic set
-- [ ] Improved web UI styling and UX polish
 - [ ] Location search functionality (if expanding beyond current 8 cities)
 
 ### LATER (Sprint 3 - Public Release)
