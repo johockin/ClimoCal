@@ -1,0 +1,16 @@
+{
+  "name": "climocal",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Weather forecasts in your calendar - set it and forget it",
+  "scripts": {
+    "generate": "node scripts/generate-calendars.js",
+    "dev": "npx serve public"
+  },
+  "dependencies": {
+    "ical-generator": "^7.0.0"
+  },
+  "devDependencies": {
+    "serve": "^14.2.0"
+  }
+}

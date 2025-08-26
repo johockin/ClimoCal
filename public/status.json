@@ -1,0 +1,13 @@
+{
+  "lastGenerated": "2025-08-26T16:31:19.036Z",
+  "success": true,
+  "locationsGenerated": 1,
+  "locations": [
+    {
+      "name": "Toronto",
+      "slug": "toronto",
+      "calendarUrl": "https://johockin.github.io/ClimoCal/calendars/toronto.ics"
+    }
+  ],
+  "nextUpdate": "2025-08-27T16:31:19.036Z"
+}

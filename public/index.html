@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ClimoCal - Weather in Your Calendar</title>
+  <meta name="description" content="Weather forecasts that live in your calendar. Set it and forget it - automatically updating weather for Toronto.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌤️</text></svg>">
+</head>
+<body>
+  <main>
+    <h1>🌤 ClimoCal</h1>
+    <p class="subtitle">Weather forecasts that live in your calendar. Set it and forget it.</p>
+    
+    <div id="my-locations">
+      <div class="location-card">
+        <h3>📍 Toronto</h3>
+        <div class="subscribe-buttons">
+          <a href="webcal://johockin.github.io/ClimoCal/calendars/toronto.ics" class="btn btn-apple">
+            🍎 Add to Apple Calendar
+          </a>
+          <a href="https://calendar.google.com/calendar/r?cid=webcal://johockin.github.io/ClimoCal/calendars/toronto.ics" 
+             class="btn btn-google" target="_blank" rel="noopener">
+            📅 Add to Google Calendar
+          </a>
+          <a href="https://johockin.github.io/ClimoCal/calendars/toronto.ics" 
+             class="btn btn-download" download="ClimoCal-Toronto.ics">
+            ⬇️ Download Calendar File
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <details>
+      <summary>ℹ️ What's included?</summary>
+      <div>
+        <ul>
+          <li><strong>16-day weather forecast</strong> with emoji indicators for quick scanning</li>
+          <li><strong>Daily high/low temperatures</strong> in Celsius</li>
+          <li><strong>Weather conditions</strong> with detailed descriptions</li>
+          <li><strong>Precipitation, wind, and UV index</strong> in event details</li>
+          <li><strong>Auto-updates daily</strong> with fresh weather data</li>
+          <li><strong>Works with all calendar apps</strong> - Apple, Google, Outlook, and more</li>
+        </ul>
+        
+        <p><strong>How it works:</strong> Subscribe once and your calendar app will automatically check for updates daily. Weather events appear alongside your regular calendar events, making it easy to plan ahead.</p>
+        
+        <p><strong>Privacy:</strong> No tracking, no accounts needed. Just weather data from Open-Meteo.com served as standard calendar files.</p>
+      </div>
+    </details>
+    
+    <footer>
+      <p>
+        <span id="status-indicator" class="status-indicator"></span>
+        Last updated: <span id="last-updated" class="loading">Loading...</span>
+      </p>
+      <p>Next update: <span id="next-update" class="loading">Loading...</span></p>
+      <p style="margin-top: 1rem; font-size: 0.85rem;">
+        Powered by <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a> • 
+        <a href="https://github.com/johockin/ClimoCal" target="_blank" rel="noopener">View Source</a>
+      </p>
+    </footer>
+  </main>
+  
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+[
+  {
+    "name": "Toronto",
+    "slug": "toronto",
+    "lat": 43.6532,
+    "lon": -79.3832,
+    "timezone": "America/Toronto"
+  }
+]

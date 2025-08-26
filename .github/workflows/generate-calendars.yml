@@ -1,0 +1,38 @@
+name: Generate ClimoCal Calendars
+
+on:
+  schedule:
+    - cron: '0 10 * * *'    # Daily at 6 AM Toronto time (10 UTC)
+  workflow_dispatch:         # Manual trigger button
+  push:
+    branches: [main]         # Regenerate on code changes
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci --production
+      
+      - name: Generate calendar files
+        run: node scripts/generate-calendars.js
+        env:
+          TZ: 'America/Toronto'  # Set timezone for generation
+      
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          # Optional: uncomment and set custom domain
+          # cname: climocal.yourdomain.com
