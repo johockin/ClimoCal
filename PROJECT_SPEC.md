@@ -207,6 +207,18 @@ Every coder must reference and maintain it. Every AI collaborator must not make 
 
 ## 📒 CHANGELOG (REVERSE CHRONOLOGICAL)
 
+### 2024-08-26 - Production Deployment Complete 🚀
+- **Achievement**: ClimoCal successfully deployed and operational
+- **Site Live**: https://johockin.github.io/ClimoCal/
+- **Calendar URL**: https://johockin.github.io/ClimoCal/calendars/toronto.ics
+- **Deployment Method**: GitHub Actions with official GitHub Pages deployment
+- **Automation Status**: Daily updates configured (6 AM Toronto time)
+- **Issue Resolved**: Fixed GitHub repository scope - initially included parent directory with all dev projects (AKWriter, Maggy, etc.), corrected to ClimoCal-only repository
+- **Issue Resolved**: GitHub Actions permission denied error when using `peaceiris/actions-gh-pages@v3` - switched to official GitHub Pages deployment workflow using `actions/upload-pages-artifact@v3` and `actions/deploy-pages@v4`
+- **Rationale for Deployment Fix**: Newer GitHub Pages actions handle permissions automatically and are more reliable than third-party actions
+- **Final Status**: Fully autonomous weather calendar system operational
+- **Milestone**: M1 COMPLETED - Production weather calendar with zero-maintenance automation
+
 ### 2024-08-26 - Sprint 1 Implementation Complete ✅
 - **Achievement**: Successfully implemented complete MVP calendar generation system
 - **Files Created**: All core files implemented and tested locally
@@ -220,8 +232,7 @@ Every coder must reference and maintain it. Every AI collaborator must not make 
   - `data/locations.json` - Toronto location configuration
   - `package.json` - Ultra-minimal dependencies (only ical-generator)
 - **Testing**: Local generation successful - generated 16 days of Toronto weather data
-- **Status**: Ready for GitHub Pages deployment and GitHub Actions setup
-- **Milestone**: M1 achieved - Basic working calendar generation with Toronto weather
+- **Initial Deployment Issues**: Git repository scope problem and GitHub Actions permissions
 
 ### 2024-08-26 - Project Initialization
 - **Decision**: Adopted pre-designed architecture from weather-calendar-architecture.md
@@ -234,14 +245,16 @@ Every coder must reference and maintain it. Every AI collaborator must not make 
 
 ## 🧱 ROADMAP & PIPELINE
 
-### NOW (Sprint 1 - Ready for Deployment)
+### NOW (Sprint 1 - COMPLETED ✅)
 - [x] Set up GitHub repository with provided URL
 - [x] Implement basic calendar generation script with Open-Meteo integration
 - [x] Add GitHub Actions workflow for daily execution (6 AM Toronto time)
 - [x] Create minimal web UI for subscription with Apple/Google/Direct download options
 - [x] Test local calendar generation (✅ 16 days of Toronto weather generated)
-- [ ] **NEXT STEP**: Push to GitHub and configure GitHub Pages
-- [ ] **FINAL STEP**: Test with personal calendar applications (Apple Calendar, Google Calendar)
+- [x] **RESOLVED**: Fix repository scope - removed parent directory projects, ClimoCal-only repo
+- [x] **RESOLVED**: Fix GitHub Actions permissions with official GitHub Pages deployment
+- [x] **COMPLETED**: Production deployment live at https://johockin.github.io/ClimoCal/
+- [ ] **USER TESTING**: Johnny to test calendar subscriptions in Apple Calendar, Google Calendar
 
 ### NEXT (Sprint 2 - After MVP Working)
 - [ ] Add seasonal climate averages from historical API
@@ -266,16 +279,67 @@ Every coder must reference and maintain it. Every AI collaborator must not make 
 
 ## 📌 MILESTONE COMMITS
 
-- **M1**: Basic working calendar generation with Toronto weather (Sprint 1 complete)
-- **M2**: Enhanced calendar with historical data and multiple locations (Sprint 2 complete) 
-- **M3**: Public-ready service with location search and custom domain (Sprint 3 complete)
+- **M1 ✅**: Production ClimoCal deployment (commit `0ebc43c`) - Sprint 1 complete
+  - All core functionality implemented and deployed
+  - Live at https://johockin.github.io/ClimoCal/
+  - Daily automation operational (6 AM Toronto time)
+  - Toronto weather calendar subscription available
+  - Issues resolved: repository scope and GitHub Actions permissions
+- **M2**: Enhanced calendar with historical data and multiple locations (Sprint 2 - future)
+- **M3**: Public-ready service with location search and custom domain (Sprint 3 - future) 
 - **M4**: Production service with monitoring and fallbacks (if pursuing public release)
+
+---
+
+## 🐛 DEPLOYMENT ISSUES & RESOLUTIONS
+
+### Issue #1: Repository Scope Problem
+**Problem**: Initial git repository included parent directory ("AI Playground") containing all of Johnny's dev projects (AKWriter, Maggy, ChronoTracker, etc.) instead of just ClimoCal files.
+
+**Root Cause**: Git was initialized in the wrong directory level - parent instead of ClimoCal-specific folder.
+
+**Impact**: GitHub repository was cluttered with unrelated projects, violating the clean architecture principle.
+
+**Resolution**: 
+- Removed parent `.git` directory 
+- Re-initialized git repository in ClimoCal directory only
+- Force-pushed clean repository containing only ClimoCal files
+- **Commit**: `8bd22eb` - "Initial ClimoCal implementation - Clean repository"
+
+**Why This Approach**: Clean separation of concerns - each project should have its own repository. Prevents confusion for future collaborators and maintains the "ultra-minimal" philosophy.
+
+### Issue #2: GitHub Actions Permission Denied  
+**Problem**: GitHub Actions failing with error: `Permission to johockin/ClimoCal.git denied to github-actions[bot]`
+
+**Root Cause**: The third-party action `peaceiris/actions-gh-pages@v3` doesn't handle GitHub's newer permission model correctly.
+
+**Impact**: Calendar generation worked locally but deployment to GitHub Pages failed, breaking the automation.
+
+**First Attempted Fix**: Enabling "Read and write permissions" in repository settings - this didn't resolve the issue.
+
+**Final Resolution**:
+- Replaced `peaceiris/actions-gh-pages@v3` with official GitHub Pages actions
+- Split workflow into two jobs: `generate` and `deploy`
+- Used `actions/upload-pages-artifact@v3` and `actions/deploy-pages@v4` 
+- Added explicit permissions (`pages: write`, `id-token: write`)
+- **Commit**: `0ebc43c` - "Fix GitHub Pages deployment - use newer action method"
+
+**Why This Approach**: GitHub's official actions are more reliable and handle the newer OIDC-based permission system correctly. Third-party actions often lag behind GitHub's security updates.
+
+### Issue #3: GitHub Pages Configuration
+**Problem**: GitHub Pages source showing "main or none" instead of `gh-pages` branch option.
+
+**Root Cause**: The `gh-pages` branch only gets created after the first successful GitHub Action run.
+
+**Resolution**: Switch to "GitHub Actions" deployment source instead of branch-based deployment - this is GitHub's newer, recommended approach.
+
+**Why This Approach**: The GitHub Actions deployment method is more modern and doesn't require branch management. It deploys directly from workflow artifacts.
 
 ---
 
 ## 📌 OPEN QUESTIONS
 
-*None currently - architecture is fully specified and ready for implementation*
+*None currently - all deployment issues resolved and system operational*
 
 ---
 
