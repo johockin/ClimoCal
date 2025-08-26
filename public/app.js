@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   
   // Set up calendar subscription handlers
   setupSubscriptionHandlers();
+  
+  // Set up font toggle functionality
+  setupFontToggle();
 });
 
 async function loadCities() {
@@ -231,4 +234,46 @@ function showNotification(message, type = 'success') {
   setTimeout(() => {
     notification.remove();
   }, 3000);
+}
+
+// Font Toggle Functionality
+function setupFontToggle() {
+  const toggleButton = document.getElementById('font-toggle');
+  let isMonoFont = true; // Start with monospace (Courier Prime)
+  
+  if (!toggleButton) return;
+  
+  // Load saved font preference from localStorage
+  const savedFont = localStorage.getItem('climocal-font-preference');
+  if (savedFont === 'sans') {
+    isMonoFont = false;
+    switchToSansFont();
+    toggleButton.textContent = 'SANS';
+  } else {
+    toggleButton.textContent = 'MONO';
+  }
+  
+  toggleButton.addEventListener('click', () => {
+    if (isMonoFont) {
+      // Switch to Helvetica Neue
+      switchToSansFont();
+      toggleButton.textContent = 'SANS';
+      localStorage.setItem('climocal-font-preference', 'sans');
+      isMonoFont = false;
+    } else {
+      // Switch to Courier Prime
+      switchToMonoFont();
+      toggleButton.textContent = 'MONO';
+      localStorage.setItem('climocal-font-preference', 'mono');
+      isMonoFont = true;
+    }
+  });
+}
+
+function switchToSansFont() {
+  document.documentElement.style.setProperty('--active-font', 'var(--font-sans)');
+}
+
+function switchToMonoFont() {
+  document.documentElement.style.setProperty('--active-font', 'var(--font-mono)');
 }
