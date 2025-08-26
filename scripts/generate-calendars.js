@@ -46,14 +46,15 @@ async function generateLocationCalendar(location) {
       location.timezone || 'auto'
     );
     
-    // Create calendar
+    // Create calendar with optimized settings
     const cal = ical({
-      name: `ClimoCal - ${location.name}`,
-      description: `Weather forecasts for ${location.name} - automatically updated daily`,
-      timezone: location.timezone || 'UTC',
-      ttl: 60 * 60 * 24, // 24 hour TTL - tells calendar apps when to refresh
+      name: `TOR ClimoCal`,
+      description: `Toronto weather forecasts - automatically updated daily at 6 AM`,
+      timezone: location.timezone || 'America/Toronto',
+      ttl: 60 * 60 * 4, // 4 hour TTL - more frequent refresh checks
       url: `https://johockin.github.io/ClimoCal/calendars/${location.slug}.ics`,
-      scale: 'gregorian'
+      scale: 'gregorian',
+      method: 'PUBLISH'
     });
     
     // Add weather events
@@ -70,7 +71,14 @@ async function generateLocationCalendar(location) {
         description: description,
         location: location.name,
         uid: `weather-${location.slug}-${day.date}@climocal.com`,
-        timestamp: new Date()
+        timestamp: new Date(),
+        // Disable alerts/notifications by default
+        alarms: [],
+        // Set as informational, not actionable
+        status: 'CONFIRMED',
+        busyStatus: 'FREE',
+        // Prevent event from blocking calendar
+        transparency: 'TRANSPARENT'
       });
     });
     
