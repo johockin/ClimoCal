@@ -180,3 +180,13 @@ footer p {
   color: #6c757d;
   font-style: italic;
 }
+
+.loading-message {
+  text-align: center;
+  margin: 2rem 0;
+  opacity: 0.7;
+}
+
+.loading-message p {
+  margin: 0;
+}

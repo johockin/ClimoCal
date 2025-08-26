@@ -254,6 +254,11 @@ Every coder must reference and maintain it. Every AI collaborator must not make 
 - [x] **RESOLVED**: Fix repository scope - removed parent directory projects, ClimoCal-only repo
 - [x] **RESOLVED**: Fix GitHub Actions permissions with official GitHub Pages deployment
 - [x] **COMPLETED**: Production deployment live at https://johockin.github.io/ClimoCal/
+- [x] **USER FEEDBACK IMPLEMENTED**: Calendar settings updated per Johnny's requirements
+  - ✅ Calendar name changed to "TOR ClimoCal" 
+  - ✅ Disabled alerts/notifications by default (alarms: [])
+  - ✅ Set events as transparent and non-blocking
+  - ✅ Reduced TTL to 4 hours for more frequent refresh checks
 - [ ] **USER TESTING**: Johnny to test calendar subscriptions in Apple Calendar, Google Calendar
 
 ### NEXT (Sprint 2 - After MVP Working)
@@ -279,12 +284,13 @@ Every coder must reference and maintain it. Every AI collaborator must not make 
 
 ## 📌 MILESTONE COMMITS
 
-- **M1 ✅**: Production ClimoCal deployment (commit `0ebc43c`) - Sprint 1 complete
+- **M1 ✅**: Production ClimoCal deployment (commit `36071ec`) - Sprint 1 complete
   - All core functionality implemented and deployed
   - Live at https://johockin.github.io/ClimoCal/
   - Daily automation operational (6 AM Toronto time)
   - Toronto weather calendar subscription available
   - Issues resolved: repository scope and GitHub Actions permissions
+  - User feedback implemented: calendar name, disabled alerts, transparent events
 - **M2**: Enhanced calendar with historical data and multiple locations (Sprint 2 - future)
 - **M3**: Public-ready service with location search and custom domain (Sprint 3 - future) 
 - **M4**: Production service with monitoring and fallbacks (if pursuing public release)

@@ -1,7 +1,7 @@
 BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:-//sebbo.net//ical-generator//EN
-URL:https://johockin.github.io/ClimoCal/calendars/toronto.ics
+URL:https://johockin.github.io/ClimoCal/calendars/montreal.ics
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 NAME:TOR ClimoCal
@@ -13,258 +13,258 @@ X-WR-TIMEZONE:America/Toronto
 REFRESH-INTERVAL;VALUE=DURATION:PT4H
 X-PUBLISHED-TTL:PT4H
 BEGIN:VEVENT
-UID:056f3573-965d-41fc-9986-066ed7813ee4
+UID:c4119570-d551-412d-87da-e84535d9be1a
 SEQUENCE:0
 DTSTAMP:20250826T173306
 DTSTART;VALUE=DATE:20250826
 DTEND;VALUE=DATE:20250826
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
 X-MICROSOFT-MSNCALENDAR-ALLDAYEVENT:TRUE
-SUMMARY:🌦️ 21°/12°
+SUMMARY:🌦️ 19°/14°
 TRANSP:TRANSPARENT
-LOCATION:Toronto
-DESCRIPTION:Weather: Light drizzle\nHigh: 21°C\, Low: 12°C\nPrecipitatio
- n: 0.3mm (39% chance)\nWind: 21 km/h\nUV Index: 5\n\n---\nPowered by Climo
- Cal - Weather in your calendar\nData from Open-Meteo.com
+LOCATION:Montreal
+DESCRIPTION:Weather: Light drizzle\nHigh: 19°C\, Low: 14°C\nPrecipitatio
+ n: 0.4mm (6% chance)\nWind: 19 km/h\nUV Index: 5\n\n---\nPowered by ClimoC
+ al - Weather in your calendar\nData from Open-Meteo.com
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:86fe9cc7-495a-47fb-9354-cc8959faae16
+UID:b6068287-ff19-47f3-bdd6-de4592be9c9e
 SEQUENCE:0
 DTSTAMP:20250826T173306
 DTSTART;VALUE=DATE:20250827
 DTEND;VALUE=DATE:20250827
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
 X-MICROSOFT-MSNCALENDAR-ALLDAYEVENT:TRUE
-SUMMARY:⛅ 22°/11°
+SUMMARY:🌦️ 19°/11°
 TRANSP:TRANSPARENT
-LOCATION:Toronto
-DESCRIPTION:Weather: Overcast\nHigh: 22°C\, Low: 11°C\nWind: 18 km/h\nUV
-  Index: 6\n\n---\nPowered by ClimoCal - Weather in your calendar\nData fro
- m Open-Meteo.com
+LOCATION:Montreal
+DESCRIPTION:Weather: Light drizzle\nHigh: 19°C\, Low: 11°C\nPrecipitatio
+ n: 0.3mm (1% chance)\nWind: 17 km/h\nUV Index: 6\n\n---\nPowered by ClimoC
+ al - Weather in your calendar\nData from Open-Meteo.com
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:530e61b7-4660-455c-88d5-31db6f4c262b
+UID:061289db-9a21-45ce-9159-8e7006e796f8
 SEQUENCE:0
 DTSTAMP:20250826T173306
 DTSTART;VALUE=DATE:20250828
 DTEND;VALUE=DATE:20250828
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
 X-MICROSOFT-MSNCALENDAR-ALLDAYEVENT:TRUE
-SUMMARY:🌧️ 24°/13°
+SUMMARY:🌧️ 21°/12°
 TRANSP:TRANSPARENT
-LOCATION:Toronto
-DESCRIPTION:Weather: Moderate rain\nHigh: 24°C\, Low: 13°C\nPrecipitatio
- n: 5mm (84% chance)\nWind: 21 km/h\nUV Index: 4\n\n---\nPowered by ClimoCa
- l - Weather in your calendar\nData from Open-Meteo.com
+LOCATION:Montreal
+DESCRIPTION:Weather: Moderate rain\nHigh: 21°C\, Low: 12°C\nPrecipitatio
+ n: 5.7mm (60% chance)\nWind: 16 km/h\nUV Index: 3\n\n---\nPowered by Climo
+ Cal - Weather in your calendar\nData from Open-Meteo.com
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:a01d299f-bef4-499d-8989-e13444c16192
+UID:a1795ce9-005c-4a26-b21d-5a8e1d8464e5
 SEQUENCE:0
 DTSTAMP:20250826T173306
 DTSTART;VALUE=DATE:20250829
 DTEND;VALUE=DATE:20250829
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
 X-MICROSOFT-MSNCALENDAR-ALLDAYEVENT:TRUE
-SUMMARY:⛅ 18°/11°
+SUMMARY:🌧️ 15°/12°
 TRANSP:TRANSPARENT
-LOCATION:Toronto
-DESCRIPTION:Weather: Overcast\nHigh: 18°C\, Low: 11°C\nWind: 23 km/h\nUV
-  Index: 5\n\n---\nPowered by ClimoCal - Weather in your calendar\nData fro
- m Open-Meteo.com
+LOCATION:Montreal
+DESCRIPTION:Weather: Moderate rain showers\nHigh: 15°C\, Low: 12°C\nPrec
+ ipitation: 23.5mm (60% chance)\nWind: 21 km/h\nUV Index: 6\n\n---\nPowered
+  by ClimoCal - Weather in your calendar\nData from Open-Meteo.com
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:e8cb58ec-4c8a-4e5d-af39-c2a296d5d318
+UID:47f1f237-ad31-4f6a-835a-17af5f8b93c7
 SEQUENCE:0
 DTSTAMP:20250826T173306
 DTSTART;VALUE=DATE:20250830
 DTEND;VALUE=DATE:20250830
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
 X-MICROSOFT-MSNCALENDAR-ALLDAYEVENT:TRUE
-SUMMARY:⛅ 22°/11°
+SUMMARY:🌦️ 12°/10°
 TRANSP:TRANSPARENT
-LOCATION:Toronto
-DESCRIPTION:Weather: Overcast\nHigh: 22°C\, Low: 11°C\nWind: 15 km/h\nUV
-  Index: 5\n\n---\nPowered by ClimoCal - Weather in your calendar\nData fro
- m Open-Meteo.com
+LOCATION:Montreal
+DESCRIPTION:Weather: Light drizzle\nHigh: 12°C\, Low: 10°C\nPrecipitatio
+ n: 1.3mm (45% chance)\nWind: 12 km/h\nUV Index: 2\n\n---\nPowered by Climo
+ Cal - Weather in your calendar\nData from Open-Meteo.com
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:039699c0-0edd-46a1-9fdd-2f6c809e49f6
+UID:15e86a85-d050-49b4-91f1-8cb93edad181
 SEQUENCE:0
 DTSTAMP:20250826T173306
 DTSTART;VALUE=DATE:20250831
 DTEND;VALUE=DATE:20250831
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
 X-MICROSOFT-MSNCALENDAR-ALLDAYEVENT:TRUE
-SUMMARY:⛅ 23°/13°
+SUMMARY:⛅ 19°/11°
 TRANSP:TRANSPARENT
-LOCATION:Toronto
-DESCRIPTION:Weather: Overcast\nHigh: 23°C\, Low: 13°C\nWind: 18 km/h\nUV
-  Index: 6\n\n---\nPowered by ClimoCal - Weather in your calendar\nData fro
- m Open-Meteo.com
+LOCATION:Montreal
+DESCRIPTION:Weather: Overcast\nHigh: 19°C\, Low: 11°C\nWind: 7 km/h\nUV 
+ Index: 5\n\n---\nPowered by ClimoCal - Weather in your calendar\nData from
+  Open-Meteo.com
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:be637615-898e-4d5b-a05f-55447f17034d
+UID:57ca919a-dac7-4b00-b456-6ebed4d5c9ae
 SEQUENCE:0
 DTSTAMP:20250826T173306
 DTSTART;VALUE=DATE:20250901
 DTEND;VALUE=DATE:20250901
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
 X-MICROSOFT-MSNCALENDAR-ALLDAYEVENT:TRUE
-SUMMARY:⛅ 25°/16°
+SUMMARY:⛅ 23°/12°
 TRANSP:TRANSPARENT
-LOCATION:Toronto
-DESCRIPTION:Weather: Overcast\nHigh: 25°C\, Low: 16°C\nWind: 12 km/h\nUV
-  Index: 6\n\n---\nPowered by ClimoCal - Weather in your calendar\nData fro
- m Open-Meteo.com
+LOCATION:Montreal
+DESCRIPTION:Weather: Mainly clear\nHigh: 23°C\, Low: 12°C\nWind: 10 km/h
+ \nUV Index: 6\n\n---\nPowered by ClimoCal - Weather in your calendar\nData
+  from Open-Meteo.com
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:fa97b7cb-6cbf-4d57-b5cb-d510ee68a091
+UID:04f113e8-e63f-4e86-8f4c-dfb2b1a71efe
 SEQUENCE:0
 DTSTAMP:20250826T173306
 DTSTART;VALUE=DATE:20250902
 DTEND;VALUE=DATE:20250902
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
 X-MICROSOFT-MSNCALENDAR-ALLDAYEVENT:TRUE
-SUMMARY:⛅ 24°/18°
+SUMMARY:☀️ 26°/15°
 TRANSP:TRANSPARENT
-LOCATION:Toronto
-DESCRIPTION:Weather: Overcast\nHigh: 24°C\, Low: 18°C\nWind: 20 km/h\nUV
+LOCATION:Montreal
+DESCRIPTION:Weather: Clear sky\nHigh: 26°C\, Low: 15°C\nWind: 7 km/h\nUV
   Index: 6\n\n---\nPowered by ClimoCal - Weather in your calendar\nData fro
  m Open-Meteo.com
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:bf7075a5-b37e-47b7-bdc0-a23dd20f8345
+UID:cb225144-5f59-46c4-a113-5b6643a95877
 SEQUENCE:0
 DTSTAMP:20250826T173306
 DTSTART;VALUE=DATE:20250903
 DTEND;VALUE=DATE:20250903
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
 X-MICROSOFT-MSNCALENDAR-ALLDAYEVENT:TRUE
-SUMMARY:⛅ 22°/20°
+SUMMARY:⛅ 27°/16°
 TRANSP:TRANSPARENT
-LOCATION:Toronto
-DESCRIPTION:Weather: Overcast\nHigh: 22°C\, Low: 20°C\nWind: 22 km/h\nUV
-  Index: 2\n\n---\nPowered by ClimoCal - Weather in your calendar\nData fro
- m Open-Meteo.com
+LOCATION:Montreal
+DESCRIPTION:Weather: Overcast\nHigh: 27°C\, Low: 16°C\nWind: 9 km/h\nUV 
+ Index: 6\n\n---\nPowered by ClimoCal - Weather in your calendar\nData from
+  Open-Meteo.com
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:d71dad20-117b-43ae-8fb1-51c132dc1aa2
+UID:1b7b7bbc-6c8d-4775-a404-dcb5cd857d8f
 SEQUENCE:0
 DTSTAMP:20250826T173306
 DTSTART;VALUE=DATE:20250904
 DTEND;VALUE=DATE:20250904
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
 X-MICROSOFT-MSNCALENDAR-ALLDAYEVENT:TRUE
-SUMMARY:🌧️ 21°/19°
+SUMMARY:🌦️ 27°/17°
 TRANSP:TRANSPARENT
-LOCATION:Toronto
-DESCRIPTION:Weather: Slight rain showers\nHigh: 21°C\, Low: 19°C\nPrecip
- itation: 5.1mm (22% chance)\nWind: 23 km/h\nUV Index: 2\n\n---\nPowered by
-  ClimoCal - Weather in your calendar\nData from Open-Meteo.com
+LOCATION:Montreal
+DESCRIPTION:Weather: Light drizzle\nHigh: 27°C\, Low: 17°C\nPrecipitatio
+ n: 0.3mm (21% chance)\nWind: 21 km/h\nUV Index: 6\n\n---\nPowered by Climo
+ Cal - Weather in your calendar\nData from Open-Meteo.com
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:b706a02f-6c41-41df-bf83-5da91f8c3fda
+UID:b45ee871-a2cb-47a2-8b82-5bc71a50a9fd
 SEQUENCE:0
 DTSTAMP:20250826T173306
 DTSTART;VALUE=DATE:20250905
 DTEND;VALUE=DATE:20250905
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
 X-MICROSOFT-MSNCALENDAR-ALLDAYEVENT:TRUE
-SUMMARY:🌦️ 21°/13°
+SUMMARY:🌦️ 19°/11°
 TRANSP:TRANSPARENT
-LOCATION:Toronto
-DESCRIPTION:Weather: Light drizzle\nHigh: 21°C\, Low: 13°C\nPrecipitatio
- n: 0.6mm (20% chance)\nWind: 19 km/h\nUV Index: 6\n\n---\nPowered by Climo
+LOCATION:Montreal
+DESCRIPTION:Weather: Light drizzle\nHigh: 19°C\, Low: 11°C\nPrecipitatio
+ n: 1.5mm (21% chance)\nWind: 17 km/h\nUV Index: 4\n\n---\nPowered by Climo
  Cal - Weather in your calendar\nData from Open-Meteo.com
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:9f50fd01-0b03-45ac-8716-4bbe88376cdd
+UID:b824e5ec-8956-4fac-afe0-ac1a0412e412
 SEQUENCE:0
 DTSTAMP:20250826T173306
 DTSTART;VALUE=DATE:20250906
 DTEND;VALUE=DATE:20250906
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
 X-MICROSOFT-MSNCALENDAR-ALLDAYEVENT:TRUE
-SUMMARY:⛅ 22°/15°
+SUMMARY:⛅ 19°/8°
 TRANSP:TRANSPARENT
-LOCATION:Toronto
-DESCRIPTION:Weather: Overcast\nHigh: 22°C\, Low: 15°C\nWind: 22 km/h\nUV
-  Index: 6\n\n---\nPowered by ClimoCal - Weather in your calendar\nData fro
- m Open-Meteo.com
+LOCATION:Montreal
+DESCRIPTION:Weather: Overcast\nHigh: 19°C\, Low: 8°C\nWind: 10 km/h\nUV 
+ Index: 5\n\n---\nPowered by ClimoCal - Weather in your calendar\nData from
+  Open-Meteo.com
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:214bf8d1-a8cd-4055-8883-9bdb76e6b34e
+UID:1dbb3130-0a79-4248-ad01-f7c650c6991f
 SEQUENCE:0
 DTSTAMP:20250826T173306
 DTSTART;VALUE=DATE:20250907
 DTEND;VALUE=DATE:20250907
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
 X-MICROSOFT-MSNCALENDAR-ALLDAYEVENT:TRUE
-SUMMARY:☀️ 21°/13°
+SUMMARY:⛅ 20°/12°
 TRANSP:TRANSPARENT
-LOCATION:Toronto
-DESCRIPTION:Weather: Clear sky\nHigh: 21°C\, Low: 13°C\nWind: 17 km/h\nU
- V Index: 6\n\n---\nPowered by ClimoCal - Weather in your calendar\nData fr
- om Open-Meteo.com
+LOCATION:Montreal
+DESCRIPTION:Weather: Partly cloudy\nHigh: 20°C\, Low: 12°C\nWind: 17 km/
+ h\nUV Index: 6\n\n---\nPowered by ClimoCal - Weather in your calendar\nDat
+ a from Open-Meteo.com
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:c1835e81-4d3b-4db3-baae-66b063af0d69
+UID:f61abe4d-d032-4237-af96-9421b7924785
 SEQUENCE:0
 DTSTAMP:20250826T173306
 DTSTART;VALUE=DATE:20250908
 DTEND;VALUE=DATE:20250908
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
 X-MICROSOFT-MSNCALENDAR-ALLDAYEVENT:TRUE
-SUMMARY:⛅ 26°/17°
+SUMMARY:⛅ 24°/11°
 TRANSP:TRANSPARENT
-LOCATION:Toronto
-DESCRIPTION:Weather: Overcast\nHigh: 26°C\, Low: 17°C\nWind: 15 km/h\nUV
+LOCATION:Montreal
+DESCRIPTION:Weather: Overcast\nHigh: 24°C\, Low: 11°C\nWind: 11 km/h\nUV
   Index: 5\n\n---\nPowered by ClimoCal - Weather in your calendar\nData fro
  m Open-Meteo.com
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:b499fe98-96d0-48fa-ab24-4a166c750b1c
+UID:3b5724fa-ffc9-43c9-b09d-842000a7c742
 SEQUENCE:0
 DTSTAMP:20250826T173306
 DTSTART;VALUE=DATE:20250909
 DTEND;VALUE=DATE:20250909
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
 X-MICROSOFT-MSNCALENDAR-ALLDAYEVENT:TRUE
-SUMMARY:⛅ 26°/18°
+SUMMARY:⛅ 26°/16°
 TRANSP:TRANSPARENT
-LOCATION:Toronto
-DESCRIPTION:Weather: Overcast\nHigh: 26°C\, Low: 18°C\nWind: 12 km/h\nUV
-  Index: 5\n\n---\nPowered by ClimoCal - Weather in your calendar\nData fro
- m Open-Meteo.com
+LOCATION:Montreal
+DESCRIPTION:Weather: Overcast\nHigh: 26°C\, Low: 16°C\nWind: 7 km/h\nUV 
+ Index: 5\n\n---\nPowered by ClimoCal - Weather in your calendar\nData from
+  Open-Meteo.com
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:876d6f10-6cf7-412c-835a-690eeea6dd3e
+UID:39c7f205-1af3-46d4-a05f-a2be20591150
 SEQUENCE:0
 DTSTAMP:20250826T173306
 DTSTART;VALUE=DATE:20250910
 DTEND;VALUE=DATE:20250910
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
 X-MICROSOFT-MSNCALENDAR-ALLDAYEVENT:TRUE
-SUMMARY:🌦️ 28°/19°
+SUMMARY:🌦️ 27°/16°
 TRANSP:TRANSPARENT
-LOCATION:Toronto
-DESCRIPTION:Weather: Light drizzle\nHigh: 28°C\, Low: 19°C\nPrecipitatio
- n: 0.3mm (16% chance)\nWind: 14 km/h\nUV Index: 5\n\n---\nPowered by Climo
+LOCATION:Montreal
+DESCRIPTION:Weather: Light drizzle\nHigh: 27°C\, Low: 16°C\nPrecipitatio
+ n: 0.6mm (25% chance)\nWind: 10 km/h\nUV Index: 5\n\n---\nPowered by Climo
  Cal - Weather in your calendar\nData from Open-Meteo.com
 STATUS:CONFIRMED
 END:VEVENT

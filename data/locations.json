@@ -5,5 +5,54 @@
     "lat": 43.6532,
     "lon": -79.3832,
     "timezone": "America/Toronto"
+  },
+  {
+    "name": "Vancouver",
+    "slug": "vancouver",
+    "lat": 49.2827,
+    "lon": -123.1207,
+    "timezone": "America/Vancouver"
+  },
+  {
+    "name": "Montreal",
+    "slug": "montreal",
+    "lat": 45.5017,
+    "lon": -73.5673,
+    "timezone": "America/Toronto"
+  },
+  {
+    "name": "Calgary",
+    "slug": "calgary",
+    "lat": 51.0447,
+    "lon": -114.0719,
+    "timezone": "America/Edmonton"
+  },
+  {
+    "name": "Ottawa",
+    "slug": "ottawa",
+    "lat": 45.4215,
+    "lon": -75.6972,
+    "timezone": "America/Toronto"
+  },
+  {
+    "name": "New York",
+    "slug": "new-york",
+    "lat": 40.7128,
+    "lon": -74.0060,
+    "timezone": "America/New_York"
+  },
+  {
+    "name": "London",
+    "slug": "london",
+    "lat": 51.5074,
+    "lon": -0.1278,
+    "timezone": "Europe/London"
+  },
+  {
+    "name": "Tokyo",
+    "slug": "tokyo",
+    "lat": 35.6762,
+    "lon": 139.6503,
+    "timezone": "Asia/Tokyo"
   }
 ]

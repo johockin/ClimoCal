@@ -3,12 +3,98 @@
 document.addEventListener('DOMContentLoaded', async () => {
   console.log('🌤️  ClimoCal loading...');
   
+  // Load available cities first
+  await loadCities();
+  
   // Load and display status information
   await loadStatus();
   
   // Set up calendar subscription handlers
   setupSubscriptionHandlers();
 });
+
+async function loadCities() {
+  const loadingEl = document.getElementById('locations-loading');
+  const containerEl = document.getElementById('locations-container');
+  
+  try {
+    const response = await fetch('/status.json');
+    
+    if (!response.ok) {
+      throw new Error(`Status API error: ${response.status}`);
+    }
+    
+    const status = await response.json();
+    
+    // Hide loading message
+    loadingEl.style.display = 'none';
+    
+    // Create city cards
+    status.locations.forEach(location => {
+      const cityCard = createCityCard(location);
+      containerEl.appendChild(cityCard);
+    });
+    
+    console.log(`🌍 Loaded ${status.locations.length} cities`);
+    
+  } catch (error) {
+    console.warn('Could not load cities:', error.message);
+    
+    // Fallback: show just Toronto
+    loadingEl.style.display = 'none';
+    const fallbackLocation = {
+      name: 'Toronto',
+      slug: 'toronto',
+      calendarUrl: 'https://johockin.github.io/ClimoCal/calendars/toronto.ics'
+    };
+    
+    const cityCard = createCityCard(fallbackLocation);
+    containerEl.appendChild(cityCard);
+  }
+}
+
+function createCityCard(location) {
+  const card = document.createElement('div');
+  card.className = 'location-card';
+  
+  // Determine city emoji based on name
+  const cityEmoji = getCityEmoji(location.name);
+  
+  card.innerHTML = `
+    <h3>${cityEmoji} ${location.name}</h3>
+    <div class="subscribe-buttons">
+      <a href="webcal://johockin.github.io/ClimoCal/calendars/${location.slug}.ics" 
+         class="btn btn-apple">
+        🍎 Add to Apple Calendar
+      </a>
+      <a href="https://calendar.google.com/calendar/r?cid=webcal://johockin.github.io/ClimoCal/calendars/${location.slug}.ics" 
+         class="btn btn-google" target="_blank" rel="noopener">
+        📅 Add to Google Calendar
+      </a>
+      <a href="https://johockin.github.io/ClimoCal/calendars/${location.slug}.ics" 
+         class="btn btn-download" download="ClimoCal-${location.name}.ics">
+        ⬇️ Download Calendar File
+      </a>
+    </div>
+  `;
+  
+  return card;
+}
+
+function getCityEmoji(cityName) {
+  const cityEmojis = {
+    'Toronto': '🏙️',
+    'Vancouver': '🏔️',
+    'Montreal': '🍁',
+    'Calgary': '🏔️',
+    'Ottawa': '🇨🇦',
+    'New York': '🗽',
+    'London': '🇬🇧',
+    'Tokyo': '🏯'
+  };
+  
+  return cityEmojis[cityName] || '📍';
+}
 
 async function loadStatus() {
   try {

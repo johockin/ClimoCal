@@ -1,13 +1,48 @@
 {
-  "lastGenerated": "2025-08-26T17:08:26.975Z",
+  "lastGenerated": "2025-08-26T21:33:07.778Z",
   "success": true,
-  "locationsGenerated": 1,
+  "locationsGenerated": 8,
   "locations": [
     {
       "name": "Toronto",
       "slug": "toronto",
       "calendarUrl": "https://johockin.github.io/ClimoCal/calendars/toronto.ics"
+    },
+    {
+      "name": "Vancouver",
+      "slug": "vancouver",
+      "calendarUrl": "https://johockin.github.io/ClimoCal/calendars/vancouver.ics"
+    },
+    {
+      "name": "Montreal",
+      "slug": "montreal",
+      "calendarUrl": "https://johockin.github.io/ClimoCal/calendars/montreal.ics"
+    },
+    {
+      "name": "Calgary",
+      "slug": "calgary",
+      "calendarUrl": "https://johockin.github.io/ClimoCal/calendars/calgary.ics"
+    },
+    {
+      "name": "Ottawa",
+      "slug": "ottawa",
+      "calendarUrl": "https://johockin.github.io/ClimoCal/calendars/ottawa.ics"
+    },
+    {
+      "name": "New York",
+      "slug": "new-york",
+      "calendarUrl": "https://johockin.github.io/ClimoCal/calendars/new-york.ics"
+    },
+    {
+      "name": "London",
+      "slug": "london",
+      "calendarUrl": "https://johockin.github.io/ClimoCal/calendars/london.ics"
+    },
+    {
+      "name": "Tokyo",
+      "slug": "tokyo",
+      "calendarUrl": "https://johockin.github.io/ClimoCal/calendars/tokyo.ics"
     }
   ],
-  "nextUpdate": "2025-08-27T17:08:26.975Z"
+  "nextUpdate": "2025-08-27T21:33:07.778Z"
 }

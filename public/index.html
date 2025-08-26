@@ -13,23 +13,12 @@
     <h1>🌤 ClimoCal</h1>
     <p class="subtitle">Weather forecasts that live in your calendar. Set it and forget it.</p>
     
-    <div id="my-locations">
-      <div class="location-card">
-        <h3>📍 Toronto</h3>
-        <div class="subscribe-buttons">
-          <a href="webcal://johockin.github.io/ClimoCal/calendars/toronto.ics" class="btn btn-apple">
-            🍎 Add to Apple Calendar
-          </a>
-          <a href="https://calendar.google.com/calendar/r?cid=webcal://johockin.github.io/ClimoCal/calendars/toronto.ics" 
-             class="btn btn-google" target="_blank" rel="noopener">
-            📅 Add to Google Calendar
-          </a>
-          <a href="https://johockin.github.io/ClimoCal/calendars/toronto.ics" 
-             class="btn btn-download" download="ClimoCal-Toronto.ics">
-            ⬇️ Download Calendar File
-          </a>
-        </div>
-      </div>
+    <div id="locations-loading" class="loading-message">
+      <p>🌤️ Loading available cities...</p>
+    </div>
+    
+    <div id="locations-container">
+      <!-- Cities will be loaded dynamically -->
     </div>
     
     <details>
