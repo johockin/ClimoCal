@@ -3,9 +3,24 @@
 document.addEventListener('DOMContentLoaded', async () => {
   console.log('🌤️  ClimoCal loading...');
   
+  // Set current date in hero
+  setCurrentDate();
+  
   // Load available cities
   await loadCities();
 });
+
+function setCurrentDate() {
+  const now = new Date();
+  const options = { 
+    weekday: 'long', 
+    year: 'numeric', 
+    month: 'long', 
+    day: 'numeric' 
+  };
+  const dateString = now.toLocaleDateString('en-US', options);
+  document.getElementById('current-date').textContent = dateString;
+}
 
 async function loadCities() {
   const loadingEl = document.getElementById('locations-loading');
@@ -73,7 +88,7 @@ function createCityItem(location) {
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ');
   
-  const calendarUrl = `webcal://johockin.github.io/ClimoCal/calendars/${location.slug}.ics`;
+  const calendarUrl = `webcal://climocal.johnnyhockin.com/calendars/${location.slug}.ics`;
   
   cityItem.innerHTML = `
     <a href="${calendarUrl}" class="city-btn">
