@@ -6,7 +6,8 @@
     "lat": 43.6532,
     "lon": -79.3832,
     "timezone": "America/Toronto",
-    "continent": "north america"
+    "continent": "north america",
+    "country": "canada"
   },
   {
     "name": "vancouver",
@@ -15,7 +16,8 @@
     "lat": 49.2827,
     "lon": -123.1207,
     "timezone": "America/Vancouver",
-    "continent": "north america"
+    "continent": "north america",
+    "country": "canada"
   },
   {
     "name": "montreal",
@@ -24,7 +26,8 @@
     "lat": 45.5017,
     "lon": -73.5673,
     "timezone": "America/Toronto",
-    "continent": "north america"
+    "continent": "north america",
+    "country": "canada"
   },
   {
     "name": "new york",
@@ -33,7 +36,8 @@
     "lat": 40.7128,
     "lon": -74.0060,
     "timezone": "America/New_York",
-    "continent": "north america"
+    "continent": "north america",
+    "country": "usa"
   },
   {
     "name": "london",
@@ -42,7 +46,8 @@
     "lat": 51.5074,
     "lon": -0.1278,
     "timezone": "Europe/London",
-    "continent": "europe"
+    "continent": "europe",
+    "country": "uk"
   },
   {
     "name": "tokyo",
@@ -51,6 +56,7 @@
     "lat": 35.6762,
     "lon": 139.6503,
     "timezone": "Asia/Tokyo",
-    "continent": "asia"
+    "continent": "asia",
+    "country": "japan"
   }
 ]

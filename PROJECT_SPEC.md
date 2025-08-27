@@ -259,6 +259,26 @@ ClimoCal embodies raw documentation over visual polish. This isn't minimalism fo
 
 ## 📒 CHANGELOG (REVERSE CHRONOLOGICAL)
 
+### 2025-08-27 - ClimoCal Branding & Calendar Name Fixes 🏷️
+- **Issue Fixed**: Calendar naming bug where all cities displayed "TOR ClimoCal" instead of unique airport codes
+- **Issue Fixed**: Added subtle ClimoCal branding to calendar files as requested
+- **Calendar Name Fix**:
+  - Updated `scripts/generate-calendars.js` to use airport codes from `data/locations.json`
+  - Calendar names now show unique airport codes: YYZ (Toronto), YVR (Vancouver), etc.
+  - Verified all 6 cities now generate with correct individual names
+- **Branding Implementation**:
+  - Calendar description field updated to: "Weather forecast by ClimoCal • climocal.johnnyhockin.com"
+  - Event description field simplified to minimal: "via ClimoCal"
+  - Removed verbose branding text in favor of clean, minimal approach
+- **Technical Changes**:
+  - `scripts/generate-calendars.js`: Changed `name: location.code` to use airport codes
+  - `scripts/generate-calendars.js`: Updated calendar description to new branding format
+  - `scripts/generate-calendars.js`: Simplified event descriptions to "via ClimoCal"
+- **Testing**: Local generation verified all cities display correct unique names (YYZ, YVR, YUL, JFK, LHR, NRT)
+- **Deployment**: Committed and pushed as "Add ClimoCal branding to calendar files" (commit 168a3e5)
+- **User Experience**: Calendar subscriptions now show proper branding in subscription settings and minimal "via ClimoCal" in weather events
+- **Status**: All calendars now properly branded and uniquely named
+
 ### 2025-08-27 - Font Rendering Issues Fixed 🔤
 - **Issue Identified**: Font rendering showing Menlo instead of intended Courier Prime
 - **Root Cause Analysis**: Multiple CSS font loading and variable connection issues

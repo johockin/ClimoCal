@@ -47,8 +47,9 @@ async function generateLocationCalendar(location) {
     );
     
     // Create calendar with optimized settings
+    const calendarName = `${location.name.charAt(0).toUpperCase() + location.name.slice(1)} Climate`;
     const cal = ical({
-      name: location.code,
+      name: calendarName,
       description: `Weather forecast by ClimoCal • climocal.johnnyhockin.com`,
       timezone: location.timezone || 'America/Toronto',
       ttl: 60 * 60 * 4, // 4 hour TTL - more frequent refresh checks
@@ -60,8 +61,19 @@ async function generateLocationCalendar(location) {
     // Add weather events
     weatherData.forecast.forEach(day => {
       const emoji = weatherEmoji(day.weatherCode);
-      const eventTitle = `${emoji} ${day.tempMax}°/${day.tempMin}°`;
-      const description = buildEventDescription(day);
+      
+      // Convert temperatures based on location
+      const isUSA = location.country === 'usa';
+      const tempMaxDisplay = isUSA ? `${Math.round(day.tempMax * 9/5 + 32)}°F` : `${day.tempMax}°C`;
+      const tempMinDisplay = isUSA ? `${Math.round(day.tempMin * 9/5 + 32)}°F` : `${day.tempMin}°C`;
+      
+      // Check if it's Sunday and add city name
+      const dayOfWeek = new Date(day.date).getDay();
+      const isSunday = dayOfWeek === 0;
+      const cityReminder = isSunday ? ` - ${location.name.charAt(0).toUpperCase() + location.name.slice(1)}` : '';
+      
+      const eventTitle = `${emoji} ${tempMaxDisplay}/${tempMinDisplay}${cityReminder}`;
+      const description = buildEventDescription(day, location);
       
       cal.createEvent({
         start: new Date(day.date + 'T00:00:00'),
@@ -94,11 +106,18 @@ async function generateLocationCalendar(location) {
   }
 }
 
-function buildEventDescription(day) {
+function buildEventDescription(day, location) {
   const condition = weatherDescription(day.weatherCode);
+  const isUSA = location.country === 'usa';
   
   let description = `Weather: ${condition}\n`;
-  description += `High: ${day.tempMax}°C, Low: ${day.tempMin}°C\n`;
+  if (isUSA) {
+    const tempMaxF = Math.round(day.tempMax * 9/5 + 32);
+    const tempMinF = Math.round(day.tempMin * 9/5 + 32);
+    description += `High: ${tempMaxF}°F, Low: ${tempMinF}°F\n`;
+  } else {
+    description += `High: ${day.tempMax}°C, Low: ${day.tempMin}°C\n`;
+  }
   
   if (day.precipitation > 0) {
     description += `Precipitation: ${day.precipitation}mm (${day.precipitationProbability}% chance)\n`;
