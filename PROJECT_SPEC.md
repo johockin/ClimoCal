@@ -259,6 +259,24 @@ ClimoCal embodies raw documentation over visual polish. This isn't minimalism fo
 
 ## 📒 CHANGELOG (REVERSE CHRONOLOGICAL)
 
+### 2025-08-27 - Font Rendering Issues Fixed 🔤
+- **Issue Identified**: Font rendering showing Menlo instead of intended Courier Prime
+- **Root Cause Analysis**: Multiple CSS font loading and variable connection issues
+- **Problems Resolved**:
+  - Fixed broken Google Fonts import for "Helvetica Neue" (not available on Google Fonts)
+  - Connected `body` element to use `--active-font` CSS variable so font toggle actually works
+  - Properly initialized `--active-font` variable in CSS root
+  - Fixed media query calc() syntax issue preventing responsive breakpoints
+- **Technical Changes**:
+  - `public/style.css`: Updated Google Fonts import to proper system font fallbacks
+  - `public/style.css`: Changed `body { font-family: var(--font-mono) }` to `body { font-family: var(--active-font) }`
+  - `public/style.css`: Added `--active-font: var(--font-mono)` to CSS `:root` section
+  - `public/style.css`: Fixed `@media (max-width: calc(var(--grid-base) * 2))` to static value
+- **User Experience**: Font now properly displays in Courier Prime and toggle button switches correctly between mono and sans fonts
+- **Testing**: Codebase audit performed to identify and resolve all styling inconsistencies
+- **Deployment**: Committed and pushed as "Fix font rendering issues - Courier Prime now displays correctly" (commit e6806e9)
+- **Status**: Raw documentation aesthetic now rendering correctly with intended typography
+
 ### 2025-08-26 - Multi-City Expansion Complete 🌍
 - **Achievement**: Successfully expanded ClimoCal from single-city (Toronto) to 8 international cities
 - **New Cities Added**: Vancouver 🏔️, Montreal 🍁, Calgary 🏔️, Ottawa 🇨🇦, New York 🗽, London 🇬🇧, Tokyo 🏯
