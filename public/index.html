@@ -18,165 +18,44 @@
             background: #f5f5f7;
             min-height: 100vh;
             color: #1d1d1f;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
         }
         
         .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 60px 20px;
+            max-width: 400px;
+            width: 100%;
         }
         
-        /* Hero Section - mimics the calendar app */
-        .hero-calendar {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-            overflow: hidden;
-            margin-bottom: 80px;
-        }
-        
-        .calendar-day-header {
-            padding: 24px 32px;
-            background: white;
-            border-bottom: 1px solid #f0f0f0;
-        }
-        
-        .calendar-day-header h1 {
-            font-size: 32px;
-            font-weight: 600;
-            color: #1d1d1f;
-            margin: 0;
-        }
-        
-        .weather-event {
-            background: #ff9500;
-            padding: 24px 32px;
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-        
-        .weather-emoji {
-            font-size: 32px;
-        }
-        
-        .weather-temp {
-            font-size: 32px;
-            font-weight: 500;
-            color: white;
-        }
-        
-        .calendar-mini-grid {
-            padding: 32px;
-            background: #fafafa;
-        }
-        
-        /* Logo and Tagline */
         .branding {
             text-align: center;
-            margin-bottom: 80px;
-        }
-        
-        .logo-text {
-            font-size: 56px;
-            font-weight: 700;
-            color: #ff9500;
-            margin-bottom: 16px;
-        }
-        
-        .main-tagline {
-            font-size: 24px;
-            color: #1d1d1f;
-            margin-bottom: 8px;
-        }
-        
-        .sub-tagline {
-            font-size: 18px;
-            color: #86868b;
-        }
-        
-        /* Content sections */
-        .content-section {
             margin-bottom: 60px;
         }
         
-        .content-section h2 {
-            font-size: 28px;
-            font-weight: 600;
-            color: #1d1d1f;
-            margin-bottom: 16px;
-        }
-        
-        .content-section p {
-            font-size: 17px;
-            line-height: 1.6;
-            color: #424245;
-            margin-bottom: 16px;
-        }
-        
-        /* Example weather display */
-        .weather-example {
-            background: white;
-            border-radius: 16px;
-            padding: 32px;
-            margin: 32px 0;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-        }
-        
-        .weather-example-row {
-            font-size: 28px;
-            margin: 12px 0;
-            font-weight: 500;
-            color: #1d1d1f;
-        }
-        
-        /* Simple numbered list */
-        .simple-list {
-            margin: 24px 0;
-            padding-left: 0;
-            list-style: none;
-        }
-        
-        .simple-list li {
-            font-size: 17px;
-            line-height: 1.8;
-            color: #424245;
+        .logo-text {
+            font-size: 48px;
+            font-weight: 700;
+            color: #ff9500;
             margin-bottom: 12px;
-            padding-left: 32px;
-            position: relative;
         }
         
-        .simple-list li:before {
-            content: attr(data-number);
-            position: absolute;
-            left: 0;
+        .tagline {
+            font-size: 18px;
             color: #86868b;
-            font-weight: 600;
+            margin-bottom: 8px;
         }
         
-        /* Subscribe section */
-        .subscribe-section {
-            background: white;
-            border-radius: 20px;
-            padding: 48px;
-            margin: 60px 0;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        .subtitle {
+            font-size: 15px;
+            color: #86868b;
         }
         
-        .subscribe-section h2 {
-            font-size: 32px;
-            font-weight: 600;
-            color: #1d1d1f;
-            margin-bottom: 32px;
-            text-align: center;
-        }
-        
-        .cities-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        .cities-container {
+            display: flex;
+            flex-direction: column;
             gap: 12px;
-            margin-bottom: 32px;
         }
         
         .city-item {
@@ -187,113 +66,116 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 16px 20px;
-            background: #f5f5f7;
+            padding: 20px 24px;
+            background: #ff9500;
             border: none;
-            border-radius: 12px;
+            border-radius: 16px;
             text-decoration: none;
-            color: #1d1d1f;
-            font-size: 16px;
-            font-weight: 500;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
             transition: all 0.2s;
             cursor: pointer;
             width: 100%;
+            box-shadow: 0 4px 20px rgba(255, 149, 0, 0.3);
         }
         
         .city-btn:hover {
-            background: #ff9500;
-            color: white;
-            transform: scale(1.02);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(255, 149, 0, 0.4);
         }
         
         .city-btn .arrow {
-            color: #86868b;
-            transition: color 0.2s;
+            font-size: 20px;
+            transition: transform 0.2s;
         }
         
         .city-btn:hover .arrow {
-            color: white;
+            transform: translateX(4px);
         }
         
         .subscribe-options {
             display: none;
-            background: #f5f5f7;
+            background: white;
+            border: 1px solid #e8e8ed;
             border-radius: 12px;
-            padding: 20px;
+            padding: 16px;
             margin-top: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            animation: slideDown 0.3s ease-out;
         }
         
         .subscribe-options.active {
             display: block;
         }
         
-        .subscribe-buttons {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-            gap: 8px;
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
-        .sub-btn {
-            display: block;
-            padding: 10px;
-            background: white;
-            border: 1px solid #e8e8ed;
-            border-radius: 8px;
-            text-decoration: none;
-            color: #424245;
+        .copy-url-section p {
             font-size: 13px;
-            text-align: center;
-            transition: all 0.15s;
-        }
-        
-        .sub-btn:hover {
-            background: #ff9500;
-            color: white;
-            border-color: #ff9500;
-        }
-        
-        .subscribe-note {
-            text-align: center;
             color: #86868b;
-            font-size: 15px;
-        }
-        
-        /* Stats */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 24px;
-            margin: 48px 0;
-        }
-        
-        .stat {
-            text-align: center;
-            padding: 24px;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
-        }
-        
-        .stat-number {
-            font-size: 36px;
-            font-weight: 600;
-            color: #ff9500;
             margin-bottom: 8px;
         }
         
-        .stat-label {
-            font-size: 14px;
-            color: #86868b;
+        .calendar-url {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #e8e8ed;
+            border-radius: 8px;
+            background: #f5f5f7;
+            font-size: 12px;
+            font-family: Monaco, 'Courier New', monospace;
+            margin-bottom: 12px;
         }
         
-        /* Footer */
+        .copy-btn {
+            background: #ff9500;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 16px;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+        
+        .copy-btn:hover {
+            background: #e8860a;
+            transform: translateY(-1px);
+        }
+        
+        .instructions {
+            text-align: center;
+            margin-top: 24px;
+            color: #86868b;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        
+        #locations-loading {
+            text-align: center;
+            color: #86868b;
+            font-size: 16px;
+            padding: 60px 20px;
+        }
+        
         .footer {
             text-align: center;
-            padding: 48px 0;
-            color: #86868b;
-            font-size: 15px;
+            margin-top: 60px;
+            padding-top: 40px;
             border-top: 1px solid #e8e8ed;
-            margin-top: 80px;
+            color: #86868b;
+            font-size: 13px;
         }
         
         .footer a {
@@ -305,157 +187,50 @@
             color: #ff9500;
         }
         
-        /* Loading state */
-        #locations-loading {
-            text-align: center;
-            color: #86868b;
-            font-size: 16px;
-            padding: 40px;
-        }
-        
-        @media (max-width: 680px) {
-            .container {
-                padding: 40px 20px;
-            }
-            
+        @media (max-width: 480px) {
             .logo-text {
-                font-size: 42px;
+                font-size: 40px;
             }
             
-            .main-tagline {
-                font-size: 20px;
-            }
-            
-            .button-grid {
+            .subscribe-buttons {
                 grid-template-columns: 1fr;
+                gap: 8px;
             }
             
-            .stats-grid {
-                grid-template-columns: 1fr 1fr;
+            .container {
+                max-width: 350px;
             }
             
-            .weather-event {
-                padding: 20px 24px;
-            }
-            
-            .weather-temp, .weather-emoji {
-                font-size: 28px;
-            }
-            
-            .subscribe-section {
-                padding: 32px 24px;
+            .city-btn {
+                padding: 18px 20px;
+                font-size: 16px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Hero that looks like a calendar app -->
-        <div class="hero-calendar">
-            <div class="calendar-day-header">
-                <h1 id="hero-date">Loading...</h1>
-            </div>
-            <div class="weather-event">
-                <span class="weather-emoji" id="hero-emoji">🌤️</span>
-                <span class="weather-temp" id="hero-temp">--°/--°</span>
-            </div>
-        </div>
-        
-        <!-- Simple branding -->
         <div class="branding">
             <div class="logo-text">ClimoCal</div>
-            <div class="main-tagline">Weather in your calendar.</div>
-            <div class="sub-tagline">No app. No widgets. Just works.</div>
+            <div class="tagline">Weather in your calendar</div>
+            <div class="subtitle">No app. No widgets. Just works.</div>
         </div>
         
-        <!-- The Problem -->
-        <div class="content-section">
-            <h2>Why I Built This</h2>
-            <p>
-                I'm a film producer. We plan shoots months ahead. I live in my calendar app, scheduling crew, locations, equipment. Weather determines everything - can we shoot exteriors? Do we need rain covers? Should we push the shoot day?
-            </p>
-            <p>
-                I kept switching between calendar and weather apps like an idiot. Apple Calendar only shows weather if an event has a location. Google Calendar killed their weather feature. The services that exist are broken, limited to 7 days, or want $5/month for something that should be free.
-            </p>
-            <p>
-                I just wanted to glance at next Tuesday and see if it's going to rain. That's it.
-            </p>
+        <div id="locations-loading">Loading cities...</div>
+        
+        <div class="cities-container" id="locations-container">
+            <!-- Cities will be loaded dynamically -->
         </div>
         
-        <!-- The Solution -->
-        <div class="content-section">
-            <h2>What It Does</h2>
-            <p>
-                ClimoCal puts weather in your calendar. Subscribe once, get weather forever.
-            </p>
-            
-            <div class="weather-example">
-                <div class="weather-example-row">☀️ 22°/15°</div>
-                <div class="weather-example-row">⛅ 24°/17°</div>
-                <div class="weather-example-row">🌧️ 18°/12°</div>
-            </div>
-            
-            <p>
-                That's it. Just emoji and temperatures. 16-day forecast. Updates every morning. Free forever.
-            </p>
+        <div class="instructions">
+            Click any city for Apple Calendar.<br>
+            For Google Calendar or Outlook, right-click and copy link.
         </div>
         
-        <!-- How it works -->
-        <div class="content-section">
-            <h2>How It Works</h2>
-            <ol class="simple-list">
-                <li data-number="1.">Click subscribe below</li>
-                <li data-number="2.">Your calendar adds the subscription</li>
-                <li data-number="3.">Weather appears every day</li>
-                <li data-number="4.">It updates automatically</li>
-                <li data-number="5.">That's literally it</li>
-            </ol>
-            <p style="margin-top: 24px; color: #86868b;">
-                Technical: ~50 lines of JavaScript, GitHub Actions, Open-Meteo weather data.
-            </p>
-        </div>
-        
-        <!-- Subscribe -->
-        <div class="subscribe-section">
-            <h2>Get It</h2>
-            <div id="locations-loading">Loading cities...</div>
-            <div class="cities-grid" id="locations-container">
-                <!-- Cities will be loaded dynamically -->
-            </div>
-            <p class="subscribe-note">
-                Click any city for Apple Calendar. For Google Calendar or Outlook, right-click and copy link.<br>
-                Need a different city? <a href="https://github.com/johockin/ClimoCal/issues" style="color: #ff9500;">Let me know</a>.
-            </p>
-        </div>
-        
-        <!-- Stats -->
-        <div class="stats-grid">
-            <div class="stat">
-                <div class="stat-number">16</div>
-                <div class="stat-label">day forecast</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">~50</div>
-                <div class="stat-label">lines of code</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">$0</div>
-                <div class="stat-label">per month</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">3hrs</div>
-                <div class="stat-label">to build</div>
-            </div>
-        </div>
-        
-        <!-- Footer -->
         <div class="footer">
-            <p>
-                Built in an afternoon because I needed it.<br><br>
-                <a href="https://github.com/johockin/ClimoCal">GitHub</a> &nbsp;·&nbsp; 
-                <a href="https://johnnyhockin.com">Johnny Hockin</a> &nbsp;·&nbsp; 
-                <a href="https://open-meteo.com">Weather by Open-Meteo</a>
-            </p>
+            <a href="https://github.com/johockin/ClimoCal">GitHub</a> • 
+            <a href="https://johnnyhockin.com">Johnny Hockin</a> • 
+            <a href="https://open-meteo.com">Open-Meteo</a>
         </div>
     </div>
     

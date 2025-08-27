@@ -3,23 +3,9 @@
 document.addEventListener('DOMContentLoaded', async () => {
   console.log('🌤️  ClimoCal loading...');
   
-  // Set current date in hero
-  setHeroDate();
-  
   // Load available cities
   await loadCities();
 });
-
-function setHeroDate() {
-  const now = new Date();
-  const options = { 
-    weekday: 'long', 
-    month: 'long', 
-    day: 'numeric' 
-  };
-  const dateString = now.toLocaleDateString('en-US', options);
-  document.getElementById('hero-date').textContent = dateString;
-}
 
 async function loadCities() {
   const loadingEl = document.getElementById('locations-loading');
@@ -87,35 +73,63 @@ function createCityItem(location) {
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ');
   
+  const calendarUrl = `webcal://johockin.github.io/ClimoCal/calendars/${location.slug}.ics`;
+  
   cityItem.innerHTML = `
-    <div class="city-btn">
+    <a href="${calendarUrl}" class="city-btn">
       <span>${displayName}</span>
       <span class="arrow">→</span>
-    </div>
+    </a>
     <div class="subscribe-options">
-      <div class="subscribe-buttons">
-        <a href="webcal://johockin.github.io/ClimoCal/calendars/${location.slug}.ics" class="sub-btn">Apple</a>
-        <a href="https://calendar.google.com/calendar/r?cid=webcal://johockin.github.io/ClimoCal/calendars/${location.slug}.ics" target="_blank" rel="noopener" class="sub-btn">Google</a>
-        <a href="https://johockin.github.io/ClimoCal/calendars/${location.slug}.ics" download="ClimoCal-${displayName}.ics" class="sub-btn">Download</a>
+      <div class="copy-url-section">
+        <p>Calendar URL:</p>
+        <input type="text" class="calendar-url" value="${calendarUrl}" readonly>
+        <button class="copy-btn">Copy</button>
       </div>
     </div>
   `;
   
-  // Toggle options on click
+  // Right-click to show copy options
   const cityBtn = cityItem.querySelector('.city-btn');
   const options = cityItem.querySelector('.subscribe-options');
+  const copyBtn = cityItem.querySelector('.copy-btn');
+  const urlInput = cityItem.querySelector('.calendar-url');
   
-  cityBtn.addEventListener('click', () => {
-    const wasActive = options.classList.contains('active');
+  cityBtn.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
     
     // Close all other city options
     document.querySelectorAll('.subscribe-options.active').forEach(opt => {
       opt.classList.remove('active');
     });
     
-    // Toggle this one
-    if (!wasActive) {
-      options.classList.add('active');
+    // Show this one
+    options.classList.add('active');
+  });
+  
+  // Copy button functionality
+  copyBtn.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(calendarUrl);
+      copyBtn.textContent = 'Copied!';
+      setTimeout(() => {
+        copyBtn.textContent = 'Copy';
+      }, 2000);
+    } catch (error) {
+      // Fallback: select the text
+      urlInput.select();
+      document.execCommand('copy');
+      copyBtn.textContent = 'Copied!';
+      setTimeout(() => {
+        copyBtn.textContent = 'Copy';
+      }, 2000);
+    }
+  });
+  
+  // Click outside to close
+  document.addEventListener('click', (e) => {
+    if (!cityItem.contains(e.target)) {
+      options.classList.remove('active');
     }
   });
   
