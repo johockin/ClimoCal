@@ -48,11 +48,11 @@ async function generateLocationCalendar(location) {
     
     // Create calendar with optimized settings
     const cal = ical({
-      name: `TOR ClimoCal`,
-      description: `Toronto weather forecasts - automatically updated daily at 6 AM`,
+      name: location.code,
+      description: `${location.name.charAt(0).toUpperCase() + location.name.slice(1)} weather forecasts - automatically updated daily at 6 AM`,
       timezone: location.timezone || 'America/Toronto',
       ttl: 60 * 60 * 4, // 4 hour TTL - more frequent refresh checks
-      url: `https://johockin.github.io/ClimoCal/calendars/${location.slug}.ics`,
+      url: `https://climocal.johnnyhockin.com/calendars/${location.slug}.ics`,
       scale: 'gregorian',
       method: 'PUBLISH'
     });
@@ -127,7 +127,7 @@ function generateStatusFile(locations) {
     locations: locations.map(loc => ({
       name: loc.name,
       slug: loc.slug,
-      calendarUrl: `https://johockin.github.io/ClimoCal/calendars/${loc.slug}.ics`
+      calendarUrl: `https://climocal.johnnyhockin.com/calendars/${loc.slug}.ics`
     })),
     nextUpdate: new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString() // 24 hours from now
   };

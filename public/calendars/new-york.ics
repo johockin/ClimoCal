@@ -1,21 +1,21 @@
 BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:-//sebbo.net//ical-generator//EN
-URL:https://johockin.github.io/ClimoCal/calendars/new-york.ics
+URL:https://climocal.johnnyhockin.com/calendars/new-york.ics
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-NAME:TOR ClimoCal
-X-WR-CALNAME:TOR ClimoCal
-X-WR-CALDESC:Toronto weather forecasts - automatically updated daily at 6 
- AM
+NAME:JFK
+X-WR-CALNAME:JFK
+X-WR-CALDESC:New york weather forecasts - automatically updated daily at 6
+  AM
 TIMEZONE-ID:America/New_York
 X-WR-TIMEZONE:America/New_York
 REFRESH-INTERVAL;VALUE=DURATION:PT4H
 X-PUBLISHED-TTL:PT4H
 BEGIN:VEVENT
-UID:d8c180f1-c7b2-4052-8346-6040cdbebd78
+UID:207c3e1d-63c9-4b7b-bfef-0e95243d235d
 SEQUENCE:0
-DTSTAMP:20250826T180127
+DTSTAMP:20250826T223440
 DTSTART;VALUE=DATE:20250826
 DTEND;VALUE=DATE:20250826
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -29,25 +29,25 @@ DESCRIPTION:Weather: Overcast\nHigh: 27°C\, Low: 16°C\nWind: 18 km/h\nUV
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:efac7447-f665-4ff0-a4d1-7c20a5722fed
+UID:742ad765-6d57-440e-9c81-604e963f55b5
 SEQUENCE:0
-DTSTAMP:20250826T180127
+DTSTAMP:20250826T223440
 DTSTART;VALUE=DATE:20250827
 DTEND;VALUE=DATE:20250827
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
 X-MICROSOFT-MSNCALENDAR-ALLDAYEVENT:TRUE
-SUMMARY:🌦️ 25°/15°
+SUMMARY:⛅ 25°/14°
 TRANSP:TRANSPARENT
 LOCATION:new york
-DESCRIPTION:Weather: Light drizzle\nHigh: 25°C\, Low: 15°C\nPrecipitatio
- n: 0.1mm (1% chance)\nWind: 21 km/h\nUV Index: 7\n\n---\nPowered by ClimoC
- al - Weather in your calendar\nData from Open-Meteo.com
+DESCRIPTION:Weather: Overcast\nHigh: 25°C\, Low: 14°C\nWind: 20 km/h\nUV
+  Index: 7\n\n---\nPowered by ClimoCal - Weather in your calendar\nData fro
+ m Open-Meteo.com
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:44d43c2d-6b4c-4927-8b93-000e950b4ef2
+UID:3b9a352a-2933-4a7b-9d33-b120a0a0a956
 SEQUENCE:0
-DTSTAMP:20250826T180127
+DTSTAMP:20250826T223440
 DTSTART;VALUE=DATE:20250828
 DTEND;VALUE=DATE:20250828
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -55,47 +55,47 @@ X-MICROSOFT-MSNCALENDAR-ALLDAYEVENT:TRUE
 SUMMARY:⛅ 27°/13°
 TRANSP:TRANSPARENT
 LOCATION:new york
-DESCRIPTION:Weather: Overcast\nHigh: 27°C\, Low: 13°C\nWind: 26 km/h\nUV
+DESCRIPTION:Weather: Overcast\nHigh: 27°C\, Low: 13°C\nWind: 24 km/h\nUV
   Index: 6\n\n---\nPowered by ClimoCal - Weather in your calendar\nData fro
  m Open-Meteo.com
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:6d1cc456-3ba0-401a-82e8-e800693aa74a
+UID:89f6b490-ae06-4389-8d36-4efa506451e2
 SEQUENCE:0
-DTSTAMP:20250826T180127
+DTSTAMP:20250826T223440
 DTSTART;VALUE=DATE:20250829
 DTEND;VALUE=DATE:20250829
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
 X-MICROSOFT-MSNCALENDAR-ALLDAYEVENT:TRUE
-SUMMARY:🌦️ 26°/19°
+SUMMARY:🌦️ 24°/19°
 TRANSP:TRANSPARENT
 LOCATION:new york
-DESCRIPTION:Weather: Light drizzle\nHigh: 26°C\, Low: 19°C\nPrecipitatio
- n: 0.2mm (33% chance)\nWind: 24 km/h\nUV Index: 7\n\n---\nPowered by Climo
+DESCRIPTION:Weather: Light drizzle\nHigh: 24°C\, Low: 19°C\nPrecipitatio
+ n: 0.1mm (33% chance)\nWind: 23 km/h\nUV Index: 5\n\n---\nPowered by Climo
  Cal - Weather in your calendar\nData from Open-Meteo.com
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:d3e00865-e48d-4783-9a43-f5583c176132
+UID:9f71818d-8ae9-4ba6-85fa-6ae73a66ca37
 SEQUENCE:0
-DTSTAMP:20250826T180127
+DTSTAMP:20250826T223440
 DTSTART;VALUE=DATE:20250830
 DTEND;VALUE=DATE:20250830
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
 X-MICROSOFT-MSNCALENDAR-ALLDAYEVENT:TRUE
-SUMMARY:⛅ 24°/15°
+SUMMARY:⛅ 25°/15°
 TRANSP:TRANSPARENT
 LOCATION:new york
-DESCRIPTION:Weather: Overcast\nHigh: 24°C\, Low: 15°C\nWind: 18 km/h\nUV
-  Index: 7\n\n---\nPowered by ClimoCal - Weather in your calendar\nData fro
- m Open-Meteo.com
+DESCRIPTION:Weather: Mainly clear\nHigh: 25°C\, Low: 15°C\nWind: 20 km/h
+ \nUV Index: 7\n\n---\nPowered by ClimoCal - Weather in your calendar\nData
+  from Open-Meteo.com
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:9c651f15-8c5d-4813-a083-d041bd6d29a4
+UID:7e580e11-d0da-45aa-93fb-9337412f7e74
 SEQUENCE:0
-DTSTAMP:20250826T180127
+DTSTAMP:20250826T223440
 DTSTART;VALUE=DATE:20250831
 DTEND;VALUE=DATE:20250831
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -103,79 +103,79 @@ X-MICROSOFT-MSNCALENDAR-ALLDAYEVENT:TRUE
 SUMMARY:⛅ 26°/17°
 TRANSP:TRANSPARENT
 LOCATION:new york
-DESCRIPTION:Weather: Partly cloudy\nHigh: 26°C\, Low: 17°C\nWind: 16 km/
- h\nUV Index: 6\n\n---\nPowered by ClimoCal - Weather in your calendar\nDat
- a from Open-Meteo.com
+DESCRIPTION:Weather: Overcast\nHigh: 26°C\, Low: 17°C\nWind: 14 km/h\nUV
+  Index: 7\n\n---\nPowered by ClimoCal - Weather in your calendar\nData fro
+ m Open-Meteo.com
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:64a47c31-778c-4d0e-9bf7-78d9813b134e
+UID:d0133635-7e30-45df-bbe6-4bc11e5f0abe
 SEQUENCE:0
-DTSTAMP:20250826T180127
+DTSTAMP:20250826T223440
 DTSTART;VALUE=DATE:20250901
 DTEND;VALUE=DATE:20250901
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
 X-MICROSOFT-MSNCALENDAR-ALLDAYEVENT:TRUE
-SUMMARY:⛅ 26°/19°
+SUMMARY:⛅ 25°/19°
 TRANSP:TRANSPARENT
 LOCATION:new york
-DESCRIPTION:Weather: Partly cloudy\nHigh: 26°C\, Low: 19°C\nWind: 18 km/
- h\nUV Index: 6\n\n---\nPowered by ClimoCal - Weather in your calendar\nDat
- a from Open-Meteo.com
+DESCRIPTION:Weather: Overcast\nHigh: 25°C\, Low: 19°C\nWind: 20 km/h\nUV
+  Index: 6\n\n---\nPowered by ClimoCal - Weather in your calendar\nData fro
+ m Open-Meteo.com
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:e0863597-0a20-4ec4-95e5-8fc47b4b5704
+UID:978699ed-c315-4bce-a04e-f31eab51dbe3
 SEQUENCE:0
-DTSTAMP:20250826T180127
+DTSTAMP:20250826T223440
 DTSTART;VALUE=DATE:20250902
 DTEND;VALUE=DATE:20250902
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
 X-MICROSOFT-MSNCALENDAR-ALLDAYEVENT:TRUE
-SUMMARY:⛅ 24°/20°
+SUMMARY:🌧️ 21°/14°
 TRANSP:TRANSPARENT
 LOCATION:new york
-DESCRIPTION:Weather: Overcast\nHigh: 24°C\, Low: 20°C\nWind: 21 km/h\nUV
-  Index: 6\n\n---\nPowered by ClimoCal - Weather in your calendar\nData fro
- m Open-Meteo.com
+DESCRIPTION:Weather: Slight rain\nHigh: 21°C\, Low: 14°C\nPrecipitation:
+  7.2mm (7% chance)\nWind: 34 km/h\nUV Index: 2\n\n---\nPowered by ClimoCal
+  - Weather in your calendar\nData from Open-Meteo.com
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:6a932b9a-f60f-480f-a510-6767429ec8bd
+UID:2b899b48-b335-4103-8127-e51394d33fbd
 SEQUENCE:0
-DTSTAMP:20250826T180127
+DTSTAMP:20250826T223440
 DTSTART;VALUE=DATE:20250903
 DTEND;VALUE=DATE:20250903
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
 X-MICROSOFT-MSNCALENDAR-ALLDAYEVENT:TRUE
-SUMMARY:⛅ 23°/20°
+SUMMARY:🌦️ 27°/14°
 TRANSP:TRANSPARENT
 LOCATION:new york
-DESCRIPTION:Weather: Partly cloudy\nHigh: 23°C\, Low: 20°C\nWind: 20 km/
- h\nUV Index: 6\n\n---\nPowered by ClimoCal - Weather in your calendar\nDat
- a from Open-Meteo.com
+DESCRIPTION:Weather: Dense drizzle\nHigh: 27°C\, Low: 14°C\nPrecipitatio
+ n: 5.7mm (8% chance)\nWind: 37 km/h\nUV Index: 5\n\n---\nPowered by ClimoC
+ al - Weather in your calendar\nData from Open-Meteo.com
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:512f4edd-abed-4a4c-a600-4f1481c0c48c
+UID:85fbf43c-13bd-4aa2-ada0-2805b7facd9d
 SEQUENCE:0
-DTSTAMP:20250826T180127
+DTSTAMP:20250826T223440
 DTSTART;VALUE=DATE:20250904
 DTEND;VALUE=DATE:20250904
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
 X-MICROSOFT-MSNCALENDAR-ALLDAYEVENT:TRUE
-SUMMARY:⛅ 23°/19°
+SUMMARY:🌦️ 26°/21°
 TRANSP:TRANSPARENT
 LOCATION:new york
-DESCRIPTION:Weather: Overcast\nHigh: 23°C\, Low: 19°C\nWind: 20 km/h\nUV
-  Index: 6\n\n---\nPowered by ClimoCal - Weather in your calendar\nData fro
- m Open-Meteo.com
+DESCRIPTION:Weather: Light drizzle\nHigh: 26°C\, Low: 21°C\nPrecipitatio
+ n: 0.3mm (8% chance)\nWind: 23 km/h\nUV Index: 5\n\n---\nPowered by ClimoC
+ al - Weather in your calendar\nData from Open-Meteo.com
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:d65a3716-3d90-43a7-bcc6-b03994866bc0
+UID:d915bbdf-dd62-4801-8060-2f43a8b502ae
 SEQUENCE:0
-DTSTAMP:20250826T180127
+DTSTAMP:20250826T223440
 DTSTART;VALUE=DATE:20250905
 DTEND;VALUE=DATE:20250905
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -183,89 +183,89 @@ X-MICROSOFT-MSNCALENDAR-ALLDAYEVENT:TRUE
 SUMMARY:🌦️ 26°/20°
 TRANSP:TRANSPARENT
 LOCATION:new york
-DESCRIPTION:Weather: Moderate drizzle\nHigh: 26°C\, Low: 20°C\nPrecipita
- tion: 3.6mm (17% chance)\nWind: 23 km/h\nUV Index: 6\n\n---\nPowered by Cl
- imoCal - Weather in your calendar\nData from Open-Meteo.com
+DESCRIPTION:Weather: Light drizzle\nHigh: 26°C\, Low: 20°C\nPrecipitatio
+ n: 0.3mm (15% chance)\nWind: 19 km/h\nUV Index: 6\n\n---\nPowered by Climo
+ Cal - Weather in your calendar\nData from Open-Meteo.com
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:cdc1783a-b4a7-4597-adc7-6670ea5786a9
+UID:44b8192e-1c5c-4ea1-b420-1ca54d93bdd8
 SEQUENCE:0
-DTSTAMP:20250826T180127
+DTSTAMP:20250826T223440
 DTSTART;VALUE=DATE:20250906
 DTEND;VALUE=DATE:20250906
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
 X-MICROSOFT-MSNCALENDAR-ALLDAYEVENT:TRUE
-SUMMARY:🌦️ 23°/18°
+SUMMARY:⛅ 24°/19°
 TRANSP:TRANSPARENT
 LOCATION:new york
-DESCRIPTION:Weather: Moderate drizzle\nHigh: 23°C\, Low: 18°C\nPrecipita
- tion: 3.3mm (24% chance)\nWind: 13 km/h\nUV Index: 5\n\n---\nPowered by Cl
- imoCal - Weather in your calendar\nData from Open-Meteo.com
+DESCRIPTION:Weather: Overcast\nHigh: 24°C\, Low: 19°C\nWind: 13 km/h\nUV
+  Index: 4\n\n---\nPowered by ClimoCal - Weather in your calendar\nData fro
+ m Open-Meteo.com
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:73bd6019-441e-4232-8a71-4a639cb577a9
+UID:9349a319-1b88-4c41-9279-a27d8a71bef3
 SEQUENCE:0
-DTSTAMP:20250826T180127
+DTSTAMP:20250826T223440
 DTSTART;VALUE=DATE:20250907
 DTEND;VALUE=DATE:20250907
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
 X-MICROSOFT-MSNCALENDAR-ALLDAYEVENT:TRUE
-SUMMARY:⛅ 27°/17°
+SUMMARY:⛅ 25°/22°
 TRANSP:TRANSPARENT
 LOCATION:new york
-DESCRIPTION:Weather: Overcast\nHigh: 27°C\, Low: 17°C\nWind: 19 km/h\nUV
-  Index: 6\n\n---\nPowered by ClimoCal - Weather in your calendar\nData fro
- m Open-Meteo.com
+DESCRIPTION:Weather: Partly cloudy\nHigh: 25°C\, Low: 22°C\nWind: 24 km/
+ h\nUV Index: 6\n\n---\nPowered by ClimoCal - Weather in your calendar\nDat
+ a from Open-Meteo.com
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:9aa1fb73-f96d-4b4c-9606-f77a4cc28976
+UID:ceb75d58-c647-4bb1-a050-bb324669b1c5
 SEQUENCE:0
-DTSTAMP:20250826T180127
+DTSTAMP:20250826T223440
 DTSTART;VALUE=DATE:20250908
 DTEND;VALUE=DATE:20250908
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
 X-MICROSOFT-MSNCALENDAR-ALLDAYEVENT:TRUE
-SUMMARY:☀️ 24°/19°
+SUMMARY:🌦️ 27°/22°
 TRANSP:TRANSPARENT
 LOCATION:new york
-DESCRIPTION:Weather: Clear sky\nHigh: 24°C\, Low: 19°C\nWind: 17 km/h\nU
- V Index: 6\n\n---\nPowered by ClimoCal - Weather in your calendar\nData fr
- om Open-Meteo.com
+DESCRIPTION:Weather: Light drizzle\nHigh: 27°C\, Low: 22°C\nPrecipitatio
+ n: 0.3mm (19% chance)\nWind: 22 km/h\nUV Index: 6\n\n---\nPowered by Climo
+ Cal - Weather in your calendar\nData from Open-Meteo.com
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:3fa93b28-cd4f-4ae0-b3a3-95c7797ae18a
+UID:16ef6885-91d5-4d19-8973-a1e5ca45cea9
 SEQUENCE:0
-DTSTAMP:20250826T180127
+DTSTAMP:20250826T223440
 DTSTART;VALUE=DATE:20250909
 DTEND;VALUE=DATE:20250909
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
 X-MICROSOFT-MSNCALENDAR-ALLDAYEVENT:TRUE
-SUMMARY:⛅ 26°/18°
+SUMMARY:🌦️ 31°/22°
 TRANSP:TRANSPARENT
 LOCATION:new york
-DESCRIPTION:Weather: Overcast\nHigh: 26°C\, Low: 18°C\nWind: 13 km/h\nUV
-  Index: 6\n\n---\nPowered by ClimoCal - Weather in your calendar\nData fro
- m Open-Meteo.com
+DESCRIPTION:Weather: Light drizzle\nHigh: 31°C\, Low: 22°C\nPrecipitatio
+ n: 1.5mm (16% chance)\nWind: 21 km/h\nUV Index: 6\n\n---\nPowered by Climo
+ Cal - Weather in your calendar\nData from Open-Meteo.com
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:30716eb7-affe-4acd-8cd4-d80a261084a4
+UID:3803d4ba-1790-474b-8c1e-c70d4773e0fc
 SEQUENCE:0
-DTSTAMP:20250826T180127
+DTSTAMP:20250826T223440
 DTSTART;VALUE=DATE:20250910
 DTEND;VALUE=DATE:20250910
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
 X-MICROSOFT-MSNCALENDAR-ALLDAYEVENT:TRUE
-SUMMARY:⛅ 25°/20°
+SUMMARY:🌦️ 22°/20°
 TRANSP:TRANSPARENT
 LOCATION:new york
-DESCRIPTION:Weather: Partly cloudy\nHigh: 25°C\, Low: 20°C\nWind: 19 km/
- h\nUV Index: 6\n\n---\nPowered by ClimoCal - Weather in your calendar\nDat
- a from Open-Meteo.com
+DESCRIPTION:Weather: Light drizzle\nHigh: 22°C\, Low: 20°C\nPrecipitatio
+ n: 0.3mm (22% chance)\nWind: 21 km/h\nUV Index: 3\n\n---\nPowered by Climo
+ Cal - Weather in your calendar\nData from Open-Meteo.com
 STATUS:CONFIRMED
 END:VEVENT
 END:VCALENDAR
