@@ -49,7 +49,7 @@ async function generateLocationCalendar(location) {
     // Create calendar with optimized settings
     const cal = ical({
       name: location.code,
-      description: `${location.name.charAt(0).toUpperCase() + location.name.slice(1)} weather forecasts - automatically updated daily at 6 AM`,
+      description: `Weather forecast by ClimoCal • climocal.johnnyhockin.com`,
       timezone: location.timezone || 'America/Toronto',
       ttl: 60 * 60 * 4, // 4 hour TTL - more frequent refresh checks
       url: `https://climocal.johnnyhockin.com/calendars/${location.slug}.ics`,
@@ -113,8 +113,7 @@ function buildEventDescription(day) {
   }
   
   description += '\n---\n';
-  description += 'Powered by ClimoCal - Weather in your calendar\n';
-  description += 'Data from Open-Meteo.com';
+  description += 'via ClimoCal';
   
   return description;
 }

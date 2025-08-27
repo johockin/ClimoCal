@@ -6,16 +6,15 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 NAME:YUL
 X-WR-CALNAME:YUL
-X-WR-CALDESC:Montreal weather forecasts - automatically updated daily at 6
-  AM
+X-WR-CALDESC:Weather forecast by ClimoCal • climocal.johnnyhockin.com
 TIMEZONE-ID:America/Toronto
 X-WR-TIMEZONE:America/Toronto
 REFRESH-INTERVAL;VALUE=DURATION:PT4H
 X-PUBLISHED-TTL:PT4H
 BEGIN:VEVENT
-UID:648f937d-4a6f-4e31-9ca1-3047b9aa4b41
+UID:f91944f4-721c-4bd2-9ff5-d9965fb72969
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223823
 DTSTART;VALUE=DATE:20250826
 DTEND;VALUE=DATE:20250826
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -24,14 +23,13 @@ SUMMARY:⛅ 19°/14°
 TRANSP:TRANSPARENT
 LOCATION:montreal
 DESCRIPTION:Weather: Overcast\nHigh: 19°C\, Low: 14°C\nWind: 18 km/h\nUV
-  Index: 5\n\n---\nPowered by ClimoCal - Weather in your calendar\nData fro
- m Open-Meteo.com
+  Index: 5\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:60c6bab0-7033-42b3-846a-8f2926f2d5a8
+UID:a0001c81-0612-4387-ba4d-0b4005dc67d5
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223823
 DTSTART;VALUE=DATE:20250827
 DTEND;VALUE=DATE:20250827
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -40,14 +38,13 @@ SUMMARY:⛅ 21°/11°
 TRANSP:TRANSPARENT
 LOCATION:montreal
 DESCRIPTION:Weather: Partly cloudy\nHigh: 21°C\, Low: 11°C\nWind: 15 km/
- h\nUV Index: 6\n\n---\nPowered by ClimoCal - Weather in your calendar\nDat
- a from Open-Meteo.com
+ h\nUV Index: 6\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:1c487c58-f7ac-4537-abec-033e8b59e7e8
+UID:58316375-7a12-4473-85e8-af4be38574cf
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223823
 DTSTART;VALUE=DATE:20250828
 DTEND;VALUE=DATE:20250828
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -56,14 +53,13 @@ SUMMARY:🌦️ 23°/12°
 TRANSP:TRANSPARENT
 LOCATION:montreal
 DESCRIPTION:Weather: Moderate drizzle\nHigh: 23°C\, Low: 12°C\nPrecipita
- tion: 1.3mm (60% chance)\nWind: 16 km/h\nUV Index: 1\n\n---\nPowered by Cl
- imoCal - Weather in your calendar\nData from Open-Meteo.com
+ tion: 1.3mm (60% chance)\nWind: 16 km/h\nUV Index: 1\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:91b9be91-4242-46e2-b615-3932ed944ea7
+UID:0b589fb2-0e0b-49ce-9e27-6c76c52f60f7
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223823
 DTSTART;VALUE=DATE:20250829
 DTEND;VALUE=DATE:20250829
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -72,14 +68,13 @@ SUMMARY:🌧️ 14°/12°
 TRANSP:TRANSPARENT
 LOCATION:montreal
 DESCRIPTION:Weather: Moderate rain\nHigh: 14°C\, Low: 12°C\nPrecipitatio
- n: 14.2mm (60% chance)\nWind: 17 km/h\nUV Index: 3\n\n---\nPowered by Clim
- oCal - Weather in your calendar\nData from Open-Meteo.com
+ n: 14.2mm (60% chance)\nWind: 17 km/h\nUV Index: 3\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:439aa2c3-9c75-4cf8-ae3e-94ab4ba1bd98
+UID:88055459-56f6-4d6b-9d27-babc38120e72
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223823
 DTSTART;VALUE=DATE:20250830
 DTEND;VALUE=DATE:20250830
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -88,14 +83,13 @@ SUMMARY:🌦️ 17°/11°
 TRANSP:TRANSPARENT
 LOCATION:montreal
 DESCRIPTION:Weather: Moderate drizzle\nHigh: 17°C\, Low: 11°C\nPrecipita
- tion: 3.8mm (45% chance)\nWind: 15 km/h\nUV Index: 6\n\n---\nPowered by Cl
- imoCal - Weather in your calendar\nData from Open-Meteo.com
+ tion: 3.8mm (45% chance)\nWind: 15 km/h\nUV Index: 6\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:78d897dd-3d27-43bb-86c4-f4d14d680c8e
+UID:17a6c518-d6ab-40ce-b61f-84a7dc4a20f6
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223823
 DTSTART;VALUE=DATE:20250831
 DTEND;VALUE=DATE:20250831
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -104,14 +98,13 @@ SUMMARY:🌦️ 22°/12°
 TRANSP:TRANSPARENT
 LOCATION:montreal
 DESCRIPTION:Weather: Light drizzle\nHigh: 22°C\, Low: 12°C\nPrecipitatio
- n: 0.5mm (16% chance)\nWind: 12 km/h\nUV Index: 5\n\n---\nPowered by Climo
- Cal - Weather in your calendar\nData from Open-Meteo.com
+ n: 0.5mm (16% chance)\nWind: 12 km/h\nUV Index: 5\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:6cc49722-ea2a-4211-813f-1fbbfb2b9d7c
+UID:d2a12db8-ff41-4359-a2c9-3211eb5fab55
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223823
 DTSTART;VALUE=DATE:20250901
 DTEND;VALUE=DATE:20250901
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -120,14 +113,13 @@ SUMMARY:⛅ 25°/15°
 TRANSP:TRANSPARENT
 LOCATION:montreal
 DESCRIPTION:Weather: Partly cloudy\nHigh: 25°C\, Low: 15°C\nWind: 7 km/h
- \nUV Index: 6\n\n---\nPowered by ClimoCal - Weather in your calendar\nData
-  from Open-Meteo.com
+ \nUV Index: 6\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:002114c2-e2c4-47f5-a78b-a021cbbc1181
+UID:95906f7d-d36b-42dc-9d89-214fa78d358b
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223823
 DTSTART;VALUE=DATE:20250902
 DTEND;VALUE=DATE:20250902
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -136,14 +128,13 @@ SUMMARY:⛅ 25°/16°
 TRANSP:TRANSPARENT
 LOCATION:montreal
 DESCRIPTION:Weather: Overcast\nHigh: 25°C\, Low: 16°C\nWind: 7 km/h\nUV 
- Index: 5\n\n---\nPowered by ClimoCal - Weather in your calendar\nData from
-  Open-Meteo.com
+ Index: 5\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:0483d045-daef-4e98-ba5a-5ed12379b957
+UID:a49f018d-5b45-4c28-a2f5-5902572cc5f0
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223823
 DTSTART;VALUE=DATE:20250903
 DTEND;VALUE=DATE:20250903
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -152,14 +143,13 @@ SUMMARY:🌦️ 19°/14°
 TRANSP:TRANSPARENT
 LOCATION:montreal
 DESCRIPTION:Weather: Light drizzle\nHigh: 19°C\, Low: 14°C\nPrecipitatio
- n: 1.5mm (7% chance)\nWind: 13 km/h\nUV Index: 2\n\n---\nPowered by ClimoC
- al - Weather in your calendar\nData from Open-Meteo.com
+ n: 1.5mm (7% chance)\nWind: 13 km/h\nUV Index: 2\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:969a52c5-54e6-4ebc-bce0-907ac00e01a7
+UID:d16103e0-74ee-48fd-a7b7-6a729d6dc6c9
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223823
 DTSTART;VALUE=DATE:20250904
 DTEND;VALUE=DATE:20250904
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -168,14 +158,13 @@ SUMMARY:🌦️ 20°/14°
 TRANSP:TRANSPARENT
 LOCATION:montreal
 DESCRIPTION:Weather: Light drizzle\nHigh: 20°C\, Low: 14°C\nPrecipitatio
- n: 0.3mm (21% chance)\nWind: 20 km/h\nUV Index: 4\n\n---\nPowered by Climo
- Cal - Weather in your calendar\nData from Open-Meteo.com
+ n: 0.3mm (21% chance)\nWind: 20 km/h\nUV Index: 4\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:adc4cff3-edf9-4cad-97c0-d33bf7f1b236
+UID:69f1df31-d7aa-4aa6-9d41-e84c2c80002b
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223823
 DTSTART;VALUE=DATE:20250905
 DTEND;VALUE=DATE:20250905
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -184,14 +173,13 @@ SUMMARY:⛅ 19°/11°
 TRANSP:TRANSPARENT
 LOCATION:montreal
 DESCRIPTION:Weather: Overcast\nHigh: 19°C\, Low: 11°C\nWind: 15 km/h\nUV
-  Index: 6\n\n---\nPowered by ClimoCal - Weather in your calendar\nData fro
- m Open-Meteo.com
+  Index: 6\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:fb198eff-6f82-4a50-8af1-17462799bc52
+UID:71505d92-1f7b-4ab2-be3c-e3cc7e84a287
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223823
 DTSTART;VALUE=DATE:20250906
 DTEND;VALUE=DATE:20250906
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -200,14 +188,13 @@ SUMMARY:⛅ 22°/12°
 TRANSP:TRANSPARENT
 LOCATION:montreal
 DESCRIPTION:Weather: Overcast\nHigh: 22°C\, Low: 12°C\nWind: 14 km/h\nUV
-  Index: 6\n\n---\nPowered by ClimoCal - Weather in your calendar\nData fro
- m Open-Meteo.com
+  Index: 6\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:daae3631-a840-4b45-b01b-c950b77eed2c
+UID:80763711-2b72-473d-b902-8dbe51afb3c8
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223823
 DTSTART;VALUE=DATE:20250907
 DTEND;VALUE=DATE:20250907
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -216,14 +203,13 @@ SUMMARY:⛅ 27°/16°
 TRANSP:TRANSPARENT
 LOCATION:montreal
 DESCRIPTION:Weather: Overcast\nHigh: 27°C\, Low: 16°C\nWind: 10 km/h\nUV
-  Index: 4\n\n---\nPowered by ClimoCal - Weather in your calendar\nData fro
- m Open-Meteo.com
+  Index: 4\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:76e8ef20-572b-46d7-9c7f-d883849b2632
+UID:b2906cb2-1fdf-4e94-af89-671905867d11
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223823
 DTSTART;VALUE=DATE:20250908
 DTEND;VALUE=DATE:20250908
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -232,14 +218,13 @@ SUMMARY:🌦️ 31°/15°
 TRANSP:TRANSPARENT
 LOCATION:montreal
 DESCRIPTION:Weather: Light drizzle\nHigh: 31°C\, Low: 15°C\nPrecipitatio
- n: 0.6mm (17% chance)\nWind: 24 km/h\nUV Index: 5\n\n---\nPowered by Climo
- Cal - Weather in your calendar\nData from Open-Meteo.com
+ n: 0.6mm (17% chance)\nWind: 24 km/h\nUV Index: 5\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:470ab546-ca14-4f7a-8734-5f5c3a0f17eb
+UID:da3e21a4-79f4-4eda-b2ef-b610e0a63cb5
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223823
 DTSTART;VALUE=DATE:20250909
 DTEND;VALUE=DATE:20250909
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -248,14 +233,13 @@ SUMMARY:⛅ 18°/9°
 TRANSP:TRANSPARENT
 LOCATION:montreal
 DESCRIPTION:Weather: Overcast\nHigh: 18°C\, Low: 9°C\nWind: 19 km/h\nUV 
- Index: 5\n\n---\nPowered by ClimoCal - Weather in your calendar\nData from
-  Open-Meteo.com
+ Index: 5\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:82ca2767-d687-4f18-89fc-3d56a07c1ce5
+UID:06a32612-1771-445c-aaed-22aaa237f714
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223823
 DTSTART;VALUE=DATE:20250910
 DTEND;VALUE=DATE:20250910
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -264,8 +248,7 @@ SUMMARY:🌦️ 13°/9°
 TRANSP:TRANSPARENT
 LOCATION:montreal
 DESCRIPTION:Weather: Light drizzle\nHigh: 13°C\, Low: 9°C\nPrecipitation
- : 1.5mm (16% chance)\nWind: 14 km/h\nUV Index: 1\n\n---\nPowered by ClimoC
- al - Weather in your calendar\nData from Open-Meteo.com
+ : 1.5mm (16% chance)\nWind: 14 km/h\nUV Index: 1\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 END:VCALENDAR

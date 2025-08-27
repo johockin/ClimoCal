@@ -6,16 +6,15 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 NAME:LHR
 X-WR-CALNAME:LHR
-X-WR-CALDESC:London weather forecasts - automatically updated daily at 6 A
- M
+X-WR-CALDESC:Weather forecast by ClimoCal • climocal.johnnyhockin.com
 TIMEZONE-ID:Europe/London
 X-WR-TIMEZONE:Europe/London
 REFRESH-INTERVAL;VALUE=DURATION:PT4H
 X-PUBLISHED-TTL:PT4H
 BEGIN:VEVENT
-UID:d134ae8e-ffc4-4013-8422-ac676f81a9ec
+UID:ac36c0db-19fb-4fd6-adda-6d9cfa345ad3
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223824
 DTSTART;VALUE=DATE:20250827
 DTEND;VALUE=DATE:20250827
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -24,14 +23,13 @@ SUMMARY:🌧️ 22°/16°
 TRANSP:TRANSPARENT
 LOCATION:london
 DESCRIPTION:Weather: Slight rain\nHigh: 22°C\, Low: 16°C\nWind: 20 km/h\
- nUV Index: 4\n\n---\nPowered by ClimoCal - Weather in your calendar\nData 
- from Open-Meteo.com
+ nUV Index: 4\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:aa3ab096-2e23-4b66-8e13-84197cb8cbd2
+UID:60e1ac62-58e4-4dce-aaa1-c1a030c6272e
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223824
 DTSTART;VALUE=DATE:20250828
 DTEND;VALUE=DATE:20250828
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -40,14 +38,13 @@ SUMMARY:⛅ 21°/14°
 TRANSP:TRANSPARENT
 LOCATION:london
 DESCRIPTION:Weather: Overcast\nHigh: 21°C\, Low: 14°C\nWind: 20 km/h\nUV
-  Index: 4\n\n---\nPowered by ClimoCal - Weather in your calendar\nData fro
- m Open-Meteo.com
+  Index: 4\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:55c8cb10-7b06-4f3b-98ac-8aefdd79af7b
+UID:322552c5-688a-4016-ad44-8fe4cc779d3e
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223824
 DTSTART;VALUE=DATE:20250829
 DTEND;VALUE=DATE:20250829
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -56,14 +53,13 @@ SUMMARY:🌧️ 22°/14°
 TRANSP:TRANSPARENT
 LOCATION:london
 DESCRIPTION:Weather: Slight rain\nHigh: 22°C\, Low: 14°C\nPrecipitation:
-  1.3mm (33% chance)\nWind: 12 km/h\nUV Index: 5\n\n---\nPowered by ClimoCa
- l - Weather in your calendar\nData from Open-Meteo.com
+  1.3mm (33% chance)\nWind: 12 km/h\nUV Index: 5\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:b51382d2-0196-4214-95c2-2b876064ca09
+UID:e1d97a83-6076-43d7-a885-131660458517
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223824
 DTSTART;VALUE=DATE:20250830
 DTEND;VALUE=DATE:20250830
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -72,14 +68,13 @@ SUMMARY:🌧️ 21°/14°
 TRANSP:TRANSPARENT
 LOCATION:london
 DESCRIPTION:Weather: Slight rain\nHigh: 21°C\, Low: 14°C\nPrecipitation:
-  4.5mm (75% chance)\nWind: 20 km/h\nUV Index: 5\n\n---\nPowered by ClimoCa
- l - Weather in your calendar\nData from Open-Meteo.com
+  4.5mm (75% chance)\nWind: 20 km/h\nUV Index: 5\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:98c641b8-e518-4147-bc01-b95eb82a0de3
+UID:33de0b30-f299-4422-a8f1-9359a2bc0947
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223824
 DTSTART;VALUE=DATE:20250831
 DTEND;VALUE=DATE:20250831
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -88,14 +83,13 @@ SUMMARY:⛅ 20°/14°
 TRANSP:TRANSPARENT
 LOCATION:london
 DESCRIPTION:Weather: Overcast\nHigh: 20°C\, Low: 14°C\nWind: 20 km/h\nUV
-  Index: 5\n\n---\nPowered by ClimoCal - Weather in your calendar\nData fro
- m Open-Meteo.com
+  Index: 5\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:d939fbb9-48cc-4cec-8c3f-180dbb8be588
+UID:e9ccd377-f96e-41b2-badb-087abd8e72a2
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223824
 DTSTART;VALUE=DATE:20250901
 DTEND;VALUE=DATE:20250901
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -104,14 +98,14 @@ SUMMARY:🌧️ 21°/13°
 TRANSP:TRANSPARENT
 LOCATION:london
 DESCRIPTION:Weather: Slight rain showers\nHigh: 21°C\, Low: 13°C\nPrecip
- itation: 0.6mm (34% chance)\nWind: 14 km/h\nUV Index: 3\n\n---\nPowered by
-  ClimoCal - Weather in your calendar\nData from Open-Meteo.com
+ itation: 0.6mm (34% chance)\nWind: 14 km/h\nUV Index: 3\n\n---\nvia ClimoC
+ al
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:b36916e0-56c4-44cc-b92d-aea468d0ff0a
+UID:eabb26a0-933f-4d41-aef8-9d92ec4c1d76
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223824
 DTSTART;VALUE=DATE:20250902
 DTEND;VALUE=DATE:20250902
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -120,14 +114,13 @@ SUMMARY:⛅ 20°/12°
 TRANSP:TRANSPARENT
 LOCATION:london
 DESCRIPTION:Weather: Partly cloudy\nHigh: 20°C\, Low: 12°C\nPrecipitatio
- n: 0.3mm (35% chance)\nWind: 15 km/h\nUV Index: 5\n\n---\nPowered by Climo
- Cal - Weather in your calendar\nData from Open-Meteo.com
+ n: 0.3mm (35% chance)\nWind: 15 km/h\nUV Index: 5\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:3e17c401-bcd3-4cfe-935c-4803543c90d5
+UID:3aad1fc0-3b81-45da-a7a3-68b77fef35dd
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223824
 DTSTART;VALUE=DATE:20250903
 DTEND;VALUE=DATE:20250903
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -136,14 +129,13 @@ SUMMARY:🌦️ 21°/14°
 TRANSP:TRANSPARENT
 LOCATION:london
 DESCRIPTION:Weather: Light drizzle\nHigh: 21°C\, Low: 14°C\nPrecipitatio
- n: 0.3mm (19% chance)\nWind: 27 km/h\nUV Index: 4\n\n---\nPowered by Climo
- Cal - Weather in your calendar\nData from Open-Meteo.com
+ n: 0.3mm (19% chance)\nWind: 27 km/h\nUV Index: 4\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:7600dfa8-b0a9-4105-9b79-985259f3d107
+UID:86c0b6f7-2994-4c90-86dd-fdf50c1a2a21
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223824
 DTSTART;VALUE=DATE:20250904
 DTEND;VALUE=DATE:20250904
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -152,14 +144,13 @@ SUMMARY:🌦️ 17°/13°
 TRANSP:TRANSPARENT
 LOCATION:london
 DESCRIPTION:Weather: Light drizzle\nHigh: 17°C\, Low: 13°C\nPrecipitatio
- n: 0.3mm (39% chance)\nWind: 17 km/h\nUV Index: 3\n\n---\nPowered by Climo
- Cal - Weather in your calendar\nData from Open-Meteo.com
+ n: 0.3mm (39% chance)\nWind: 17 km/h\nUV Index: 3\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:751448bb-aabd-4af8-86e5-d51f4a35326d
+UID:420dcd1e-f47a-4909-b303-84804ee258e4
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223824
 DTSTART;VALUE=DATE:20250905
 DTEND;VALUE=DATE:20250905
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -168,14 +159,13 @@ SUMMARY:⛅ 18°/12°
 TRANSP:TRANSPARENT
 LOCATION:london
 DESCRIPTION:Weather: Overcast\nHigh: 18°C\, Low: 12°C\nWind: 21 km/h\nUV
-  Index: 4\n\n---\nPowered by ClimoCal - Weather in your calendar\nData fro
- m Open-Meteo.com
+  Index: 4\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:428a899e-264d-4958-89c0-e20194bea54a
+UID:68df9dbd-3034-41cb-bba9-a584b3a4e5bf
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223824
 DTSTART;VALUE=DATE:20250906
 DTEND;VALUE=DATE:20250906
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -184,14 +174,13 @@ SUMMARY:🌦️ 19°/12°
 TRANSP:TRANSPARENT
 LOCATION:london
 DESCRIPTION:Weather: Light drizzle\nHigh: 19°C\, Low: 12°C\nPrecipitatio
- n: 0.7mm (16% chance)\nWind: 19 km/h\nUV Index: 3\n\n---\nPowered by Climo
- Cal - Weather in your calendar\nData from Open-Meteo.com
+ n: 0.7mm (16% chance)\nWind: 19 km/h\nUV Index: 3\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:7fe189df-9b83-45f5-8482-721a46066044
+UID:013a16ec-84f2-4263-aa9c-64de18a2f71e
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223824
 DTSTART;VALUE=DATE:20250907
 DTEND;VALUE=DATE:20250907
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -200,14 +189,13 @@ SUMMARY:🌦️ 18°/13°
 TRANSP:TRANSPARENT
 LOCATION:london
 DESCRIPTION:Weather: Light drizzle\nHigh: 18°C\, Low: 13°C\nPrecipitatio
- n: 1.4mm (29% chance)\nWind: 21 km/h\nUV Index: 4\n\n---\nPowered by Climo
- Cal - Weather in your calendar\nData from Open-Meteo.com
+ n: 1.4mm (29% chance)\nWind: 21 km/h\nUV Index: 4\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:4524bb07-03a4-4712-8f9d-74340096b9f7
+UID:d93af4d9-9490-48bd-977f-d6bed03b5ad0
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223824
 DTSTART;VALUE=DATE:20250908
 DTEND;VALUE=DATE:20250908
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -216,14 +204,13 @@ SUMMARY:🌦️ 17°/13°
 TRANSP:TRANSPARENT
 LOCATION:london
 DESCRIPTION:Weather: Light drizzle\nHigh: 17°C\, Low: 13°C\nPrecipitatio
- n: 0.9mm (22% chance)\nWind: 21 km/h\nUV Index: 2\n\n---\nPowered by Climo
- Cal - Weather in your calendar\nData from Open-Meteo.com
+ n: 0.9mm (22% chance)\nWind: 21 km/h\nUV Index: 2\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:d109b5ee-a342-457c-9458-9bf5e98b3373
+UID:b272fc3f-1d8e-4319-9481-48ecc649e746
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223824
 DTSTART;VALUE=DATE:20250909
 DTEND;VALUE=DATE:20250909
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -232,14 +219,13 @@ SUMMARY:🌦️ 20°/12°
 TRANSP:TRANSPARENT
 LOCATION:london
 DESCRIPTION:Weather: Light drizzle\nHigh: 20°C\, Low: 12°C\nPrecipitatio
- n: 0.6mm (19% chance)\nWind: 15 km/h\nUV Index: 4\n\n---\nPowered by Climo
- Cal - Weather in your calendar\nData from Open-Meteo.com
+ n: 0.6mm (19% chance)\nWind: 15 km/h\nUV Index: 4\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:6c7b2784-f2c0-400d-8ec6-aa9cfb2ae5b7
+UID:3a207b25-3bdc-45d0-a8cf-c4235de19329
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223824
 DTSTART;VALUE=DATE:20250910
 DTEND;VALUE=DATE:20250910
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -248,14 +234,13 @@ SUMMARY:🌦️ 20°/14°
 TRANSP:TRANSPARENT
 LOCATION:london
 DESCRIPTION:Weather: Light drizzle\nHigh: 20°C\, Low: 14°C\nPrecipitatio
- n: 0.9mm (13% chance)\nWind: 14 km/h\nUV Index: 2\n\n---\nPowered by Climo
- Cal - Weather in your calendar\nData from Open-Meteo.com
+ n: 0.9mm (13% chance)\nWind: 14 km/h\nUV Index: 2\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:6af48424-bcaf-4585-8f9c-f38a504af72b
+UID:a336abf2-c124-411c-840e-df975e7b949a
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223824
 DTSTART;VALUE=DATE:20250911
 DTEND;VALUE=DATE:20250911
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -264,8 +249,7 @@ SUMMARY:🌤️ 0°/0°
 TRANSP:TRANSPARENT
 LOCATION:london
 DESCRIPTION:Weather: Unknown weather condition\nHigh: 0°C\, Low: 0°C\n\n
- ---\nPowered by ClimoCal - Weather in your calendar\nData from Open-Meteo.
- com
+ ---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 END:VCALENDAR

@@ -6,15 +6,15 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 NAME:NRT
 X-WR-CALNAME:NRT
-X-WR-CALDESC:Tokyo weather forecasts - automatically updated daily at 6 AM
+X-WR-CALDESC:Weather forecast by ClimoCal • climocal.johnnyhockin.com
 TIMEZONE-ID:Asia/Tokyo
 X-WR-TIMEZONE:Asia/Tokyo
 REFRESH-INTERVAL;VALUE=DURATION:PT4H
 X-PUBLISHED-TTL:PT4H
 BEGIN:VEVENT
-UID:719329c5-41ef-4cdd-8444-29d441c94917
+UID:96925c0f-6cf5-4203-847d-fc4271cf6336
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223824
 DTSTART;VALUE=DATE:20250827
 DTEND;VALUE=DATE:20250827
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -23,14 +23,13 @@ SUMMARY:🌦️ 34°/26°
 TRANSP:TRANSPARENT
 LOCATION:tokyo
 DESCRIPTION:Weather: Light drizzle\nHigh: 34°C\, Low: 26°C\nPrecipitatio
- n: 0.3mm (25% chance)\nWind: 7 km/h\nUV Index: 8\n\n---\nPowered by ClimoC
- al - Weather in your calendar\nData from Open-Meteo.com
+ n: 0.3mm (25% chance)\nWind: 7 km/h\nUV Index: 8\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:cf44b8c7-d35c-4dfa-85e0-d8851e6c2365
+UID:9e121d98-3ed4-4b49-b846-f2d85932d811
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223824
 DTSTART;VALUE=DATE:20250828
 DTEND;VALUE=DATE:20250828
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -39,14 +38,13 @@ SUMMARY:🌦️ 29°/25°
 TRANSP:TRANSPARENT
 LOCATION:tokyo
 DESCRIPTION:Weather: Light drizzle\nHigh: 29°C\, Low: 25°C\nPrecipitatio
- n: 0.3mm (15% chance)\nWind: 5 km/h\nUV Index: 3\n\n---\nPowered by ClimoC
- al - Weather in your calendar\nData from Open-Meteo.com
+ n: 0.3mm (15% chance)\nWind: 5 km/h\nUV Index: 3\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:24b6af26-cac8-4615-918a-ce550f9e8c19
+UID:c29dc3a9-e5f9-461b-a1bc-87204867c975
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223824
 DTSTART;VALUE=DATE:20250829
 DTEND;VALUE=DATE:20250829
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -55,14 +53,13 @@ SUMMARY:🌦️ 31°/24°
 TRANSP:TRANSPARENT
 LOCATION:tokyo
 DESCRIPTION:Weather: Light drizzle\nHigh: 31°C\, Low: 24°C\nPrecipitatio
- n: 0.1mm (10% chance)\nWind: 6 km/h\nUV Index: 7\n\n---\nPowered by ClimoC
- al - Weather in your calendar\nData from Open-Meteo.com
+ n: 0.1mm (10% chance)\nWind: 6 km/h\nUV Index: 7\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:e1747b39-869f-4608-a011-fe38d51dcb49
+UID:f19a3210-cb91-4d4d-89bf-d266ff22f7c0
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223824
 DTSTART;VALUE=DATE:20250830
 DTEND;VALUE=DATE:20250830
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -71,14 +68,13 @@ SUMMARY:⛅ 36°/25°
 TRANSP:TRANSPARENT
 LOCATION:tokyo
 DESCRIPTION:Weather: Partly cloudy\nHigh: 36°C\, Low: 25°C\nPrecipitatio
- n: 0.3mm (3% chance)\nWind: 13 km/h\nUV Index: 7\n\n---\nPowered by ClimoC
- al - Weather in your calendar\nData from Open-Meteo.com
+ n: 0.3mm (3% chance)\nWind: 13 km/h\nUV Index: 7\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:2d6c9943-50e6-4f86-9747-5d4792bccd19
+UID:17cfff69-6f03-4812-8f71-06c80c675160
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223824
 DTSTART;VALUE=DATE:20250831
 DTEND;VALUE=DATE:20250831
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -87,14 +83,14 @@ SUMMARY:🌧️ 33°/26°
 TRANSP:TRANSPARENT
 LOCATION:tokyo
 DESCRIPTION:Weather: Slight rain showers\nHigh: 33°C\, Low: 26°C\nPrecip
- itation: 2.6mm (16% chance)\nWind: 11 km/h\nUV Index: 7\n\n---\nPowered by
-  ClimoCal - Weather in your calendar\nData from Open-Meteo.com
+ itation: 2.6mm (16% chance)\nWind: 11 km/h\nUV Index: 7\n\n---\nvia ClimoC
+ al
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:8ec898e5-f357-4e2d-903e-4133c6f2e354
+UID:6d1bbf56-3119-449b-b0ca-8f588e46b5e3
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223824
 DTSTART;VALUE=DATE:20250901
 DTEND;VALUE=DATE:20250901
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -103,14 +99,13 @@ SUMMARY:🌧️ 34°/25°
 TRANSP:TRANSPARENT
 LOCATION:tokyo
 DESCRIPTION:Weather: Slight rain showers\nHigh: 34°C\, Low: 25°C\nPrecip
- itation: 1mm (16% chance)\nWind: 16 km/h\nUV Index: 6\n\n---\nPowered by C
- limoCal - Weather in your calendar\nData from Open-Meteo.com
+ itation: 1mm (16% chance)\nWind: 16 km/h\nUV Index: 6\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:39a99049-fff2-43b8-bc58-b0f0f35edee5
+UID:b78cd71f-71b2-4b92-83ca-d8797638fdf3
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223824
 DTSTART;VALUE=DATE:20250902
 DTEND;VALUE=DATE:20250902
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -119,14 +114,13 @@ SUMMARY:⛅ 35°/26°
 TRANSP:TRANSPARENT
 LOCATION:tokyo
 DESCRIPTION:Weather: Overcast\nHigh: 35°C\, Low: 26°C\nWind: 15 km/h\nUV
-  Index: 7\n\n---\nPowered by ClimoCal - Weather in your calendar\nData fro
- m Open-Meteo.com
+  Index: 7\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:e156ee40-3dbf-47c2-aa35-0791074c0945
+UID:19c02f0e-d15a-476c-85dd-f80a6fc4ca67
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223824
 DTSTART;VALUE=DATE:20250903
 DTEND;VALUE=DATE:20250903
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -135,14 +129,13 @@ SUMMARY:🌦️ 31°/24°
 TRANSP:TRANSPARENT
 LOCATION:tokyo
 DESCRIPTION:Weather: Moderate drizzle\nHigh: 31°C\, Low: 24°C\nPrecipita
- tion: 3.6mm (58% chance)\nWind: 29 km/h\nUV Index: 5\n\n---\nPowered by Cl
- imoCal - Weather in your calendar\nData from Open-Meteo.com
+ tion: 3.6mm (58% chance)\nWind: 29 km/h\nUV Index: 5\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:25d98dea-69e4-43e4-9f53-7f0db3906983
+UID:4a77298c-301b-4f5a-87a3-5653155a7789
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223824
 DTSTART;VALUE=DATE:20250904
 DTEND;VALUE=DATE:20250904
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -151,14 +144,13 @@ SUMMARY:🌦️ 32°/24°
 TRANSP:TRANSPARENT
 LOCATION:tokyo
 DESCRIPTION:Weather: Moderate drizzle\nHigh: 32°C\, Low: 24°C\nPrecipita
- tion: 1.8mm (45% chance)\nWind: 26 km/h\nUV Index: 7\n\n---\nPowered by Cl
- imoCal - Weather in your calendar\nData from Open-Meteo.com
+ tion: 1.8mm (45% chance)\nWind: 26 km/h\nUV Index: 7\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:9bc32ab6-56ea-4fd4-ba7c-3a6600cb8c77
+UID:ef18b07f-d483-4c4e-a607-848952dbc21a
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223824
 DTSTART;VALUE=DATE:20250905
 DTEND;VALUE=DATE:20250905
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -167,14 +159,13 @@ SUMMARY:⛅ 35°/27°
 TRANSP:TRANSPARENT
 LOCATION:tokyo
 DESCRIPTION:Weather: Overcast\nHigh: 35°C\, Low: 27°C\nWind: 32 km/h\nUV
-  Index: 7\n\n---\nPowered by ClimoCal - Weather in your calendar\nData fro
- m Open-Meteo.com
+  Index: 7\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:eaa47a09-1bac-4ec0-9065-9e53ab226c4b
+UID:eeffdf78-7bd2-4757-ae80-f7843e5a3800
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223824
 DTSTART;VALUE=DATE:20250906
 DTEND;VALUE=DATE:20250906
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -183,14 +174,13 @@ SUMMARY:🌦️ 32°/28°
 TRANSP:TRANSPARENT
 LOCATION:tokyo
 DESCRIPTION:Weather: Light drizzle\nHigh: 32°C\, Low: 28°C\nPrecipitatio
- n: 0.6mm (35% chance)\nWind: 25 km/h\nUV Index: 6\n\n---\nPowered by Climo
- Cal - Weather in your calendar\nData from Open-Meteo.com
+ n: 0.6mm (35% chance)\nWind: 25 km/h\nUV Index: 6\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:2be9b039-2aa5-47d9-b36c-38a7caaea464
+UID:91202dcc-ad9f-4c53-9f06-932ab6797ced
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223824
 DTSTART;VALUE=DATE:20250907
 DTEND;VALUE=DATE:20250907
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -199,14 +189,13 @@ SUMMARY:🌦️ 31°/27°
 TRANSP:TRANSPARENT
 LOCATION:tokyo
 DESCRIPTION:Weather: Light drizzle\nHigh: 31°C\, Low: 27°C\nPrecipitatio
- n: 0.6mm (32% chance)\nWind: 21 km/h\nUV Index: 5\n\n---\nPowered by Climo
- Cal - Weather in your calendar\nData from Open-Meteo.com
+ n: 0.6mm (32% chance)\nWind: 21 km/h\nUV Index: 5\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:36914c57-13c8-4922-bdd0-0ce62a9c6efc
+UID:369a626c-2201-4e2d-b5ff-ebf2074eeefd
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223824
 DTSTART;VALUE=DATE:20250908
 DTEND;VALUE=DATE:20250908
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -215,14 +204,13 @@ SUMMARY:⛅ 34°/27°
 TRANSP:TRANSPARENT
 LOCATION:tokyo
 DESCRIPTION:Weather: Overcast\nHigh: 34°C\, Low: 27°C\nWind: 26 km/h\nUV
-  Index: 6\n\n---\nPowered by ClimoCal - Weather in your calendar\nData fro
- m Open-Meteo.com
+  Index: 6\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:8b7c3910-7292-411c-8369-413bba8f5883
+UID:07b01070-5b63-43bf-ae6b-8ef55ba3adc3
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223824
 DTSTART;VALUE=DATE:20250909
 DTEND;VALUE=DATE:20250909
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -231,14 +219,13 @@ SUMMARY:☀️ 33°/26°
 TRANSP:TRANSPARENT
 LOCATION:tokyo
 DESCRIPTION:Weather: Clear sky\nHigh: 33°C\, Low: 26°C\nWind: 25 km/h\nU
- V Index: 7\n\n---\nPowered by ClimoCal - Weather in your calendar\nData fr
- om Open-Meteo.com
+ V Index: 7\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:96501879-2e07-4191-99e4-6bb47db9c720
+UID:2a8bb39c-07e7-4a8d-a520-b52f404a6d4e
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223824
 DTSTART;VALUE=DATE:20250910
 DTEND;VALUE=DATE:20250910
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -247,14 +234,13 @@ SUMMARY:⛅ 34°/27°
 TRANSP:TRANSPARENT
 LOCATION:tokyo
 DESCRIPTION:Weather: Overcast\nHigh: 34°C\, Low: 27°C\nWind: 29 km/h\nUV
-  Index: 7\n\n---\nPowered by ClimoCal - Weather in your calendar\nData fro
- m Open-Meteo.com
+  Index: 7\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:a8c4dc4a-92d5-4acb-8a48-4d7213d2e24a
+UID:d767ed2b-fe49-496f-a30d-a081f80f0126
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223824
 DTSTART;VALUE=DATE:20250911
 DTEND;VALUE=DATE:20250911
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -263,8 +249,7 @@ SUMMARY:🌦️ 33°/28°
 TRANSP:TRANSPARENT
 LOCATION:tokyo
 DESCRIPTION:Weather: Moderate drizzle\nHigh: 33°C\, Low: 28°C\nPrecipita
- tion: 1.6mm (47% chance)\nWind: 25 km/h\nUV Index: 7\n\n---\nPowered by Cl
- imoCal - Weather in your calendar\nData from Open-Meteo.com
+ tion: 1.6mm (47% chance)\nWind: 25 km/h\nUV Index: 7\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 END:VCALENDAR

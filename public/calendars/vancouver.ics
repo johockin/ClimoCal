@@ -6,16 +6,15 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 NAME:YVR
 X-WR-CALNAME:YVR
-X-WR-CALDESC:Vancouver weather forecasts - automatically updated daily at 
- 6 AM
+X-WR-CALDESC:Weather forecast by ClimoCal • climocal.johnnyhockin.com
 TIMEZONE-ID:America/Vancouver
 X-WR-TIMEZONE:America/Vancouver
 REFRESH-INTERVAL;VALUE=DURATION:PT4H
 X-PUBLISHED-TTL:PT4H
 BEGIN:VEVENT
-UID:a16983e4-e303-4efc-bc82-5183804e838d
+UID:a524daca-7fe4-4356-b435-55264fdbf514
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223823
 DTSTART;VALUE=DATE:20250826
 DTEND;VALUE=DATE:20250826
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -24,14 +23,13 @@ SUMMARY:☀️ 25°/16°
 TRANSP:TRANSPARENT
 LOCATION:vancouver
 DESCRIPTION:Weather: Clear sky\nHigh: 25°C\, Low: 16°C\nWind: 9 km/h\nUV
-  Index: 6\n\n---\nPowered by ClimoCal - Weather in your calendar\nData fro
- m Open-Meteo.com
+  Index: 6\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:3d5b8bca-7280-417b-924d-24216e83639c
+UID:e2a3af24-3ff3-4e6d-a74f-a09dff3136d0
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223823
 DTSTART;VALUE=DATE:20250827
 DTEND;VALUE=DATE:20250827
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -40,14 +38,13 @@ SUMMARY:⛅ 26°/17°
 TRANSP:TRANSPARENT
 LOCATION:vancouver
 DESCRIPTION:Weather: Overcast\nHigh: 26°C\, Low: 17°C\nWind: 11 km/h\nUV
-  Index: 5\n\n---\nPowered by ClimoCal - Weather in your calendar\nData fro
- m Open-Meteo.com
+  Index: 5\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:cb311c7c-4931-4670-91bd-17ec5537d603
+UID:a38432ec-8e8b-4888-a327-ad972e9764c2
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223823
 DTSTART;VALUE=DATE:20250828
 DTEND;VALUE=DATE:20250828
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -56,14 +53,13 @@ SUMMARY:🌦️ 25°/19°
 TRANSP:TRANSPARENT
 LOCATION:vancouver
 DESCRIPTION:Weather: Light drizzle\nHigh: 25°C\, Low: 19°C\nPrecipitatio
- n: 0.4mm (18% chance)\nWind: 11 km/h\nUV Index: 5\n\n---\nPowered by Climo
- Cal - Weather in your calendar\nData from Open-Meteo.com
+ n: 0.4mm (18% chance)\nWind: 11 km/h\nUV Index: 5\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:549b024a-88d4-4057-8025-5e992892d583
+UID:b3460328-6176-4f34-8ebc-d9031867e7cf
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223823
 DTSTART;VALUE=DATE:20250829
 DTEND;VALUE=DATE:20250829
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -72,14 +68,13 @@ SUMMARY:⛅ 25°/19°
 TRANSP:TRANSPARENT
 LOCATION:vancouver
 DESCRIPTION:Weather: Overcast\nHigh: 25°C\, Low: 19°C\nWind: 8 km/h\nUV 
- Index: 5\n\n---\nPowered by ClimoCal - Weather in your calendar\nData from
-  Open-Meteo.com
+ Index: 5\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:c49575ac-a54c-4d56-b830-96055d845014
+UID:e3e1d4be-39b6-4bd4-a204-621ece97c6b1
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223823
 DTSTART;VALUE=DATE:20250830
 DTEND;VALUE=DATE:20250830
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -88,14 +83,13 @@ SUMMARY:⛅ 23°/18°
 TRANSP:TRANSPARENT
 LOCATION:vancouver
 DESCRIPTION:Weather: Overcast\nHigh: 23°C\, Low: 18°C\nWind: 25 km/h\nUV
-  Index: 5\n\n---\nPowered by ClimoCal - Weather in your calendar\nData fro
- m Open-Meteo.com
+  Index: 5\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:682ebc7c-04b2-4d23-a3a7-53d26c191fa2
+UID:f4c01763-0670-4006-881b-d788f7e63df8
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223823
 DTSTART;VALUE=DATE:20250831
 DTEND;VALUE=DATE:20250831
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -104,14 +98,13 @@ SUMMARY:🌦️ 19°/16°
 TRANSP:TRANSPARENT
 LOCATION:vancouver
 DESCRIPTION:Weather: Dense drizzle\nHigh: 19°C\, Low: 16°C\nPrecipitatio
- n: 3.8mm (28% chance)\nWind: 15 km/h\nUV Index: 2\n\n---\nPowered by Climo
- Cal - Weather in your calendar\nData from Open-Meteo.com
+ n: 3.8mm (28% chance)\nWind: 15 km/h\nUV Index: 2\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:ba528fef-b696-444f-bdd3-c424ce4712f9
+UID:374a1b55-7bcb-46b2-b244-1e063d656787
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223823
 DTSTART;VALUE=DATE:20250901
 DTEND;VALUE=DATE:20250901
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -120,14 +113,13 @@ SUMMARY:⛅ 21°/16°
 TRANSP:TRANSPARENT
 LOCATION:vancouver
 DESCRIPTION:Weather: Overcast\nHigh: 21°C\, Low: 16°C\nWind: 10 km/h\nUV
-  Index: 5\n\n---\nPowered by ClimoCal - Weather in your calendar\nData fro
- m Open-Meteo.com
+  Index: 5\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:16a8c6e4-1756-4162-8d47-2cf5a68470c9
+UID:6f7260f8-b90c-4c9d-a182-3e1e68511b2c
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223823
 DTSTART;VALUE=DATE:20250902
 DTEND;VALUE=DATE:20250902
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -136,14 +128,13 @@ SUMMARY:☀️ 26°/17°
 TRANSP:TRANSPARENT
 LOCATION:vancouver
 DESCRIPTION:Weather: Clear sky\nHigh: 26°C\, Low: 17°C\nWind: 10 km/h\nU
- V Index: 6\n\n---\nPowered by ClimoCal - Weather in your calendar\nData fr
- om Open-Meteo.com
+ V Index: 6\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:8a87888a-0b40-46c6-9d0a-fd19e88d4ce0
+UID:0f378345-eaa8-4dd5-8bcb-f5a464b410cc
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223823
 DTSTART;VALUE=DATE:20250903
 DTEND;VALUE=DATE:20250903
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -152,14 +143,13 @@ SUMMARY:⛅ 28°/19°
 TRANSP:TRANSPARENT
 LOCATION:vancouver
 DESCRIPTION:Weather: Mainly clear\nHigh: 28°C\, Low: 19°C\nWind: 10 km/h
- \nUV Index: 6\n\n---\nPowered by ClimoCal - Weather in your calendar\nData
-  from Open-Meteo.com
+ \nUV Index: 6\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:9cb53f68-e5ca-444f-83bb-201b6b7e7b42
+UID:581db449-75d7-4b1a-aee2-8dba1ef6bc7d
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223823
 DTSTART;VALUE=DATE:20250904
 DTEND;VALUE=DATE:20250904
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -168,14 +158,13 @@ SUMMARY:⛅ 25°/19°
 TRANSP:TRANSPARENT
 LOCATION:vancouver
 DESCRIPTION:Weather: Overcast\nHigh: 25°C\, Low: 19°C\nWind: 16 km/h\nUV
-  Index: 5\n\n---\nPowered by ClimoCal - Weather in your calendar\nData fro
- m Open-Meteo.com
+  Index: 5\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:6edcef8e-2717-40a3-9573-edbdf8a91fb2
+UID:9bb5b7ce-1ba5-4087-bbfd-fc24ea8e6b46
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223823
 DTSTART;VALUE=DATE:20250905
 DTEND;VALUE=DATE:20250905
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -184,14 +173,13 @@ SUMMARY:⛅ 20°/17°
 TRANSP:TRANSPARENT
 LOCATION:vancouver
 DESCRIPTION:Weather: Overcast\nHigh: 20°C\, Low: 17°C\nWind: 27 km/h\nUV
-  Index: 3\n\n---\nPowered by ClimoCal - Weather in your calendar\nData fro
- m Open-Meteo.com
+  Index: 3\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:0623a6bc-26a3-4c24-98a7-9de3cfe4ae79
+UID:23d4040f-a8a1-486f-af33-51bfd6d22a67
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223823
 DTSTART;VALUE=DATE:20250906
 DTEND;VALUE=DATE:20250906
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -200,14 +188,13 @@ SUMMARY:🌦️ 18°/15°
 TRANSP:TRANSPARENT
 LOCATION:vancouver
 DESCRIPTION:Weather: Light drizzle\nHigh: 18°C\, Low: 15°C\nPrecipitatio
- n: 1.5mm (13% chance)\nWind: 14 km/h\nUV Index: 3\n\n---\nPowered by Climo
- Cal - Weather in your calendar\nData from Open-Meteo.com
+ n: 1.5mm (13% chance)\nWind: 14 km/h\nUV Index: 3\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:80efea2b-ab1b-41a7-ba17-e77841e55776
+UID:93b4da6c-6755-4b47-a8d0-d18e3cc60b0b
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223823
 DTSTART;VALUE=DATE:20250907
 DTEND;VALUE=DATE:20250907
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -216,14 +203,13 @@ SUMMARY:⛅ 19°/15°
 TRANSP:TRANSPARENT
 LOCATION:vancouver
 DESCRIPTION:Weather: Overcast\nHigh: 19°C\, Low: 15°C\nWind: 10 km/h\nUV
-  Index: 5\n\n---\nPowered by ClimoCal - Weather in your calendar\nData fro
- m Open-Meteo.com
+  Index: 5\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:f9b1289a-9aff-4763-b2ae-6b03ddc574d2
+UID:fb61220a-14aa-4a16-ba07-26905833938a
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223823
 DTSTART;VALUE=DATE:20250908
 DTEND;VALUE=DATE:20250908
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -232,14 +218,13 @@ SUMMARY:⛅ 17°/15°
 TRANSP:TRANSPARENT
 LOCATION:vancouver
 DESCRIPTION:Weather: Overcast\nHigh: 17°C\, Low: 15°C\nWind: 13 km/h\nUV
-  Index: 1\n\n---\nPowered by ClimoCal - Weather in your calendar\nData fro
- m Open-Meteo.com
+  Index: 1\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:73d1f757-3da0-4796-819f-05590977ae97
+UID:0dfa9976-71ba-4be5-9c6c-0b54bf34b2f4
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223823
 DTSTART;VALUE=DATE:20250909
 DTEND;VALUE=DATE:20250909
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -248,14 +233,13 @@ SUMMARY:🌦️ 16°/12°
 TRANSP:TRANSPARENT
 LOCATION:vancouver
 DESCRIPTION:Weather: Light drizzle\nHigh: 16°C\, Low: 12°C\nPrecipitatio
- n: 2.1mm (23% chance)\nWind: 14 km/h\nUV Index: 2\n\n---\nPowered by Climo
- Cal - Weather in your calendar\nData from Open-Meteo.com
+ n: 2.1mm (23% chance)\nWind: 14 km/h\nUV Index: 2\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
-UID:d6d1955c-3ef9-4bc9-9d73-f362a5269b6c
+UID:5a980895-30a0-4056-b1d1-59b8750827a1
 SEQUENCE:0
-DTSTAMP:20250826T223440
+DTSTAMP:20250826T223823
 DTSTART;VALUE=DATE:20250910
 DTEND;VALUE=DATE:20250910
 X-MICROSOFT-CDO-ALLDAYEVENT:TRUE
@@ -264,8 +248,7 @@ SUMMARY:🌦️ 15°/11°
 TRANSP:TRANSPARENT
 LOCATION:vancouver
 DESCRIPTION:Weather: Light drizzle\nHigh: 15°C\, Low: 11°C\nPrecipitatio
- n: 1.2mm (23% chance)\nWind: 13 km/h\nUV Index: 4\n\n---\nPowered by Climo
- Cal - Weather in your calendar\nData from Open-Meteo.com
+ n: 1.2mm (23% chance)\nWind: 13 km/h\nUV Index: 4\n\n---\nvia ClimoCal
 STATUS:CONFIRMED
 END:VEVENT
 END:VCALENDAR
