@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ClimoCal - Weather in your calendar</title>
-    <meta name="description" content="Weather forecasts that live in your calendar. Set it and forget it - automatically updating weather for your city.">
-    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌤️</text></svg>">
     <style>
         * {
             margin: 0;
@@ -179,10 +177,6 @@
             margin-bottom: 32px;
         }
         
-        .city-item {
-            position: relative;
-        }
-        
         .city-btn {
             display: flex;
             align-items: center;
@@ -197,7 +191,6 @@
             font-weight: 500;
             transition: all 0.2s;
             cursor: pointer;
-            width: 100%;
         }
         
         .city-btn:hover {
@@ -305,14 +298,6 @@
             color: #ff9500;
         }
         
-        /* Loading state */
-        #locations-loading {
-            text-align: center;
-            color: #86868b;
-            font-size: 16px;
-            padding: 40px;
-        }
-        
         @media (max-width: 680px) {
             .container {
                 padding: 40px 20px;
@@ -341,10 +326,6 @@
             .weather-temp, .weather-emoji {
                 font-size: 28px;
             }
-            
-            .subscribe-section {
-                padding: 32px 24px;
-            }
         }
     </style>
 </head>
@@ -353,11 +334,11 @@
         <!-- Hero that looks like a calendar app -->
         <div class="hero-calendar">
             <div class="calendar-day-header">
-                <h1 id="hero-date">Loading...</h1>
+                <h1>Wednesday, August 27</h1>
             </div>
             <div class="weather-event">
-                <span class="weather-emoji" id="hero-emoji">🌤️</span>
-                <span class="weather-temp" id="hero-temp">--°/--°</span>
+                <span class="weather-emoji">☁️</span>
+                <span class="weather-temp">23°/10°</span>
             </div>
         </div>
         
@@ -418,13 +399,43 @@
         <!-- Subscribe -->
         <div class="subscribe-section">
             <h2>Get It</h2>
-            <div id="locations-loading">Loading cities...</div>
-            <div class="cities-grid" id="locations-container">
-                <!-- Cities will be loaded dynamically -->
+            <div class="cities-grid">
+                <a href="webcal://climocal.com/calendars/toronto.ics" class="city-btn">
+                    <span>Toronto</span>
+                    <span class="arrow">→</span>
+                </a>
+                <a href="webcal://climocal.com/calendars/vancouver.ics" class="city-btn">
+                    <span>Vancouver</span>
+                    <span class="arrow">→</span>
+                </a>
+                <a href="webcal://climocal.com/calendars/montreal.ics" class="city-btn">
+                    <span>Montreal</span>
+                    <span class="arrow">→</span>
+                </a>
+                <a href="webcal://climocal.com/calendars/nyc.ics" class="city-btn">
+                    <span>New York</span>
+                    <span class="arrow">→</span>
+                </a>
+                <a href="webcal://climocal.com/calendars/la.ics" class="city-btn">
+                    <span>Los Angeles</span>
+                    <span class="arrow">→</span>
+                </a>
+                <a href="webcal://climocal.com/calendars/london.ics" class="city-btn">
+                    <span>London</span>
+                    <span class="arrow">→</span>
+                </a>
+                <a href="webcal://climocal.com/calendars/paris.ics" class="city-btn">
+                    <span>Paris</span>
+                    <span class="arrow">→</span>
+                </a>
+                <a href="webcal://climocal.com/calendars/tokyo.ics" class="city-btn">
+                    <span>Tokyo</span>
+                    <span class="arrow">→</span>
+                </a>
             </div>
             <p class="subscribe-note">
                 Click any city for Apple Calendar. For Google Calendar or Outlook, right-click and copy link.<br>
-                Need a different city? <a href="https://github.com/johockin/ClimoCal/issues" style="color: #ff9500;">Let me know</a>.
+                Need a different city? Let me know.
             </p>
         </div>
         
@@ -458,7 +469,5 @@
             </p>
         </div>
     </div>
-    
-    <script src="app.js"></script>
 </body>
 </html>
