@@ -1,0 +1,9 @@
+[
+  ["Canada", "CA", ["Toronto", "Vancouver", "Montreal|Montréal", "Calgary", "Ottawa", "Edmonton", "Winnipeg", "Quebec City|Québec", "Halifax", "Victoria", "Hamilton", "Saskatoon", "Regina", "St. John's|St. John's", "Kelowna"]],
+  ["United States", "US", ["New York", "Los Angeles", "Chicago", "Houston", "Phoenix", "Philadelphia", "San Antonio", "San Diego", "Dallas", "Austin", "San Francisco", "Seattle", "Denver", "Washington, DC|Washington", "Boston", "Nashville", "Atlanta", "Miami", "Orlando", "Las Vegas", "Portland", "Minneapolis", "Detroit", "New Orleans", "Salt Lake City", "Honolulu", "Anchorage", "Charlotte", "Pittsburgh", "Albuquerque"]],
+  ["Latin America", "", ["Mexico City|Mexico City@MX", "Guadalajara@MX", "Cancún|Cancún@MX", "São Paulo|São Paulo@BR", "Rio de Janeiro@BR", "Buenos Aires@AR", "Santiago@CL", "Lima@PE", "Bogotá|Bogotá@CO", "Medellín|Medellín@CO"]],
+  ["Europe", "", ["London@GB", "Paris@FR", "Berlin@DE", "Madrid@ES", "Barcelona@ES", "Lisbon@PT", "Rome@IT", "Milan@IT", "Amsterdam@NL", "Brussels@BE", "Dublin@IE", "Edinburgh@GB", "Manchester@GB", "Copenhagen@DK", "Stockholm@SE", "Oslo@NO", "Helsinki@FI", "Reykjavík|Reykjavík@IS", "Vienna@AT", "Prague@CZ", "Budapest@HU", "Warsaw@PL", "Athens@GR", "Zurich|Zürich@CH", "Munich|München@DE", "Istanbul@TR"]],
+  ["Middle East & Africa", "", ["Dubai@AE", "Tel Aviv@IL", "Cairo@EG", "Marrakesh|Marrakesh@MA", "Cape Town@ZA", "Johannesburg@ZA", "Nairobi@KE", "Lagos@NG"]],
+  ["Asia", "", ["Tokyo@JP", "Osaka@JP", "Seoul@KR", "Shanghai@CN", "Beijing@CN", "Hong Kong@HK", "Taipei@TW", "Singapore@SG", "Bangkok@TH", "Bali|Denpasar@ID", "Manila@PH", "Ho Chi Minh City@VN", "Kuala Lumpur@MY", "Mumbai@IN", "Delhi|New Delhi@IN", "Bangalore|Bengaluru@IN"]],
+  ["Oceania", "", ["Sydney@AU", "Melbourne@AU", "Brisbane@AU", "Perth@AU", "Auckland@NZ"]]
+]

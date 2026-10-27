@@ -1,94 +1,83 @@
 // Open-Meteo API wrapper - NO API KEY NEEDED!
+//
+// Forecasts are fetched in batches: Open-Meteo accepts comma-separated
+// coordinates and timezones and returns one result per location, so ~100
+// cities cost 2-3 HTTP requests a day instead of 100.
 
-export async function fetchWeatherData(lat, lon, timezone = 'auto') {
-  const baseUrl = 'https://api.open-meteo.com/v1/forecast';
-  
-  // Fetch 16-day forecast with all the data we need
-  const forecastUrl = `${baseUrl}?latitude=${lat}&longitude=${lon}` +
-    '&daily=weather_code,temperature_2m_max,temperature_2m_min,' +
-    'precipitation_sum,precipitation_probability_max,wind_speed_10m_max,uv_index_max' +
-    `&timezone=${timezone}&forecast_days=16`;
-  
-  console.log(`🌤️  Fetching weather for ${lat}, ${lon}`);
-  
-  try {
-    const response = await fetch(forecastUrl);
-    
-    if (!response.ok) {
-      throw new Error(`Open-Meteo API error: ${response.status} ${response.statusText}`);
+const FORECAST_URL = 'https://api.open-meteo.com/v1/forecast';
+const BATCH_SIZE = 50;
+const DAILY_VARS = [
+  'weather_code', 'temperature_2m_max', 'temperature_2m_min',
+  'precipitation_sum', 'precipitation_probability_max',
+  'wind_speed_10m_max', 'uv_index_max', 'sunrise', 'sunset'
+].join(',');
+
+// Fetch with retries and exponential backoff (1s, 2s, 4s). Open-Meteo has no
+// uptime guarantee on the free tier, and one blip shouldn't cost a day.
+export async function fetchJson(url, attempts = 4) {
+  for (let attempt = 1; ; attempt++) {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        const body = await response.text();
+        throw new Error(`Open-Meteo ${response.status}: ${body.slice(0, 200)}`);
+      }
+      return await response.json();
+    } catch (error) {
+      if (attempt >= attempts) throw error;
+      const wait = 1000 * 2 ** (attempt - 1);
+      console.warn(`⚠️  ${error.message} — retrying in ${wait / 1000}s`);
+      await new Promise(resolve => setTimeout(resolve, wait));
     }
-    
-    const data = await response.json();
-    
-    // Transform the data into a more usable format
-    return transformForecastData(data);
-    
-  } catch (error) {
-    console.error('❌ Weather API error:', error.message);
-    throw error;
   }
 }
 
+// Returns a Map of slug -> 16-day forecast (array of days), local to each city.
+export async function fetchForecasts(locations) {
+  const forecasts = new Map();
+
+  for (let i = 0; i < locations.length; i += BATCH_SIZE) {
+    const batch = locations.slice(i, i + BATCH_SIZE);
+    const url = `${FORECAST_URL}?` +
+      `latitude=${batch.map(l => l.lat).join(',')}` +
+      `&longitude=${batch.map(l => l.lon).join(',')}` +
+      `&timezone=${batch.map(l => encodeURIComponent(l.timezone)).join(',')}` +
+      `&daily=${DAILY_VARS}&forecast_days=16`;
+
+    console.log(`🌤️  Fetching forecasts for ${batch.length} cities`);
+    const data = await fetchJson(url);
+    const results = Array.isArray(data) ? data : [data];
+
+    if (results.length !== batch.length) {
+      throw new Error(`Asked for ${batch.length} locations, got ${results.length}`);
+    }
+    batch.forEach((location, index) => {
+      forecasts.set(location.slug, transformForecastData(results[index]));
+    });
+  }
+
+  return forecasts;
+}
+
+// Parallel arrays -> one object per day. Values stay unrounded here so
+// unit conversion (°C -> °F) happens before rounding, not after.
 function transformForecastData(data) {
   const { daily } = data;
-  
+
   if (!daily || !daily.time) {
     throw new Error('Invalid weather data received from Open-Meteo');
   }
-  
-  // Transform parallel arrays into array of objects
-  const forecast = daily.time.map((date, index) => ({
-    date: date,
+
+  return daily.time.map((date, index) => ({
+    date,
     weatherCode: daily.weather_code[index],
-    tempMax: Math.round(daily.temperature_2m_max[index]),
-    tempMin: Math.round(daily.temperature_2m_min[index]),
+    tempMax: daily.temperature_2m_max[index],
+    tempMin: daily.temperature_2m_min[index],
     precipitation: daily.precipitation_sum[index] || 0,
     precipitationProbability: daily.precipitation_probability_max[index] || 0,
     windSpeed: daily.wind_speed_10m_max[index] || 0,
-    uvIndex: daily.uv_index_max[index] || 0
-  }));
-  
-  console.log(`✅ Processed ${forecast.length} days of weather data`);
-  
-  return {
-    forecast,
-    generatedAt: new Date().toISOString(),
-    location: {
-      latitude: data.latitude,
-      longitude: data.longitude,
-      timezone: data.timezone
-    }
-  };
-}
-
-// Optional: Fetch historical data for climate averages (for future use)
-export async function fetchHistoricalData(lat, lon, startYear = new Date().getFullYear() - 30) {
-  const baseUrl = 'https://archive-api.open-meteo.com/v1/era5';
-  const endYear = new Date().getFullYear() - 1;
-  
-  const historicalUrl = `${baseUrl}?latitude=${lat}&longitude=${lon}` +
-    `&start_date=${startYear}-01-01&end_date=${endYear}-12-31` +
-    '&daily=temperature_2m_max,temperature_2m_min,precipitation_sum';
-  
-  try {
-    const response = await fetch(historicalUrl);
-    
-    if (!response.ok) {
-      console.warn('⚠️ Historical data not available, skipping');
-      return null;
-    }
-    
-    const data = await response.json();
-    return calculateMonthlyAverages(data);
-    
-  } catch (error) {
-    console.warn('⚠️ Could not fetch historical data:', error.message);
-    return null;
-  }
-}
-
-function calculateMonthlyAverages(historicalData) {
-  // This would calculate monthly climate averages
-  // For now, return null - this is a future enhancement
-  return null;
+    uvIndex: daily.uv_index_max[index] || 0,
+    sunrise: daily.sunrise[index],   // local time, e.g. "2026-10-27T07:08"
+    sunset: daily.sunset[index]
+  })).filter(day => day.tempMax != null && day.tempMin != null);
 }

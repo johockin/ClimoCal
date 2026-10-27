@@ -10,27 +10,30 @@ on:
 jobs:
   generate:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
-      
+        uses: actions/checkout@v7
+
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
-          node-version: '20'
+          node-version: '24'
           cache: 'npm'
-      
+
       - name: Install dependencies
-        run: npm ci --production
-      
+        run: npm ci --omit=dev
+
+      # Fails the run if any city fails or a feed comes out short. A failed run
+      # never reaches deploy, so the site keeps serving yesterday's complete set,
+      # and GitHub emails the repo owner about the failed scheduled run.
       - name: Generate calendar files
         run: node scripts/generate-calendars.js
         env:
           TZ: 'America/Toronto'  # Set timezone for generation
-      
+
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: ./public
 
@@ -46,4 +49,19 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
+
+  # GitHub disables scheduled workflows in public repos after 60 days without
+  # repository activity; that froze every feed from 2025-12-27 to 2026-10-27.
+  # Re-enabling the workflow through the API resets that clock without
+  # committing anything, so the daily schedule keeps itself alive.
+  keepalive:
+    runs-on: ubuntu-latest
+    if: github.event_name != 'push'   # schedule, or a manual run to test it
+    permissions:
+      actions: write
+    steps:
+      - name: Reset the 60-day inactivity timer
+        run: gh api -X PUT "repos/${{ github.repository }}/actions/workflows/generate-calendars.yml/enable"
+        env:
+          GH_TOKEN: ${{ github.token }}

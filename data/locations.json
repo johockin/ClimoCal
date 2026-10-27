@@ -1,82 +1,992 @@
 [
   {
-    "name": "toronto",
+    "name": "Toronto",
     "slug": "toronto",
-    "code": "YYZ",
     "lat": 43.6532,
     "lon": -79.3832,
     "timezone": "America/Toronto",
-    "continent": "north america",
-    "country": "canada"
+    "country": "CA",
+    "region": "Canada"
   },
   {
-    "name": "vancouver",
+    "name": "Vancouver",
     "slug": "vancouver",
-    "code": "YVR",
     "lat": 49.2827,
     "lon": -123.1207,
     "timezone": "America/Vancouver",
-    "continent": "north america",
-    "country": "canada"
+    "country": "CA",
+    "region": "Canada"
   },
   {
-    "name": "montreal",
+    "name": "Montreal",
     "slug": "montreal",
-    "code": "YUL",
     "lat": 45.5017,
     "lon": -73.5673,
     "timezone": "America/Toronto",
-    "continent": "north america",
-    "country": "canada"
+    "country": "CA",
+    "region": "Canada"
   },
   {
-    "name": "new york",
+    "name": "Calgary",
+    "slug": "calgary",
+    "lat": 51.0447,
+    "lon": -114.0719,
+    "timezone": "America/Edmonton",
+    "country": "CA",
+    "region": "Canada"
+  },
+  {
+    "name": "Ottawa",
+    "slug": "ottawa",
+    "lat": 45.4215,
+    "lon": -75.6972,
+    "timezone": "America/Toronto",
+    "country": "CA",
+    "region": "Canada"
+  },
+  {
+    "name": "Edmonton",
+    "slug": "edmonton",
+    "lat": 53.5501,
+    "lon": -113.4687,
+    "timezone": "America/Edmonton",
+    "country": "CA",
+    "region": "Canada"
+  },
+  {
+    "name": "Winnipeg",
+    "slug": "winnipeg",
+    "lat": 49.8844,
+    "lon": -97.147,
+    "timezone": "America/Winnipeg",
+    "country": "CA",
+    "region": "Canada"
+  },
+  {
+    "name": "Quebec City",
+    "slug": "quebec-city",
+    "lat": 46.8123,
+    "lon": -71.2145,
+    "timezone": "America/Toronto",
+    "country": "CA",
+    "region": "Canada"
+  },
+  {
+    "name": "Halifax",
+    "slug": "halifax",
+    "lat": 44.6427,
+    "lon": -63.5769,
+    "timezone": "America/Halifax",
+    "country": "CA",
+    "region": "Canada"
+  },
+  {
+    "name": "Victoria",
+    "slug": "victoria",
+    "lat": 48.4359,
+    "lon": -123.3516,
+    "timezone": "America/Vancouver",
+    "country": "CA",
+    "region": "Canada"
+  },
+  {
+    "name": "Hamilton",
+    "slug": "hamilton",
+    "lat": 43.2501,
+    "lon": -79.8496,
+    "timezone": "America/Toronto",
+    "country": "CA",
+    "region": "Canada"
+  },
+  {
+    "name": "Saskatoon",
+    "slug": "saskatoon",
+    "lat": 52.1324,
+    "lon": -106.6689,
+    "timezone": "America/Regina",
+    "country": "CA",
+    "region": "Canada"
+  },
+  {
+    "name": "Regina",
+    "slug": "regina",
+    "lat": 50.4501,
+    "lon": -104.6178,
+    "timezone": "America/Regina",
+    "country": "CA",
+    "region": "Canada"
+  },
+  {
+    "name": "St. John's",
+    "slug": "st-johns",
+    "lat": 47.5649,
+    "lon": -52.7093,
+    "timezone": "America/St_Johns",
+    "country": "CA",
+    "region": "Canada"
+  },
+  {
+    "name": "Kelowna",
+    "slug": "kelowna",
+    "lat": 49.8831,
+    "lon": -119.4857,
+    "timezone": "America/Vancouver",
+    "country": "CA",
+    "region": "Canada"
+  },
+  {
+    "name": "New York",
     "slug": "new-york",
-    "code": "JFK",
     "lat": 40.7128,
     "lon": -74.006,
     "timezone": "America/New_York",
-    "continent": "north america",
-    "country": "usa"
+    "country": "US",
+    "region": "United States"
   },
   {
-    "name": "los angeles",
+    "name": "Los Angeles",
     "slug": "los-angeles",
-    "code": "LAX",
     "lat": 34.0522,
     "lon": -118.2437,
     "timezone": "America/Los_Angeles",
-    "continent": "north america",
-    "country": "usa"
+    "country": "US",
+    "region": "United States"
   },
   {
-    "name": "london",
+    "name": "Chicago",
+    "slug": "chicago",
+    "lat": 41.85,
+    "lon": -87.65,
+    "timezone": "America/Chicago",
+    "country": "US",
+    "region": "United States"
+  },
+  {
+    "name": "Houston",
+    "slug": "houston",
+    "lat": 29.7633,
+    "lon": -95.3633,
+    "timezone": "America/Chicago",
+    "country": "US",
+    "region": "United States"
+  },
+  {
+    "name": "Phoenix",
+    "slug": "phoenix",
+    "lat": 33.4484,
+    "lon": -112.074,
+    "timezone": "America/Phoenix",
+    "country": "US",
+    "region": "United States"
+  },
+  {
+    "name": "Philadelphia",
+    "slug": "philadelphia",
+    "lat": 39.9524,
+    "lon": -75.1636,
+    "timezone": "America/New_York",
+    "country": "US",
+    "region": "United States"
+  },
+  {
+    "name": "San Antonio",
+    "slug": "san-antonio",
+    "lat": 29.4241,
+    "lon": -98.4936,
+    "timezone": "America/Chicago",
+    "country": "US",
+    "region": "United States"
+  },
+  {
+    "name": "San Diego",
+    "slug": "san-diego",
+    "lat": 32.7157,
+    "lon": -117.1647,
+    "timezone": "America/Los_Angeles",
+    "country": "US",
+    "region": "United States"
+  },
+  {
+    "name": "Dallas",
+    "slug": "dallas",
+    "lat": 32.7831,
+    "lon": -96.8067,
+    "timezone": "America/Chicago",
+    "country": "US",
+    "region": "United States"
+  },
+  {
+    "name": "Austin",
+    "slug": "austin",
+    "lat": 30.2672,
+    "lon": -97.7431,
+    "timezone": "America/Chicago",
+    "country": "US",
+    "region": "United States"
+  },
+  {
+    "name": "San Francisco",
+    "slug": "san-francisco",
+    "lat": 37.7749,
+    "lon": -122.4194,
+    "timezone": "America/Los_Angeles",
+    "country": "US",
+    "region": "United States"
+  },
+  {
+    "name": "Seattle",
+    "slug": "seattle",
+    "lat": 47.6062,
+    "lon": -122.3321,
+    "timezone": "America/Los_Angeles",
+    "country": "US",
+    "region": "United States"
+  },
+  {
+    "name": "Denver",
+    "slug": "denver",
+    "lat": 39.7392,
+    "lon": -104.9847,
+    "timezone": "America/Denver",
+    "country": "US",
+    "region": "United States"
+  },
+  {
+    "name": "Washington, DC",
+    "slug": "washington-dc",
+    "lat": 38.8951,
+    "lon": -77.0364,
+    "timezone": "America/New_York",
+    "country": "US",
+    "region": "United States"
+  },
+  {
+    "name": "Boston",
+    "slug": "boston",
+    "lat": 42.3584,
+    "lon": -71.0598,
+    "timezone": "America/New_York",
+    "country": "US",
+    "region": "United States"
+  },
+  {
+    "name": "Nashville",
+    "slug": "nashville",
+    "lat": 36.1659,
+    "lon": -86.7844,
+    "timezone": "America/Chicago",
+    "country": "US",
+    "region": "United States"
+  },
+  {
+    "name": "Atlanta",
+    "slug": "atlanta",
+    "lat": 33.749,
+    "lon": -84.388,
+    "timezone": "America/New_York",
+    "country": "US",
+    "region": "United States"
+  },
+  {
+    "name": "Miami",
+    "slug": "miami",
+    "lat": 25.7743,
+    "lon": -80.1937,
+    "timezone": "America/New_York",
+    "country": "US",
+    "region": "United States"
+  },
+  {
+    "name": "Orlando",
+    "slug": "orlando",
+    "lat": 28.5383,
+    "lon": -81.3792,
+    "timezone": "America/New_York",
+    "country": "US",
+    "region": "United States"
+  },
+  {
+    "name": "Las Vegas",
+    "slug": "las-vegas",
+    "lat": 36.175,
+    "lon": -115.1372,
+    "timezone": "America/Los_Angeles",
+    "country": "US",
+    "region": "United States"
+  },
+  {
+    "name": "Portland",
+    "slug": "portland",
+    "lat": 45.5234,
+    "lon": -122.6762,
+    "timezone": "America/Los_Angeles",
+    "country": "US",
+    "region": "United States"
+  },
+  {
+    "name": "Minneapolis",
+    "slug": "minneapolis",
+    "lat": 44.98,
+    "lon": -93.2638,
+    "timezone": "America/Chicago",
+    "country": "US",
+    "region": "United States"
+  },
+  {
+    "name": "Detroit",
+    "slug": "detroit",
+    "lat": 42.3314,
+    "lon": -83.0457,
+    "timezone": "America/Detroit",
+    "country": "US",
+    "region": "United States"
+  },
+  {
+    "name": "New Orleans",
+    "slug": "new-orleans",
+    "lat": 29.9547,
+    "lon": -90.0751,
+    "timezone": "America/Chicago",
+    "country": "US",
+    "region": "United States"
+  },
+  {
+    "name": "Salt Lake City",
+    "slug": "salt-lake-city",
+    "lat": 40.7608,
+    "lon": -111.8911,
+    "timezone": "America/Denver",
+    "country": "US",
+    "region": "United States"
+  },
+  {
+    "name": "Honolulu",
+    "slug": "honolulu",
+    "lat": 21.3069,
+    "lon": -157.8583,
+    "timezone": "Pacific/Honolulu",
+    "country": "US",
+    "region": "United States"
+  },
+  {
+    "name": "Anchorage",
+    "slug": "anchorage",
+    "lat": 61.2181,
+    "lon": -149.9003,
+    "timezone": "America/Anchorage",
+    "country": "US",
+    "region": "United States"
+  },
+  {
+    "name": "Charlotte",
+    "slug": "charlotte",
+    "lat": 35.2271,
+    "lon": -80.8431,
+    "timezone": "America/New_York",
+    "country": "US",
+    "region": "United States"
+  },
+  {
+    "name": "Pittsburgh",
+    "slug": "pittsburgh",
+    "lat": 40.4406,
+    "lon": -79.9959,
+    "timezone": "America/New_York",
+    "country": "US",
+    "region": "United States"
+  },
+  {
+    "name": "Albuquerque",
+    "slug": "albuquerque",
+    "lat": 35.0845,
+    "lon": -106.6511,
+    "timezone": "America/Denver",
+    "country": "US",
+    "region": "United States"
+  },
+  {
+    "name": "Mexico City",
+    "slug": "mexico-city",
+    "lat": 19.4285,
+    "lon": -99.1277,
+    "timezone": "America/Mexico_City",
+    "country": "MX",
+    "region": "Latin America"
+  },
+  {
+    "name": "Guadalajara",
+    "slug": "guadalajara",
+    "lat": 20.6774,
+    "lon": -103.3475,
+    "timezone": "America/Mexico_City",
+    "country": "MX",
+    "region": "Latin America"
+  },
+  {
+    "name": "Cancún",
+    "slug": "cancun",
+    "lat": 21.1743,
+    "lon": -86.8466,
+    "timezone": "America/Cancun",
+    "country": "MX",
+    "region": "Latin America"
+  },
+  {
+    "name": "São Paulo",
+    "slug": "sao-paulo",
+    "lat": -23.5475,
+    "lon": -46.6361,
+    "timezone": "America/Sao_Paulo",
+    "country": "BR",
+    "region": "Latin America"
+  },
+  {
+    "name": "Rio de Janeiro",
+    "slug": "rio-de-janeiro",
+    "lat": -22.9064,
+    "lon": -43.1822,
+    "timezone": "America/Sao_Paulo",
+    "country": "BR",
+    "region": "Latin America"
+  },
+  {
+    "name": "Buenos Aires",
+    "slug": "buenos-aires",
+    "lat": -34.6131,
+    "lon": -58.3772,
+    "timezone": "America/Argentina/Buenos_Aires",
+    "country": "AR",
+    "region": "Latin America"
+  },
+  {
+    "name": "Santiago",
+    "slug": "santiago",
+    "lat": -33.4569,
+    "lon": -70.6483,
+    "timezone": "America/Santiago",
+    "country": "CL",
+    "region": "Latin America"
+  },
+  {
+    "name": "Lima",
+    "slug": "lima",
+    "lat": -12.0432,
+    "lon": -77.0282,
+    "timezone": "America/Lima",
+    "country": "PE",
+    "region": "Latin America"
+  },
+  {
+    "name": "Bogotá",
+    "slug": "bogota",
+    "lat": 4.6097,
+    "lon": -74.0817,
+    "timezone": "America/Bogota",
+    "country": "CO",
+    "region": "Latin America"
+  },
+  {
+    "name": "Medellín",
+    "slug": "medellin",
+    "lat": 6.245,
+    "lon": -75.5715,
+    "timezone": "America/Bogota",
+    "country": "CO",
+    "region": "Latin America"
+  },
+  {
+    "name": "London",
     "slug": "london",
-    "code": "LHR",
     "lat": 51.5074,
     "lon": -0.1278,
     "timezone": "Europe/London",
-    "continent": "europe",
-    "country": "uk"
+    "country": "GB",
+    "region": "Europe"
   },
   {
-    "name": "tokyo",
+    "name": "Paris",
+    "slug": "paris",
+    "lat": 48.8534,
+    "lon": 2.3488,
+    "timezone": "Europe/Paris",
+    "country": "FR",
+    "region": "Europe"
+  },
+  {
+    "name": "Berlin",
+    "slug": "berlin",
+    "lat": 52.5244,
+    "lon": 13.4105,
+    "timezone": "Europe/Berlin",
+    "country": "DE",
+    "region": "Europe"
+  },
+  {
+    "name": "Madrid",
+    "slug": "madrid",
+    "lat": 40.4165,
+    "lon": -3.7026,
+    "timezone": "Europe/Madrid",
+    "country": "ES",
+    "region": "Europe"
+  },
+  {
+    "name": "Barcelona",
+    "slug": "barcelona",
+    "lat": 41.3888,
+    "lon": 2.159,
+    "timezone": "Europe/Madrid",
+    "country": "ES",
+    "region": "Europe"
+  },
+  {
+    "name": "Lisbon",
+    "slug": "lisbon",
+    "lat": 38.7251,
+    "lon": -9.1498,
+    "timezone": "Europe/Lisbon",
+    "country": "PT",
+    "region": "Europe"
+  },
+  {
+    "name": "Rome",
+    "slug": "rome",
+    "lat": 41.8919,
+    "lon": 12.5113,
+    "timezone": "Europe/Rome",
+    "country": "IT",
+    "region": "Europe"
+  },
+  {
+    "name": "Milan",
+    "slug": "milan",
+    "lat": 45.4643,
+    "lon": 9.1895,
+    "timezone": "Europe/Rome",
+    "country": "IT",
+    "region": "Europe"
+  },
+  {
+    "name": "Amsterdam",
+    "slug": "amsterdam",
+    "lat": 52.374,
+    "lon": 4.8897,
+    "timezone": "Europe/Amsterdam",
+    "country": "NL",
+    "region": "Europe"
+  },
+  {
+    "name": "Brussels",
+    "slug": "brussels",
+    "lat": 50.8505,
+    "lon": 4.3488,
+    "timezone": "Europe/Brussels",
+    "country": "BE",
+    "region": "Europe"
+  },
+  {
+    "name": "Dublin",
+    "slug": "dublin",
+    "lat": 53.3331,
+    "lon": -6.2489,
+    "timezone": "Europe/Dublin",
+    "country": "IE",
+    "region": "Europe"
+  },
+  {
+    "name": "Edinburgh",
+    "slug": "edinburgh",
+    "lat": 55.9521,
+    "lon": -3.1965,
+    "timezone": "Europe/London",
+    "country": "GB",
+    "region": "Europe"
+  },
+  {
+    "name": "Manchester",
+    "slug": "manchester",
+    "lat": 53.4809,
+    "lon": -2.2374,
+    "timezone": "Europe/London",
+    "country": "GB",
+    "region": "Europe"
+  },
+  {
+    "name": "Copenhagen",
+    "slug": "copenhagen",
+    "lat": 55.6759,
+    "lon": 12.5655,
+    "timezone": "Europe/Copenhagen",
+    "country": "DK",
+    "region": "Europe"
+  },
+  {
+    "name": "Stockholm",
+    "slug": "stockholm",
+    "lat": 59.3294,
+    "lon": 18.0687,
+    "timezone": "Europe/Stockholm",
+    "country": "SE",
+    "region": "Europe"
+  },
+  {
+    "name": "Oslo",
+    "slug": "oslo",
+    "lat": 59.9127,
+    "lon": 10.7461,
+    "timezone": "Europe/Oslo",
+    "country": "NO",
+    "region": "Europe"
+  },
+  {
+    "name": "Helsinki",
+    "slug": "helsinki",
+    "lat": 60.1695,
+    "lon": 24.9354,
+    "timezone": "Europe/Helsinki",
+    "country": "FI",
+    "region": "Europe"
+  },
+  {
+    "name": "Reykjavík",
+    "slug": "reykjavik",
+    "lat": 64.1355,
+    "lon": -21.8954,
+    "timezone": "Atlantic/Reykjavik",
+    "country": "IS",
+    "region": "Europe"
+  },
+  {
+    "name": "Vienna",
+    "slug": "vienna",
+    "lat": 48.2085,
+    "lon": 16.3721,
+    "timezone": "Europe/Vienna",
+    "country": "AT",
+    "region": "Europe"
+  },
+  {
+    "name": "Prague",
+    "slug": "prague",
+    "lat": 50.088,
+    "lon": 14.4208,
+    "timezone": "Europe/Prague",
+    "country": "CZ",
+    "region": "Europe"
+  },
+  {
+    "name": "Budapest",
+    "slug": "budapest",
+    "lat": 47.4984,
+    "lon": 19.0404,
+    "timezone": "Europe/Budapest",
+    "country": "HU",
+    "region": "Europe"
+  },
+  {
+    "name": "Warsaw",
+    "slug": "warsaw",
+    "lat": 52.2298,
+    "lon": 21.0118,
+    "timezone": "Europe/Warsaw",
+    "country": "PL",
+    "region": "Europe"
+  },
+  {
+    "name": "Athens",
+    "slug": "athens",
+    "lat": 37.9838,
+    "lon": 23.7278,
+    "timezone": "Europe/Athens",
+    "country": "GR",
+    "region": "Europe"
+  },
+  {
+    "name": "Zurich",
+    "slug": "zurich",
+    "lat": 47.3667,
+    "lon": 8.55,
+    "timezone": "Europe/Zurich",
+    "country": "CH",
+    "region": "Europe"
+  },
+  {
+    "name": "Munich",
+    "slug": "munich",
+    "lat": 48.1374,
+    "lon": 11.5755,
+    "timezone": "Europe/Berlin",
+    "country": "DE",
+    "region": "Europe"
+  },
+  {
+    "name": "Istanbul",
+    "slug": "istanbul",
+    "lat": 41.0138,
+    "lon": 28.9497,
+    "timezone": "Europe/Istanbul",
+    "country": "TR",
+    "region": "Europe"
+  },
+  {
+    "name": "Dubai",
+    "slug": "dubai",
+    "lat": 25.0772,
+    "lon": 55.3093,
+    "timezone": "Asia/Dubai",
+    "country": "AE",
+    "region": "Middle East & Africa"
+  },
+  {
+    "name": "Tel Aviv",
+    "slug": "tel-aviv",
+    "lat": 32.0809,
+    "lon": 34.7806,
+    "timezone": "Asia/Jerusalem",
+    "country": "IL",
+    "region": "Middle East & Africa"
+  },
+  {
+    "name": "Cairo",
+    "slug": "cairo",
+    "lat": 30.0626,
+    "lon": 31.2497,
+    "timezone": "Africa/Cairo",
+    "country": "EG",
+    "region": "Middle East & Africa"
+  },
+  {
+    "name": "Marrakesh",
+    "slug": "marrakesh",
+    "lat": 31.6342,
+    "lon": -7.9999,
+    "timezone": "Africa/Casablanca",
+    "country": "MA",
+    "region": "Middle East & Africa"
+  },
+  {
+    "name": "Cape Town",
+    "slug": "cape-town",
+    "lat": -33.9258,
+    "lon": 18.4232,
+    "timezone": "Africa/Johannesburg",
+    "country": "ZA",
+    "region": "Middle East & Africa"
+  },
+  {
+    "name": "Johannesburg",
+    "slug": "johannesburg",
+    "lat": -26.2023,
+    "lon": 28.0436,
+    "timezone": "Africa/Johannesburg",
+    "country": "ZA",
+    "region": "Middle East & Africa"
+  },
+  {
+    "name": "Nairobi",
+    "slug": "nairobi",
+    "lat": -1.2833,
+    "lon": 36.8167,
+    "timezone": "Africa/Nairobi",
+    "country": "KE",
+    "region": "Middle East & Africa"
+  },
+  {
+    "name": "Lagos",
+    "slug": "lagos",
+    "lat": 6.4541,
+    "lon": 3.3947,
+    "timezone": "Africa/Lagos",
+    "country": "NG",
+    "region": "Middle East & Africa"
+  },
+  {
+    "name": "Tokyo",
     "slug": "tokyo",
-    "code": "NRT",
     "lat": 35.6762,
     "lon": 139.6503,
     "timezone": "Asia/Tokyo",
-    "continent": "asia",
-    "country": "japan"
+    "country": "JP",
+    "region": "Asia"
   },
   {
-    "name": "shanghai",
+    "name": "Osaka",
+    "slug": "osaka",
+    "lat": 34.6938,
+    "lon": 135.5011,
+    "timezone": "Asia/Tokyo",
+    "country": "JP",
+    "region": "Asia"
+  },
+  {
+    "name": "Seoul",
+    "slug": "seoul",
+    "lat": 37.566,
+    "lon": 126.9784,
+    "timezone": "Asia/Seoul",
+    "country": "KR",
+    "region": "Asia"
+  },
+  {
+    "name": "Shanghai",
     "slug": "shanghai",
-    "code": "PVG",
     "lat": 31.2304,
     "lon": 121.4737,
     "timezone": "Asia/Shanghai",
-    "continent": "asia",
-    "country": "china"
+    "country": "CN",
+    "region": "Asia"
+  },
+  {
+    "name": "Beijing",
+    "slug": "beijing",
+    "lat": 39.9075,
+    "lon": 116.3972,
+    "timezone": "Asia/Shanghai",
+    "country": "CN",
+    "region": "Asia"
+  },
+  {
+    "name": "Hong Kong",
+    "slug": "hong-kong",
+    "lat": 22.2783,
+    "lon": 114.1747,
+    "timezone": "Asia/Hong_Kong",
+    "country": "HK",
+    "region": "Asia"
+  },
+  {
+    "name": "Taipei",
+    "slug": "taipei",
+    "lat": 25.0531,
+    "lon": 121.5264,
+    "timezone": "Asia/Taipei",
+    "country": "TW",
+    "region": "Asia"
+  },
+  {
+    "name": "Singapore",
+    "slug": "singapore",
+    "lat": 1.2897,
+    "lon": 103.8501,
+    "timezone": "Asia/Singapore",
+    "country": "SG",
+    "region": "Asia"
+  },
+  {
+    "name": "Bangkok",
+    "slug": "bangkok",
+    "lat": 13.754,
+    "lon": 100.5014,
+    "timezone": "Asia/Bangkok",
+    "country": "TH",
+    "region": "Asia"
+  },
+  {
+    "name": "Bali",
+    "slug": "bali",
+    "lat": -8.65,
+    "lon": 115.2167,
+    "timezone": "Asia/Makassar",
+    "country": "ID",
+    "region": "Asia"
+  },
+  {
+    "name": "Manila",
+    "slug": "manila",
+    "lat": 14.6042,
+    "lon": 120.9822,
+    "timezone": "Asia/Manila",
+    "country": "PH",
+    "region": "Asia"
+  },
+  {
+    "name": "Ho Chi Minh City",
+    "slug": "ho-chi-minh-city",
+    "lat": 10.823,
+    "lon": 106.6296,
+    "timezone": "Asia/Ho_Chi_Minh",
+    "country": "VN",
+    "region": "Asia"
+  },
+  {
+    "name": "Kuala Lumpur",
+    "slug": "kuala-lumpur",
+    "lat": 3.1412,
+    "lon": 101.6865,
+    "timezone": "Asia/Kuala_Lumpur",
+    "country": "MY",
+    "region": "Asia"
+  },
+  {
+    "name": "Mumbai",
+    "slug": "mumbai",
+    "lat": 19.0728,
+    "lon": 72.8826,
+    "timezone": "Asia/Kolkata",
+    "country": "IN",
+    "region": "Asia"
+  },
+  {
+    "name": "Delhi",
+    "slug": "delhi",
+    "lat": 28.6214,
+    "lon": 77.2148,
+    "timezone": "Asia/Kolkata",
+    "country": "IN",
+    "region": "Asia"
+  },
+  {
+    "name": "Bangalore",
+    "slug": "bangalore",
+    "lat": 12.9719,
+    "lon": 77.5937,
+    "timezone": "Asia/Kolkata",
+    "country": "IN",
+    "region": "Asia"
+  },
+  {
+    "name": "Sydney",
+    "slug": "sydney",
+    "lat": -33.8678,
+    "lon": 151.2073,
+    "timezone": "Australia/Sydney",
+    "country": "AU",
+    "region": "Oceania"
+  },
+  {
+    "name": "Melbourne",
+    "slug": "melbourne",
+    "lat": -37.814,
+    "lon": 144.9633,
+    "timezone": "Australia/Melbourne",
+    "country": "AU",
+    "region": "Oceania"
+  },
+  {
+    "name": "Brisbane",
+    "slug": "brisbane",
+    "lat": -27.4679,
+    "lon": 153.0281,
+    "timezone": "Australia/Brisbane",
+    "country": "AU",
+    "region": "Oceania"
+  },
+  {
+    "name": "Perth",
+    "slug": "perth",
+    "lat": -31.9522,
+    "lon": 115.8614,
+    "timezone": "Australia/Perth",
+    "country": "AU",
+    "region": "Oceania"
+  },
+  {
+    "name": "Auckland",
+    "slug": "auckland",
+    "lat": -36.8485,
+    "lon": 174.7635,
+    "timezone": "Pacific/Auckland",
+    "country": "NZ",
+    "region": "Oceania"
   }
 ]
