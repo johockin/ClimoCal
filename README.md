@@ -33,8 +33,10 @@ Pick your city and copy the calendar URL:
 - **Vancouver**: `webcal://johockin.github.io/ClimoCal/calendars/vancouver.ics`
 - **Montreal**: `webcal://johockin.github.io/ClimoCal/calendars/montreal.ics`
 - **New York**: `webcal://johockin.github.io/ClimoCal/calendars/new-york.ics`
+- **Los Angeles**: `webcal://johockin.github.io/ClimoCal/calendars/los-angeles.ics`
 - **London**: `webcal://johockin.github.io/ClimoCal/calendars/london.ics`
 - **Tokyo**: `webcal://johockin.github.io/ClimoCal/calendars/tokyo.ics`
+- **Shanghai**: `webcal://johockin.github.io/ClimoCal/calendars/shanghai.ics`
 
 *Need another city? [Open an issue](https://github.com/johockin/ClimoCal/issues) and I'll add it.*
 
@@ -68,7 +70,7 @@ I just wanted to glance at next Tuesday and see if it's going to rain. So I buil
 ## 🔧 Technical Details
 
 - **Weather Data**: [Open-Meteo](https://open-meteo.com) (free, no API key needed)
-- **Updates**: GitHub Actions runs daily at 6 AM UTC
+- **Updates**: GitHub Actions runs daily at 10:00 UTC (6 AM Toronto)
 - **Format**: Standard iCalendar (.ics) files
 - **Hosting**: GitHub Pages (free, fast, reliable)
 - **Code**: ~50 lines of JavaScript, completely open source

@@ -259,6 +259,13 @@ ClimoCal embodies raw documentation over visual polish. This isn't minimalism fo
 
 ## 📒 CHANGELOG (REVERSE CHRONOLOGICAL)
 
+### 2026-10-27 - Los Angeles + Shanghai, two label bugs fixed 🌴
+- **Added**: Los Angeles (LAX, °F, America/Los_Angeles) after a user request; Shanghai (PVG, Asia/Shanghai) from GitHub issue #1. 8 live cities.
+- **Fixed**: Sunday city tag landed on Monday. `new Date('YYYY-MM-DD')` is UTC midnight, so `getDay()` in Toronto time returned the previous day. Now `getUTCDay()`; verified under TZ=America/Toronto, UTC, Asia/Tokyo.
+- **Fixed**: multi-word city names rendered "Los angeles Climate" / "New york Climate"; now title-cased per word.
+- **Found**: the daily workflow has been `disabled_inactivity` since 2025-12-27 (GitHub's 60-day rule for public repos), so live feeds are frozen. Re-enable is pending johnny's go.
+- **Docs**: `CLAUDE.md` is now a lean hub (Status/Next/Map/Gotchas); dated log moves to `LOG.md`. This spec stays as the deep dive.
+
 ### 2025-08-27 - ClimoCal Branding & Calendar Name Fixes 🏷️
 - **Issue Fixed**: Calendar naming bug where all cities displayed "TOR ClimoCal" instead of unique airport codes
 - **Issue Fixed**: Added subtle ClimoCal branding to calendar files as requested

@@ -34,8 +34,18 @@
     "slug": "new-york",
     "code": "JFK",
     "lat": 40.7128,
-    "lon": -74.0060,
+    "lon": -74.006,
     "timezone": "America/New_York",
+    "continent": "north america",
+    "country": "usa"
+  },
+  {
+    "name": "los angeles",
+    "slug": "los-angeles",
+    "code": "LAX",
+    "lat": 34.0522,
+    "lon": -118.2437,
+    "timezone": "America/Los_Angeles",
     "continent": "north america",
     "country": "usa"
   },
@@ -58,5 +68,15 @@
     "timezone": "Asia/Tokyo",
     "continent": "asia",
     "country": "japan"
+  },
+  {
+    "name": "shanghai",
+    "slug": "shanghai",
+    "code": "PVG",
+    "lat": 31.2304,
+    "lon": 121.4737,
+    "timezone": "Asia/Shanghai",
+    "continent": "asia",
+    "country": "china"
   }
 ]

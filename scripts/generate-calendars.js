@@ -46,8 +46,13 @@ async function generateLocationCalendar(location) {
       location.timezone || 'auto'
     );
     
+    // Title-case every word so multi-word cities read "Los Angeles", not "Los angeles"
+    const displayName = location.name.split(' ')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+
     // Create calendar with optimized settings
-    const calendarName = `${location.name.charAt(0).toUpperCase() + location.name.slice(1)} Climate`;
+    const calendarName = `${displayName} Climate`;
     const cal = ical({
       name: calendarName,
       description: `Weather forecast by ClimoCal • climocal.johnnyhockin.com`,
@@ -67,10 +72,12 @@ async function generateLocationCalendar(location) {
       const tempMaxDisplay = isUSA ? `${Math.round(day.tempMax * 9/5 + 32)}°F` : `${day.tempMax}°C`;
       const tempMinDisplay = isUSA ? `${Math.round(day.tempMin * 9/5 + 32)}°F` : `${day.tempMin}°C`;
       
-      // Check if it's Sunday and add city name
-      const dayOfWeek = new Date(day.date).getDay();
+      // Check if it's Sunday and add city name.
+      // A bare 'YYYY-MM-DD' parses as UTC midnight, so read the weekday in UTC;
+      // local getDay() is off by one west of Greenwich (tagged Mondays instead).
+      const dayOfWeek = new Date(day.date).getUTCDay();
       const isSunday = dayOfWeek === 0;
-      const cityReminder = isSunday ? ` - ${location.name.charAt(0).toUpperCase() + location.name.slice(1)}` : '';
+      const cityReminder = isSunday ? ` - ${displayName}` : '';
       
       const eventTitle = `${emoji} ${tempMaxDisplay}/${tempMinDisplay}${cityReminder}`;
       const description = buildEventDescription(day, location);
