@@ -1,5 +1,9 @@
 # ClimoCal — log (newest first)
 
+## 2026-10-27 — Writing template + blog refresh
+- johnnyhockin.com branch `writing-template` (7b533b6, pushed, not merged): typed-lab-note template site-wide on writing pages, image-led index, ClimoCal post refresh with two screen grabs, `scripts/build-writing.js`.
+- Merging to main deploys via Netlify; waiting on johnny's go.
+
 ## 2026-10-27 (evening) — Deployed
 - `revival` merged to `main` (7c8ef19), deploy green, spot-checked live: page, status (110 cities), Toronto/LA/Calgary/Auckland feeds (UID date = DTSTART; ≈ events present where backfilled).
 - johnny saw a dead page right after deploy: his browser ran cached old `app.js` with the new HTML. Fixed for good by fingerprinting the script URL. Added "DM me on Instagram" (@johnnystagram) feedback links (deployed).
