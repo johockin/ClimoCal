@@ -4,6 +4,8 @@
 - Live: pushed LA + Shanghai to `main`, re-enabled the workflow, deploy green, issue #1 closed. HTTPS enforced on Pages.
 - On `revival` (not deployed): keepalive job; Node 24 actions; batched forecast fetch with retries; stable UIDs, exclusive DTEND, UTC dates, units converted before rounding, mph/inches for US, null day-16 dropped; rain % and sunrise/sunset; 110 cities from a geocoded seed; typical weather (≈) to 12 months from 10-yr ERA5 with a self-finishing backfill workflow; generated feeds no longer committed; `serve` dropped (0 audit findings).
 - Landing page rebuilt per johnny ("less brash, more immediate, SO clear where to press"): headline, a live week of real forecast chips, then step 1 (which calendar) and step 2 (tap your city), with text that says exactly what happens per app. Story and FAQ below. Checked at desktop and 375px, no console errors.
+- Independent review caught a blocker: with a calendar `timezone` set, ical-generator writes all-day dates in the build machine's local time, so Toronto-time CI put every event a day early. Fixed by dropping the option; `checkFeed()` now fails the build on any date drift (negative-tested). Also: backfill skips bad cities, CI rebases before push, region search by prefix.
+- City list calmed per johnny ("too busy"): 12 popular cities, then each region folded behind "See all N". Typical weather: 30/110 cities done; CI adds ~18/day.
 
 ## 2026-10-27 — Resurrection pass, LA + Shanghai
 - Cloned fresh. The live site serves, but the daily workflow has been `disabled_inactivity` since 2025-12-27, so every feed is stuck at that date. Last green run: 2025-12-27.
