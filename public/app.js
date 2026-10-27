@@ -6,7 +6,7 @@
 // preview at the top.
 
 const SITE_HOST = 'climocal.johnnyhockin.com';
-const REQUEST_URL = 'https://github.com/johockin/ClimoCal/issues/new?title=';
+const FEEDBACK_URL = 'https://instagram.com/johnnystagram';
 
 // Step 2's title and follow-up line say exactly what a city tap will do
 const APPS = {
@@ -189,9 +189,9 @@ function setupSearch() {
       const name = input.value.trim();
       noMatch.textContent = `${name} isn't on the list yet. `;
       const link = document.createElement('a');
-      link.href = REQUEST_URL + encodeURIComponent(`City request: ${name}`);
-      link.textContent = `Ask for ${name}`;
-      noMatch.append(link, '.');
+      link.href = FEEDBACK_URL;
+      link.textContent = 'DM me on Instagram';
+      noMatch.append(link, ` and I'll add ${name}.`);
     }
   });
 

@@ -8,6 +8,7 @@
 
 import ical from 'ical-generator';
 import { writeFileSync, mkdirSync, readFileSync, existsSync } from 'fs';
+import { createHash } from 'crypto';
 import { fetchForecasts } from './weather-api.js';
 import { weatherEmoji, weatherDescription } from './emoji-mapper.js';
 
@@ -250,6 +251,10 @@ function generateStatusFile(locations) {
   console.log('📊 Status file generated');
 }
 
+function fingerprint(file) {
+  return createHash('sha256').update(readFileSync(file)).digest('hex').slice(0, 10);
+}
+
 // --- City list in index.html -------------------------------------------------
 
 // The page's city list is static HTML between two markers, so it renders
@@ -295,7 +300,10 @@ function renderCityList(locations) {
   const page = readFileSync(file, 'utf8');
   const updated = page
     .replace(/(<!-- CITIES:START[^>]*-->\n)[\s\S]*?(<!-- CITIES:END -->)/, `$1${html}\n$2`)
-    .replace(/(id="city-count">)\d+(<)/, `$1${locations.length}$2`);
+    .replace(/(id="city-count">)\d+(<)/, `$1${locations.length}$2`)
+    // Fingerprint the script URL so a new page never runs a cached old app.js
+    // (Pages caches for 10 minutes; a mismatched pair left the page dead).
+    .replace(/src="app\.js(\?v=[0-9a-f]+)?"/, `src="app.js?v=${fingerprint('public/app.js')}"`);
   if (!updated.includes('<!-- CITIES:END -->')) throw new Error('City list markers missing from index.html');
   if (updated !== page) {
     writeFileSync(file, updated);
