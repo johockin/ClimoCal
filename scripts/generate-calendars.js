@@ -16,6 +16,8 @@ const NORMALS_FILE = 'data/climate-normals.json';
 const NORMALS_DAYS_AHEAD = 365;
 const MIN_FORECAST_DAYS = 14;     // fewer than this = bad API response, fail the run
 const RAIN_TAG_THRESHOLD = 40;    // show "💧NN%" in the title at or above this chance
+const POPULAR_CITIES = ['toronto', 'vancouver', 'montreal', 'calgary', 'new-york', 'los-angeles',
+  'chicago', 'san-francisco', 'london', 'paris', 'tokyo', 'sydney'];  // shown first on the page
 
 async function generateCalendars() {
   console.log('🌤️  ClimoCal: Starting calendar generation...');
@@ -81,9 +83,10 @@ function clock(localIso, location) {
 
 // --- Dates -----------------------------------------------------------------
 
-// All-day dates are pinned to UTC midnight: ical-generator formats all-day
-// DATE values from UTC, and a bare 'YYYY-MM-DD' already parses as UTC.
-// Local-midnight dates shifted every event back a day when TZ was east of UTC.
+// All-day dates are pinned to UTC midnight, and the calendar deliberately has
+// no timezone: ical-generator 7 formats DATE values in UTC only when no
+// timezone is set (with one, it uses the build machine's local time, which put
+// every event a day early on Toronto-time CI). checkFeed() guards this.
 function utcDate(isoDate) {
   return new Date(`${isoDate}T00:00:00Z`);
 }
@@ -102,7 +105,6 @@ function writeLocationCalendar(location, forecast, cityNormals) {
   const cal = ical({
     name: `${location.name} Climate`,
     description: `Weather forecast by ClimoCal • climocal.johnnyhockin.com`,
-    timezone: location.timezone,
     ttl: 60 * 60 * 4, // 4 hour TTL - more frequent refresh checks
     url: `${SITE}/calendars/${location.slug}.ics`,
     scale: 'gregorian',
@@ -133,9 +135,27 @@ function writeLocationCalendar(location, forecast, cityNormals) {
     }
   }
 
-  writeFileSync(`public/calendars/${location.slug}.ics`, cal.toString());
+  const ics = cal.toString();
+  checkFeed(location, ics);
+  writeFileSync(`public/calendars/${location.slug}.ics`, ics);
   console.log(`✅ ${location.name}: ${forecast.length} forecast days` +
     (cityNormals ? ` + typical weather to 12 months` : ''));
+}
+
+// Every event's DTSTART must equal the date in its UID, and DTEND the next
+// day. Fails the run (so nothing deploys) if date formatting ever drifts.
+function checkFeed(location, ics) {
+  const events = ics.split('BEGIN:VEVENT').slice(1);
+  for (const event of events) {
+    const uidDate = event.match(/UID:weather-[a-z0-9-]+?-(\d{4})-(\d{2})-(\d{2})@/);
+    const start = event.match(/DTSTART;VALUE=DATE:(\d{8})/);
+    const end = event.match(/DTEND;VALUE=DATE:(\d{8})/);
+    const expected = uidDate && uidDate.slice(1).join('');
+    const nextDay = expected && isoDay(addDays(utcDate(`${uidDate[1]}-${uidDate[2]}-${uidDate[3]}`), 1)).replace(/-/g, '');
+    if (!expected || start?.[1] !== expected || end?.[1] !== nextDay) {
+      throw new Error(`${location.name}: event dates drifted (UID ${expected}, DTSTART ${start?.[1]}, DTEND ${end?.[1]})`);
+    }
+  }
 }
 
 function addDayEvent(cal, location, isoDate, title, description) {
@@ -239,22 +259,37 @@ function generateStatusFile(locations) {
 function renderCityList(locations) {
   const escape = text => text.replace(/&/g, '&amp;').replace(/</g, '&lt;')
     .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  const chip = c =>
+    `<a class="city" href="webcal://climocal.johnnyhockin.com/calendars/${c.slug}.ics" ` +
+    `data-slug="${c.slug}" data-name="${escape(c.name)}">${escape(c.name)}</a>`;
+
+  const bySlug = new Map(locations.map(l => [l.slug, l]));
+  const popular = POPULAR_CITIES.map(slug => bySlug.get(slug)).filter(Boolean);
+
   const regions = new Map();
   for (const location of locations) {
     if (!regions.has(location.region)) regions.set(location.region, []);
     regions.get(location.region).push(location);
   }
 
-  const html = [...regions].map(([region, cities]) => [
-    `<div class="region" data-region="${escape(region)}">`,
-    `  <h3>${escape(region)}</h3>`,
+  // Popular cities up front; every region folded behind "See all N"
+  const html = [
+    `<div class="popular" id="popular">`,
+    `  <h3>Popular</h3>`,
     `  <div class="region-cities">`,
-    ...cities.map(c =>
-      `    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/${c.slug}.ics" ` +
-      `data-slug="${c.slug}" data-name="${escape(c.name)}">${escape(c.name)}</a>`),
+    ...popular.map(c => `    ${chip(c)}`),
     `  </div>`,
-    `</div>`
-  ].join('\n')).join('\n');
+    `</div>`,
+    `<h3 class="more-label" id="more-label">More cities</h3>`,
+    ...[...regions].map(([region, cities]) => [
+      `<details class="region" data-region="${escape(region)}">`,
+      `  <summary><span class="region-name">${escape(region)}</span><span class="see-all"><span class="when-closed">See all ${cities.length}</span><span class="when-open">Close</span></span></summary>`,
+      `  <div class="region-cities">`,
+      ...cities.map(c => `    ${chip(c)}`),
+      `  </div>`,
+      `</details>`
+    ].join('\n'))
+  ].join('\n');
 
   const file = 'public/index.html';
   const page = readFileSync(file, 'utf8');

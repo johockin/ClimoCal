@@ -9,8 +9,9 @@
 // Cost: Open-Meteo counts history by length, ~261 API calls per city for
 // 10 years, against a free limit of 600/min, 5,000/hour and 10,000/day.
 // So this is resumable: it saves after every city, paces itself, stops at
-// --budget (default 8000 calls) or on a 429, and skips cities already done.
-//   node scripts/build-normals.js [--budget 8000]
+// --budget (default 4800 calls, under the hourly limit) or on a 429, and
+// skips cities already done.
+//   node scripts/build-normals.js [--budget 4800]
 
 import { readFileSync, writeFileSync, existsSync } from 'fs';
 import { fetchJson } from './weather-api.js';
@@ -29,7 +30,7 @@ const CALLS_PER_CITY = Math.ceil(DAYS / 14);
 const SECONDS_BETWEEN_CITIES = Math.ceil(CALLS_PER_CITY / 550 * 60); // stay under 600/min
 
 const budgetArg = process.argv.indexOf('--budget');
-let budget = budgetArg > -1 ? Number(process.argv[budgetArg + 1]) : 8000;
+let budget = budgetArg > -1 ? Number(process.argv[budgetArg + 1]) : 4800;
 
 // Position in a leap year (0..365), so Feb 29 gets its own slot
 function leapIndex(isoDate) {
@@ -102,9 +103,13 @@ for (const [n, location] of todo.entries()) {
     const jan = store.cities[location.slug].days['01-15'];
     console.log(`✅ ${location.name}: Jan 15 ≈ ${jan[0]}/${jan[1]}°C, Jul 15 ≈ ${jul[0]}/${jul[1]}°C`);
   } catch (error) {
-    // 429 = rate limit for today; stop cleanly and let the next run resume
-    console.warn(`⏸️  ${location.name}: ${error.message.slice(0, 120)} — stopping, will resume next run`);
-    break;
+    // A rate limit ends this run (the next run resumes); any other failure
+    // skips just this city so one bad location can't stall the backfill.
+    if (/429|limit/i.test(error.message)) {
+      console.warn(`⏸️  ${location.name}: ${error.message.slice(0, 120)} — rate limited, will resume next run`);
+      break;
+    }
+    console.warn(`⚠️  ${location.name}: ${error.message.slice(0, 120)} — skipped, will retry next run`);
   }
 }
 

@@ -143,21 +143,43 @@ function fold(text) {
 function setupSearch() {
   const input = document.getElementById('city-search');
   const noMatch = document.getElementById('no-match');
+  const popular = document.getElementById('popular');
+  const moreLabel = document.getElementById('more-label');
   const regions = [...document.querySelectorAll('.region')];
+  let openBeforeSearch = null;
 
   input.addEventListener('input', () => {
     const query = fold(input.value.trim());
+
+    if (!query) {
+      // Back to the resting layout: popular row, regions as they were
+      popular.hidden = moreLabel.hidden = false;
+      regions.forEach((region, i) => {
+        region.hidden = false;
+        region.open = openBeforeSearch ? openBeforeSearch[i] : false;
+        region.querySelectorAll('.city').forEach(city => { city.hidden = false; });
+      });
+      openBeforeSearch = null;
+      noMatch.hidden = true;
+      return;
+    }
+
+    // Searching: hide the popular duplicates, open every region with a match
+    if (!openBeforeSearch) openBeforeSearch = regions.map(region => region.open);
+    popular.hidden = moreLabel.hidden = true;
     const visible = [];
 
     regions.forEach(region => {
-      const regionMatch = fold(region.dataset.region).includes(query);
+      // A region matches by its start ("can" → Canada), never mid-word
+      const regionMatch = query.length >= 3 && fold(region.dataset.region).startsWith(query);
       let regionShown = 0;
       region.querySelectorAll('.city').forEach(city => {
-        const match = !query || regionMatch || fold(city.dataset.name).includes(query);
+        const match = regionMatch || fold(city.dataset.name).includes(query);
         city.hidden = !match;
         if (match) { regionShown++; visible.push(city); }
       });
       region.hidden = regionShown === 0;
+      region.open = regionShown > 0;
     });
 
     if (visible.length === 1) showWeek(visible[0].dataset.slug);
@@ -176,7 +198,7 @@ function setupSearch() {
   // Enter picks the city when the search narrows to exactly one
   input.addEventListener('keydown', event => {
     if (event.key !== 'Enter') return;
-    const visible = [...document.querySelectorAll('.city:not([hidden])')];
+    const visible = [...document.querySelectorAll('.region:not([hidden]) .city:not([hidden])')];
     if (visible.length === 1) visible[0].click();
   });
 }
@@ -197,7 +219,7 @@ async function loadWeek() {
     showWeek(home.slug);
   } catch (error) {
     console.warn('Could not load the week preview:', error.message);
-    document.querySelector('.week').hidden = true;
+    // No data: the week preview stays hidden (it starts hidden in the HTML)
   }
 }
 
@@ -206,6 +228,7 @@ function showWeek(slug) {
   if (!city || city.slug === showWeek.current) return;
   showWeek.current = city.slug;
 
+  document.getElementById('week').hidden = false;
   const days = document.getElementById('week-days');
   days.replaceChildren(...city.week.map(day => {
     const date = new Date(`${day.date}T12:00:00Z`);
