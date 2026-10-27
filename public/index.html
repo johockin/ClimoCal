@@ -3,489 +3,676 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClimoCal - Weather in your calendar</title>
-    <meta name="description" content="Weather forecasts that live in your calendar. Set it and forget it - automatically updating weather for your city.">
-    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌤️</text></svg>">
+    <title>ClimoCal: Add Weather to Apple Calendar, Google Calendar &amp; Outlook (Free)</title>
+    <meta name="description" content="Free weather in your calendar. Subscribe once and every day shows the forecast (☀️ 22°/15°), 16 days out, then typical weather for the rest of the year. Apple Calendar, Google Calendar, Outlook. No app, no account.">
+    <link rel="canonical" href="https://climocal.johnnyhockin.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://climocal.johnnyhockin.com/">
+    <meta property="og:title" content="ClimoCal: weather on every day of your calendar">
+    <meta property="og:description" content="Subscribe once. Every day in your calendar shows the weather. Free, no app, no account.">
+    <meta property="og:image" content="https://climocal.johnnyhockin.com/og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌤️</text></svg>">
+    <link rel="preload" href="status.json" as="fetch" crossorigin>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "name": "ClimoCal",
+          "url": "https://climocal.johnnyhockin.com/",
+          "description": "Free subscribable weather calendars: a daily forecast 16 days out, then typical weather for every day of the year, in Apple Calendar, Google Calendar and Outlook.",
+          "applicationCategory": "UtilitiesApplication",
+          "operatingSystem": "iOS, macOS, Android, Windows, Web",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+          "author": { "@type": "Person", "name": "Johnny Hockin", "url": "https://johnnyhockin.com" }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "How do I add weather to Apple Calendar?",
+              "acceptedAnswer": { "@type": "Answer", "text": "On ClimoCal, choose Apple Calendar and tap your city. Calendar asks whether to subscribe; tap Subscribe. On iPhone the forecast appears on every day in the Calendar app. It updates by itself; on a Mac, right-click the calendar and choose Get Info to set how often." } },
+            { "@type": "Question", "name": "How do I add weather to Google Calendar?",
+              "acceptedAnswer": { "@type": "Answer", "text": "On a computer, choose Google Calendar on ClimoCal and click your city. Google Calendar opens with the weather calendar ready to add. Once added it syncs to the Google Calendar app on your phone. Google refreshes subscribed calendars on its own schedule, usually about once a day." } },
+            { "@type": "Question", "name": "How do I add weather to Outlook?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Choose Outlook and click your city to subscribe in Outlook on the web. For a work or school account, choose Something else to copy the link, then in Outlook go to Add calendar, Subscribe from web, and paste it." } },
+            { "@type": "Question", "name": "What does ≈ mean on some days?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Past the 16-day forecast, each day shows typical weather for that date, the average of the last 10 years. It is marked ≈ so you never mistake it for a forecast. The real forecast replaces it about 16 days out." } },
+            { "@type": "Question", "name": "Does it cost anything?",
+              "acceptedAnswer": { "@type": "Answer", "text": "No. ClimoCal is free, with no account and no tracking. Weather data comes from Open-Meteo." } }
+          ]
+        }
+      ]
+    }
+    </script>
     <style>
+        :root {
+            --ink: #1d1d1f;
+            --muted: #6e6e73;
+            --line: #d2d2d7;
+            --soft: #f5f5f7;
+            --event-bg: #fde6cf;     /* Apple Calendar's orange all-day event */
+            --event-ink: #8f4210;
+            --accent: #f08a24;
+            --warn: #b4410c;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background: #f5f5f7;
-            min-height: 100vh;
-            color: #1d1d1f;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #fff;
+            color: var(--ink);
+            font-size: 17px;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
-        
-        .container {
-            max-width: 1000px;
+
+        a {
+            color: inherit;
+        }
+
+        :focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .page {
+            max-width: 720px;
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: 28px 24px 64px;
         }
-        
-        /* Hero Section - mimics the calendar app */
-        .hero-calendar {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-            overflow: hidden;
-            margin-bottom: 80px;
-        }
-        
-        .calendar-day-header {
-            padding: 24px 32px;
-            background: white;
-            border-bottom: 1px solid #f0f0f0;
-        }
-        
-        .calendar-day-header h1 {
-            font-size: 32px;
+
+        /* --- Top ------------------------------------------------------- */
+
+        .wordmark {
+            font-size: 17px;
             font-weight: 600;
-            color: #1d1d1f;
-            margin: 0;
+            margin-bottom: 36px;
         }
-        
-        .weather-event {
-            background: #ff9500;
-            padding: 24px 32px;
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-        
-        .weather-emoji {
-            font-size: 32px;
-        }
-        
-        .weather-temp {
-            font-size: 32px;
-            font-weight: 500;
-            color: white;
-        }
-        
-        .calendar-mini-grid {
-            padding: 32px;
-            background: #fafafa;
-        }
-        
-        /* Logo and Tagline */
-        .branding {
-            text-align: center;
-            margin-bottom: 80px;
-        }
-        
-        .logo-text {
-            font-size: 56px;
+
+        h1 {
+            font-size: 40px;
+            line-height: 1.1;
             font-weight: 700;
-            color: #ff9500;
-            margin-bottom: 16px;
-        }
-        
-        .main-tagline {
-            font-size: 24px;
-            color: #1d1d1f;
-            margin-bottom: 8px;
-        }
-        
-        .sub-tagline {
-            font-size: 18px;
-            color: #86868b;
-        }
-        
-        /* Content sections */
-        .content-section {
-            margin-bottom: 60px;
-        }
-        
-        .content-section h2 {
-            font-size: 28px;
-            font-weight: 600;
-            color: #1d1d1f;
-            margin-bottom: 16px;
-        }
-        
-        .content-section p {
-            font-size: 17px;
-            line-height: 1.6;
-            color: #424245;
-            margin-bottom: 16px;
-        }
-        
-        /* Example weather display */
-        .weather-example {
-            background: white;
-            border-radius: 16px;
-            padding: 32px;
-            margin: 32px 0;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-        }
-        
-        .weather-example-row {
-            font-size: 28px;
-            margin: 12px 0;
-            font-weight: 500;
-            color: #1d1d1f;
-        }
-        
-        /* Simple numbered list */
-        .simple-list {
-            margin: 24px 0;
-            padding-left: 0;
-            list-style: none;
-        }
-        
-        .simple-list li {
-            font-size: 17px;
-            line-height: 1.8;
-            color: #424245;
+            letter-spacing: -0.02em;
+            max-width: 15em;
             margin-bottom: 12px;
-            padding-left: 32px;
-            position: relative;
         }
-        
-        .simple-list li:before {
-            content: attr(data-number);
-            position: absolute;
-            left: 0;
-            color: #86868b;
-            font-weight: 600;
-        }
-        
-        /* Subscribe section */
-        .subscribe-section {
-            background: white;
-            border-radius: 20px;
-            padding: 48px;
-            margin: 60px 0;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-        }
-        
-        .subscribe-section h2 {
-            font-size: 32px;
-            font-weight: 600;
-            color: #1d1d1f;
+
+        .lede {
+            font-size: 19px;
+            color: var(--muted);
             margin-bottom: 32px;
+        }
+
+        /* --- Live week: the page's one visual, real forecast chips ------ */
+
+        .week {
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 16px 16px 14px;
+            margin-bottom: 44px;
+        }
+
+        .week-days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 6px;
+            min-height: 58px;
+        }
+
+        .week-day {
+            font-size: 13px;
+            color: var(--muted);
             text-align: center;
         }
-        
-        .cities-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 12px;
-            margin-bottom: 32px;
-        }
-        
-        .city-item {
-            position: relative;
-        }
-        
-        .city-btn {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 16px 20px;
-            background: #f5f5f7;
-            border: none;
-            border-radius: 12px;
-            text-decoration: none;
-            color: #1d1d1f;
-            font-size: 16px;
-            font-weight: 500;
-            transition: all 0.2s;
-            cursor: pointer;
-            width: 100%;
-        }
-        
-        .city-btn:hover {
-            background: #ff9500;
-            color: white;
-            transform: scale(1.02);
-        }
-        
-        .city-btn .arrow {
-            color: #86868b;
-            transition: color 0.2s;
-        }
-        
-        .city-btn:hover .arrow {
-            color: white;
-        }
-        
-        .subscribe-options {
-            display: none;
-            background: white;
-            border: 1px solid #e8e8ed;
-            border-radius: 12px;
-            padding: 16px;
-            margin-top: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            animation: slideDown 0.3s ease-out;
-        }
-        
-        .subscribe-options.active {
+
+        .week-day strong {
             display: block;
+            color: var(--ink);
+            font-weight: 500;
+            margin-bottom: 6px;
         }
-        
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+
+        .event {
+            display: block;
+            background: var(--event-bg);
+            color: var(--event-ink);
+            font-weight: 600;
+            font-size: 14px;
+            border-radius: 6px;
+            padding: 5px 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
-        
-        .copy-url-section p {
-            font-size: 13px;
-            color: #86868b;
+
+        .event .rain {
+            display: block;
+            font-weight: 500;
+            font-size: 12px;
+        }
+
+        .week-caption {
+            font-size: 14px;
+            color: var(--muted);
+            margin-top: 12px;
+        }
+
+        .week-caption.stale {
+            color: var(--warn);
+        }
+
+        /* --- The two steps --------------------------------------------- */
+
+        .step {
+            display: grid;
+            grid-template-columns: 36px 1fr;
+            column-gap: 14px;
+            margin-bottom: 32px;
+        }
+
+        .step-num {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--ink);
+            color: #fff;
+            font-weight: 600;
+            font-size: 16px;
+            display: grid;
+            place-items: center;
+            margin-top: 1px;
+        }
+
+        .step h2 {
+            font-size: 22px;
+            line-height: 1.35;
+            font-weight: 600;
+            margin-bottom: 14px;
+        }
+
+        .step-body {
+            grid-column: 2;
+        }
+
+        .app-picker {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+        }
+
+        .app-picker button {
+            border: 1px solid var(--line);
+            background: #fff;
+            border-radius: 10px;
+            padding: 12px 8px;
+            font: inherit;
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--ink);
+            cursor: pointer;
+        }
+
+        .app-picker button:hover {
+            border-color: var(--ink);
+        }
+
+        .app-picker button[aria-pressed="true"] {
+            background: var(--ink);
+            border-color: var(--ink);
+            color: #fff;
+        }
+
+        .after {
+            color: var(--muted);
+            font-size: 16px;
+            margin: -6px 0 18px;
+        }
+
+        .city-search {
+            display: block;
+            width: 100%;
+            padding: 12px 16px;
+            font: inherit;
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            background: var(--soft);
+            color: var(--ink);
+            margin-bottom: 22px;
+        }
+
+        .city-search:focus {
+            background: #fff;
+            border-color: var(--ink);
+            outline: none;
+        }
+
+        .region {
+            margin-bottom: 18px;
+        }
+
+        .region h3 {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--muted);
             margin-bottom: 8px;
         }
-        
-        .calendar-url {
-            width: 100%;
-            padding: 8px 12px;
-            border: 1px solid #e8e8ed;
-            border-radius: 8px;
-            background: #f5f5f7;
-            font-size: 12px;
-            font-family: Monaco, 'Courier New', monospace;
-            margin-bottom: 12px;
+
+        .region-cities {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
         }
-        
-        .copy-btn {
-            background: #ff9500;
-            color: white;
-            border: none;
+
+        .city {
+            display: inline-flex;
+            align-items: center;
+            min-height: 40px;
+            padding: 0 15px;
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            text-decoration: none;
+            color: var(--ink);
+            font-size: 16px;
+            background: #fff;
+        }
+
+        .city:hover {
+            background: var(--event-bg);
+            border-color: var(--event-bg);
+            color: var(--event-ink);
+        }
+
+        .city.done {
+            background: var(--ink);
+            border-color: var(--ink);
+            color: #fff;
+        }
+
+        [hidden] {
+            display: none !important;
+        }
+
+        .no-match, .copy-fallback {
+            font-size: 16px;
+            margin-bottom: 18px;
+        }
+
+        .copy-fallback input {
+            display: block;
+            width: 100%;
+            margin-top: 8px;
+            padding: 10px 12px;
+            font: inherit;
+            font-size: 14px;
+            border: 1px solid var(--line);
             border-radius: 8px;
-            padding: 8px 16px;
-            font-size: 13px;
+        }
+
+        .request {
+            font-size: 15px;
+            color: var(--muted);
+        }
+
+        /* --- Below the fold: story, questions ---------------------------- */
+
+        .story, .faq {
+            border-top: 1px solid var(--line);
+            padding-top: 40px;
+            margin-top: 24px;
+            margin-bottom: 40px;
+        }
+
+        .story h2, .faq h2 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 14px;
+        }
+
+        .story p {
+            color: #424245;
+            margin-bottom: 14px;
+            max-width: 36em;
+        }
+
+        .faq details {
+            border-bottom: 1px solid #e8e8ed;
+            padding: 14px 0;
+        }
+
+        .faq summary {
             font-weight: 500;
             cursor: pointer;
-            transition: all 0.15s;
         }
-        
-        .copy-btn:hover {
-            background: #e8860a;
-            transform: translateY(-1px);
-        }
-        
-        .subscribe-note {
-            text-align: center;
-            color: #86868b;
-            font-size: 15px;
-        }
-        
-        /* Stats */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 24px;
-            margin: 48px 0;
-        }
-        
-        .stat {
-            text-align: center;
-            padding: 24px;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
-        }
-        
-        .stat-number {
-            font-size: 36px;
-            font-weight: 600;
-            color: #ff9500;
-            margin-bottom: 8px;
-        }
-        
-        .stat-label {
-            font-size: 14px;
-            color: #86868b;
-        }
-        
-        /* Footer */
-        .footer {
-            text-align: center;
-            padding: 48px 0;
-            color: #86868b;
-            font-size: 15px;
-            border-top: 1px solid #e8e8ed;
-            margin-top: 80px;
-        }
-        
-        .footer a {
+
+        .faq details p {
             color: #424245;
-            text-decoration: none;
+            margin-top: 10px;
+            max-width: 36em;
         }
-        
-        .footer a:hover {
-            color: #ff9500;
+
+        .footer {
+            font-size: 15px;
+            color: var(--muted);
+            padding-top: 24px;
         }
-        
-        #locations-loading {
-            text-align: center;
-            color: #86868b;
-            font-size: 16px;
-            padding: 60px 20px;
+
+        .toast {
+            position: fixed;
+            left: 50%;
+            bottom: 24px;
+            transform: translateX(-50%);
+            background: var(--ink);
+            color: #fff;
+            padding: 12px 18px;
+            border-radius: 10px;
+            font-size: 15px;
+            max-width: calc(100% - 32px);
+            z-index: 10;
         }
-        
-        @media (max-width: 680px) {
-            .container {
-                padding: 40px 20px;
+
+        @media (max-width: 640px) {
+            .page {
+                padding: 20px 16px 48px;
             }
-            
-            .logo-text {
-                font-size: 42px;
+
+            h1 {
+                font-size: 31px;
             }
-            
-            .main-tagline {
+
+            .lede {
+                font-size: 17px;
+                margin-bottom: 24px;
+            }
+
+            /* Four days fit a phone; the rest is still in the calendar */
+            .week-days {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .week-day:nth-child(n+5) {
+                display: none;
+            }
+
+            .step {
+                grid-template-columns: 30px 1fr;
+                column-gap: 10px;
+            }
+
+            .step-num {
+                width: 28px;
+                height: 28px;
+                font-size: 15px;
+            }
+
+            .step-body {
+                grid-column: 1 / -1;
+            }
+
+            .step h2 {
                 font-size: 20px;
+                margin-bottom: 12px;
             }
-            
-            .cities-grid {
-                grid-template-columns: 1fr;
+
+            .wordmark {
+                margin-bottom: 24px;
             }
-            
-            .stats-grid {
+
+            .week {
+                margin-bottom: 32px;
+            }
+
+            .app-picker {
                 grid-template-columns: 1fr 1fr;
-            }
-            
-            .weather-event {
-                padding: 20px 24px;
-            }
-            
-            .weather-temp, .weather-emoji {
-                font-size: 28px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Hero that looks like a calendar app -->
-        <div class="hero-calendar">
-            <div class="calendar-day-header">
-                <h1 id="current-date">Wednesday, August 27</h1>
+    <main class="page">
+        <div class="wordmark">🌤️ ClimoCal</div>
+
+        <h1>Weather on every day of your calendar.</h1>
+        <p class="lede">Free. No app, no account. Subscribe once and it keeps itself up to date.</p>
+
+        <!-- Live preview: the visitor's city this week, as calendar events (filled from status.json) -->
+        <figure class="week" aria-live="polite">
+            <div class="week-days" id="week-days"></div>
+            <figcaption class="week-caption" id="week-caption">This is how the weather shows up in your calendar.</figcaption>
+        </figure>
+
+        <section class="step" aria-labelledby="step1-title">
+            <div class="step-num" aria-hidden="true">1</div>
+            <h2 id="step1-title">Which calendar do you use?</h2>
+            <div class="step-body">
+                <div class="app-picker" role="group" aria-labelledby="step1-title">
+                    <button type="button" data-app="apple" aria-pressed="true">Apple Calendar</button>
+                    <button type="button" data-app="google" aria-pressed="false">Google Calendar</button>
+                    <button type="button" data-app="outlook" aria-pressed="false">Outlook</button>
+                    <button type="button" data-app="copy" aria-pressed="false">Something else</button>
+                </div>
             </div>
-            <div class="weather-event">
-                <span class="weather-emoji" id="hero-emoji">☁️</span>
-                <span class="weather-temp" id="hero-temp">23°/10°</span>
+        </section>
+
+        <section class="step" aria-labelledby="step2-title" id="get-it">
+            <div class="step-num" aria-hidden="true">2</div>
+            <h2 id="step2-title">Tap your city to add it to Apple Calendar.</h2>
+            <div class="step-body">
+                <p class="after" id="after">Calendar asks you to confirm. Tap Subscribe and you're done.</p>
+
+                <input type="search" class="city-search" id="city-search" placeholder="Find your city" aria-label="Find your city" autocomplete="off">
+
+                <div id="cities">
+<!-- CITIES:START (generated by scripts/generate-calendars.js from data/locations.json) -->
+<div class="region" data-region="Canada">
+  <h3>Canada</h3>
+  <div class="region-cities">
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/toronto.ics" data-slug="toronto" data-name="Toronto">Toronto</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/vancouver.ics" data-slug="vancouver" data-name="Vancouver">Vancouver</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/montreal.ics" data-slug="montreal" data-name="Montreal">Montreal</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/calgary.ics" data-slug="calgary" data-name="Calgary">Calgary</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/ottawa.ics" data-slug="ottawa" data-name="Ottawa">Ottawa</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/edmonton.ics" data-slug="edmonton" data-name="Edmonton">Edmonton</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/winnipeg.ics" data-slug="winnipeg" data-name="Winnipeg">Winnipeg</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/quebec-city.ics" data-slug="quebec-city" data-name="Quebec City">Quebec City</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/halifax.ics" data-slug="halifax" data-name="Halifax">Halifax</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/victoria.ics" data-slug="victoria" data-name="Victoria">Victoria</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/hamilton.ics" data-slug="hamilton" data-name="Hamilton">Hamilton</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/saskatoon.ics" data-slug="saskatoon" data-name="Saskatoon">Saskatoon</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/regina.ics" data-slug="regina" data-name="Regina">Regina</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/st-johns.ics" data-slug="st-johns" data-name="St. John's">St. John's</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/kelowna.ics" data-slug="kelowna" data-name="Kelowna">Kelowna</a>
+  </div>
+</div>
+<div class="region" data-region="United States">
+  <h3>United States</h3>
+  <div class="region-cities">
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/new-york.ics" data-slug="new-york" data-name="New York">New York</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/los-angeles.ics" data-slug="los-angeles" data-name="Los Angeles">Los Angeles</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/chicago.ics" data-slug="chicago" data-name="Chicago">Chicago</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/houston.ics" data-slug="houston" data-name="Houston">Houston</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/phoenix.ics" data-slug="phoenix" data-name="Phoenix">Phoenix</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/philadelphia.ics" data-slug="philadelphia" data-name="Philadelphia">Philadelphia</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/san-antonio.ics" data-slug="san-antonio" data-name="San Antonio">San Antonio</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/san-diego.ics" data-slug="san-diego" data-name="San Diego">San Diego</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/dallas.ics" data-slug="dallas" data-name="Dallas">Dallas</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/austin.ics" data-slug="austin" data-name="Austin">Austin</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/san-francisco.ics" data-slug="san-francisco" data-name="San Francisco">San Francisco</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/seattle.ics" data-slug="seattle" data-name="Seattle">Seattle</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/denver.ics" data-slug="denver" data-name="Denver">Denver</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/washington-dc.ics" data-slug="washington-dc" data-name="Washington, DC">Washington, DC</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/boston.ics" data-slug="boston" data-name="Boston">Boston</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/nashville.ics" data-slug="nashville" data-name="Nashville">Nashville</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/atlanta.ics" data-slug="atlanta" data-name="Atlanta">Atlanta</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/miami.ics" data-slug="miami" data-name="Miami">Miami</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/orlando.ics" data-slug="orlando" data-name="Orlando">Orlando</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/las-vegas.ics" data-slug="las-vegas" data-name="Las Vegas">Las Vegas</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/portland.ics" data-slug="portland" data-name="Portland">Portland</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/minneapolis.ics" data-slug="minneapolis" data-name="Minneapolis">Minneapolis</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/detroit.ics" data-slug="detroit" data-name="Detroit">Detroit</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/new-orleans.ics" data-slug="new-orleans" data-name="New Orleans">New Orleans</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/salt-lake-city.ics" data-slug="salt-lake-city" data-name="Salt Lake City">Salt Lake City</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/honolulu.ics" data-slug="honolulu" data-name="Honolulu">Honolulu</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/anchorage.ics" data-slug="anchorage" data-name="Anchorage">Anchorage</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/charlotte.ics" data-slug="charlotte" data-name="Charlotte">Charlotte</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/pittsburgh.ics" data-slug="pittsburgh" data-name="Pittsburgh">Pittsburgh</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/albuquerque.ics" data-slug="albuquerque" data-name="Albuquerque">Albuquerque</a>
+  </div>
+</div>
+<div class="region" data-region="Latin America">
+  <h3>Latin America</h3>
+  <div class="region-cities">
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/mexico-city.ics" data-slug="mexico-city" data-name="Mexico City">Mexico City</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/guadalajara.ics" data-slug="guadalajara" data-name="Guadalajara">Guadalajara</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/cancun.ics" data-slug="cancun" data-name="Cancún">Cancún</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/sao-paulo.ics" data-slug="sao-paulo" data-name="São Paulo">São Paulo</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/rio-de-janeiro.ics" data-slug="rio-de-janeiro" data-name="Rio de Janeiro">Rio de Janeiro</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/buenos-aires.ics" data-slug="buenos-aires" data-name="Buenos Aires">Buenos Aires</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/santiago.ics" data-slug="santiago" data-name="Santiago">Santiago</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/lima.ics" data-slug="lima" data-name="Lima">Lima</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/bogota.ics" data-slug="bogota" data-name="Bogotá">Bogotá</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/medellin.ics" data-slug="medellin" data-name="Medellín">Medellín</a>
+  </div>
+</div>
+<div class="region" data-region="Europe">
+  <h3>Europe</h3>
+  <div class="region-cities">
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/london.ics" data-slug="london" data-name="London">London</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/paris.ics" data-slug="paris" data-name="Paris">Paris</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/berlin.ics" data-slug="berlin" data-name="Berlin">Berlin</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/madrid.ics" data-slug="madrid" data-name="Madrid">Madrid</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/barcelona.ics" data-slug="barcelona" data-name="Barcelona">Barcelona</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/lisbon.ics" data-slug="lisbon" data-name="Lisbon">Lisbon</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/rome.ics" data-slug="rome" data-name="Rome">Rome</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/milan.ics" data-slug="milan" data-name="Milan">Milan</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/amsterdam.ics" data-slug="amsterdam" data-name="Amsterdam">Amsterdam</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/brussels.ics" data-slug="brussels" data-name="Brussels">Brussels</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/dublin.ics" data-slug="dublin" data-name="Dublin">Dublin</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/edinburgh.ics" data-slug="edinburgh" data-name="Edinburgh">Edinburgh</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/manchester.ics" data-slug="manchester" data-name="Manchester">Manchester</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/copenhagen.ics" data-slug="copenhagen" data-name="Copenhagen">Copenhagen</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/stockholm.ics" data-slug="stockholm" data-name="Stockholm">Stockholm</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/oslo.ics" data-slug="oslo" data-name="Oslo">Oslo</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/helsinki.ics" data-slug="helsinki" data-name="Helsinki">Helsinki</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/reykjavik.ics" data-slug="reykjavik" data-name="Reykjavík">Reykjavík</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/vienna.ics" data-slug="vienna" data-name="Vienna">Vienna</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/prague.ics" data-slug="prague" data-name="Prague">Prague</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/budapest.ics" data-slug="budapest" data-name="Budapest">Budapest</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/warsaw.ics" data-slug="warsaw" data-name="Warsaw">Warsaw</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/athens.ics" data-slug="athens" data-name="Athens">Athens</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/zurich.ics" data-slug="zurich" data-name="Zurich">Zurich</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/munich.ics" data-slug="munich" data-name="Munich">Munich</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/istanbul.ics" data-slug="istanbul" data-name="Istanbul">Istanbul</a>
+  </div>
+</div>
+<div class="region" data-region="Middle East &amp; Africa">
+  <h3>Middle East &amp; Africa</h3>
+  <div class="region-cities">
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/dubai.ics" data-slug="dubai" data-name="Dubai">Dubai</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/tel-aviv.ics" data-slug="tel-aviv" data-name="Tel Aviv">Tel Aviv</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/cairo.ics" data-slug="cairo" data-name="Cairo">Cairo</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/marrakesh.ics" data-slug="marrakesh" data-name="Marrakesh">Marrakesh</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/cape-town.ics" data-slug="cape-town" data-name="Cape Town">Cape Town</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/johannesburg.ics" data-slug="johannesburg" data-name="Johannesburg">Johannesburg</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/nairobi.ics" data-slug="nairobi" data-name="Nairobi">Nairobi</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/lagos.ics" data-slug="lagos" data-name="Lagos">Lagos</a>
+  </div>
+</div>
+<div class="region" data-region="Asia">
+  <h3>Asia</h3>
+  <div class="region-cities">
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/tokyo.ics" data-slug="tokyo" data-name="Tokyo">Tokyo</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/osaka.ics" data-slug="osaka" data-name="Osaka">Osaka</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/seoul.ics" data-slug="seoul" data-name="Seoul">Seoul</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/shanghai.ics" data-slug="shanghai" data-name="Shanghai">Shanghai</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/beijing.ics" data-slug="beijing" data-name="Beijing">Beijing</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/hong-kong.ics" data-slug="hong-kong" data-name="Hong Kong">Hong Kong</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/taipei.ics" data-slug="taipei" data-name="Taipei">Taipei</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/singapore.ics" data-slug="singapore" data-name="Singapore">Singapore</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/bangkok.ics" data-slug="bangkok" data-name="Bangkok">Bangkok</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/bali.ics" data-slug="bali" data-name="Bali">Bali</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/manila.ics" data-slug="manila" data-name="Manila">Manila</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/ho-chi-minh-city.ics" data-slug="ho-chi-minh-city" data-name="Ho Chi Minh City">Ho Chi Minh City</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/kuala-lumpur.ics" data-slug="kuala-lumpur" data-name="Kuala Lumpur">Kuala Lumpur</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/mumbai.ics" data-slug="mumbai" data-name="Mumbai">Mumbai</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/delhi.ics" data-slug="delhi" data-name="Delhi">Delhi</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/bangalore.ics" data-slug="bangalore" data-name="Bangalore">Bangalore</a>
+  </div>
+</div>
+<div class="region" data-region="Oceania">
+  <h3>Oceania</h3>
+  <div class="region-cities">
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/sydney.ics" data-slug="sydney" data-name="Sydney">Sydney</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/melbourne.ics" data-slug="melbourne" data-name="Melbourne">Melbourne</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/brisbane.ics" data-slug="brisbane" data-name="Brisbane">Brisbane</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/perth.ics" data-slug="perth" data-name="Perth">Perth</a>
+    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/auckland.ics" data-slug="auckland" data-name="Auckland">Auckland</a>
+  </div>
+</div>
+<!-- CITIES:END -->
+                </div>
+
+                <p class="no-match" id="no-match" hidden></p>
+                <div class="copy-fallback" id="copy-fallback" hidden>
+                    Copy this link and paste it into your calendar app:
+                    <input type="text" readonly id="copy-fallback-url" aria-label="Calendar link">
+                </div>
+                <p class="request">City not listed? <a id="request-link" href="https://github.com/johockin/ClimoCal/issues/new?title=City%20request%3A%20">Ask for it</a> and I'll add it.</p>
             </div>
-        </div>
-        
-        <!-- Simple branding -->
-        <div class="branding">
-            <div class="logo-text">ClimoCal</div>
-            <div class="main-tagline">Weather in your calendar.</div>
-            <div class="sub-tagline">No app. No widgets. Just works.</div>
-        </div>
-        
-        <!-- The Problem -->
-        <div class="content-section">
-            <h2>Why I Built This</h2>
-            <p>
-                I'm a film producer. We plan shoots months ahead. I live in my calendar app, scheduling crew, locations, equipment. Weather determines everything - can we shoot exteriors? Do we need rain covers? Should we push the shoot day?
-            </p>
-            <p>
-                I kept switching between calendar and weather apps like an idiot. Apple Calendar only shows weather if an event has a location. Google Calendar killed their weather feature. The services that exist are broken, limited to 7 days, or want $5/month for something that should be free.
-            </p>
-            <p>
-                I just wanted to glance at next Tuesday and see if it's going to rain. That's it.
-            </p>
-        </div>
-        
-        <!-- The Solution -->
-        <div class="content-section">
-            <h2>What It Does</h2>
-            <p>
-                ClimoCal puts weather in your calendar. Subscribe once, get weather forever.
-            </p>
-            
-            <div class="weather-example">
-                <div class="weather-example-row">☀️ 22°/15°</div>
-                <div class="weather-example-row">⛅ 24°/17°</div>
-                <div class="weather-example-row">🌧️ 18°/12°</div>
-            </div>
-            
-            <p>
-                That's it. Just emoji and temperatures. 16-day forecast. Updates every morning. Free forever.
-            </p>
-        </div>
-        
-        <!-- How it works -->
-        <div class="content-section">
-            <h2>How It Works</h2>
-            <ol class="simple-list">
-                <li data-number="1.">Click subscribe below</li>
-                <li data-number="2.">Your calendar adds the subscription</li>
-                <li data-number="3.">Weather appears every day</li>
-                <li data-number="4.">It updates automatically</li>
-                <li data-number="5.">That's literally it</li>
-            </ol>
-            <p style="margin-top: 24px; color: #86868b;">
-                Technical: ~50 lines of JavaScript, GitHub Actions, Open-Meteo weather data.
-            </p>
-        </div>
-        
-        <!-- Subscribe -->
-        <div class="subscribe-section">
-            <h2>Get It</h2>
-            <p class="subscribe-note" style="text-align: center; margin-bottom: 24px;">
-                Click any city for Apple Calendar. <br />For Google Calendar or Outlook, right-click and copy link.
-            </p>
-            <div id="locations-loading">Loading cities...</div>
-            <div class="cities-grid" id="locations-container">
-                <!-- Cities will be loaded dynamically -->
-            </div>
-            <p class="subscribe-note">
-                Need a different city? Let me know.
-            </p>
-            <div style="margin-top: 24px; padding: 20px; background: #f5f5f7; border-radius: 12px;">
-                <p style="font-size: 15px; font-weight: 500; color: #1d1d1f; margin-bottom: 12px;">For best results:</p>
-                <ul style="font-size: 14px; color: #424245; margin: 0; padding-left: 20px; line-height: 1.6;">
-                    <li>Set calendar to refresh daily</li>
-                    <li>Turn off all alerts/notifications</li>
-                </ul>
-            </div>
-        </div>
-        
-        <!-- Stats -->
-        <div class="stats-grid">
-            <div class="stat">
-                <div class="stat-number">16</div>
-                <div class="stat-label">day forecast</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">~50</div>
-                <div class="stat-label">lines of code</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">$0</div>
-                <div class="stat-label">per month</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">3hrs</div>
-                <div class="stat-label">to build</div>
-            </div>
-        </div>
-        
-        <!-- Footer -->
-        <div class="footer">
-            <p>
-                Built in an afternoon because I needed it.<br><br>
-                <a href="https://github.com/johockin/ClimoCal">GitHub</a> &nbsp;·&nbsp; 
-                <a href="https://johnnyhockin.com">Johnny Hockin</a> &nbsp;·&nbsp; 
-                <a href="https://open-meteo.com">Weather by Open-Meteo</a>
-            </p>
-        </div>
-    </div>
-    
-    <script src="app.js"></script>
+        </section>
+
+        <section class="story">
+            <h2>Why I made this</h2>
+            <p>I'm a film producer. We plan shoots months ahead. I live in my calendar app, scheduling crew, locations, equipment. Weather determines everything: can we shoot exteriors? Do we need rain covers? Should we push the shoot day?</p>
+            <p>I kept switching between calendar and weather apps. Apple Calendar only shows weather if an event has a location. Google Calendar killed their weather feature. The services that exist are broken, limited to 7 days, or want $5/month for something that should be free.</p>
+            <p>I just wanted to glance at next Tuesday and see if it's going to rain. So every day shows the forecast for 16 days out, then the typical weather for that date, marked ≈, out to a year. It updates every morning.</p>
+        </section>
+
+        <!-- Mirrors the FAQPage structured data in <head> -->
+        <section class="faq">
+            <h2>Questions</h2>
+            <details>
+                <summary>How do I add weather to Apple Calendar?</summary>
+                <p>Choose Apple Calendar above and tap your city. Calendar asks whether to subscribe; tap Subscribe. On iPhone the forecast appears on every day in the Calendar app. It updates by itself; on a Mac, right-click the calendar and choose Get Info to set how often.</p>
+            </details>
+            <details>
+                <summary>How do I add weather to Google Calendar?</summary>
+                <p>On a computer, choose Google Calendar above and click your city. Google Calendar opens with the weather calendar ready to add. Once added it syncs to the Google Calendar app on your phone. Google refreshes subscribed calendars on its own schedule, usually about once a day.</p>
+            </details>
+            <details>
+                <summary>How do I add weather to Outlook?</summary>
+                <p>Choose Outlook and click your city to subscribe in Outlook on the web. For a work or school account, choose Something else to copy the link, then in Outlook go to Add calendar, Subscribe from web, and paste it.</p>
+            </details>
+            <details>
+                <summary>What does ≈ mean on some days?</summary>
+                <p>Past the 16-day forecast, each day shows typical weather for that date, the average of the last 10 years. It's marked ≈ so you never mistake it for a forecast. The real forecast replaces it about 16 days out.</p>
+            </details>
+            <details>
+                <summary>What does 💧 mean?</summary>
+                <p>A 40% or higher chance of rain or snow that day, with the percentage. Tap any day in your calendar for wind, UV, sunrise and sunset.</p>
+            </details>
+            <details>
+                <summary>Does it cost anything?</summary>
+                <p>No. No account, no tracking. Weather data comes from <a href="https://open-meteo.com">Open-Meteo</a>.</p>
+            </details>
+        </section>
+
+        <footer class="footer">
+            Made by <a href="https://johnnyhockin.com">Johnny Hockin</a>. Weather from <a href="https://open-meteo.com">Open-Meteo</a>. <a href="https://github.com/johockin/ClimoCal">Source on GitHub</a>.
+        </footer>
+    </main>
+
+    <script src="app.js" defer></script>
 </body>
 </html>

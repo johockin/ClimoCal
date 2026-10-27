@@ -2,41 +2,27 @@
 
 **Weather in your calendar. No app. No widgets. Just works.**
 
-Get 16-day weather forecasts directly in your calendar app. Subscribe once, get weather forever.
+Every day in your calendar shows the weather: a 16-day forecast, then typical weather for that date out to a year. Subscribe once; it updates itself every morning.
 
 ## 🌟 What It Does
 
-ClimoCal puts weather directly in your calendar as events that update automatically every morning:
-
 ```
-☀️ 22°/15°
-⛅ 24°/17° 
-🌧️ 18°/12°
+☀️ 22°C/15°C          forecast (16 days out)
+🌧️ 18°C/12°C 💧70%    40%+ chance of rain
+≈ 24°C/15°C           past day 16: the 10-year average for that date
 ```
 
-- **16-day forecast** - See weather up to 2 weeks ahead
-- **Auto-updates daily** - Always current, no manual refresh
+- **110 cities** across North America, Latin America, Europe, Africa, Asia and Oceania
+- **°F and mph** for US cities, °C and km/h everywhere else
+- **Tap any day** for wind, UV, sunrise and sunset
 - **Works everywhere** - Apple Calendar, Google Calendar, Outlook, anything that supports calendar subscriptions
 - **Completely free** - No accounts, no tracking, no premium tiers
 
 ## 🚀 Get Started
 
-### Option 1: Use the Website (Easiest)
-1. Go to **[johockin.github.io/ClimoCal](https://johockin.github.io/ClimoCal)**
-2. Click your city to add to Apple Calendar
-3. For Google Calendar/Outlook: right-click and copy the link
+Go to **[climocal.johnnyhockin.com](https://climocal.johnnyhockin.com)**, pick your calendar app, tap your city.
 
-### Option 2: Direct Links
-Pick your city and copy the calendar URL:
-
-- **Toronto**: `webcal://johockin.github.io/ClimoCal/calendars/toronto.ics`
-- **Vancouver**: `webcal://johockin.github.io/ClimoCal/calendars/vancouver.ics`
-- **Montreal**: `webcal://johockin.github.io/ClimoCal/calendars/montreal.ics`
-- **New York**: `webcal://johockin.github.io/ClimoCal/calendars/new-york.ics`
-- **Los Angeles**: `webcal://johockin.github.io/ClimoCal/calendars/los-angeles.ics`
-- **London**: `webcal://johockin.github.io/ClimoCal/calendars/london.ics`
-- **Tokyo**: `webcal://johockin.github.io/ClimoCal/calendars/tokyo.ics`
-- **Shanghai**: `webcal://johockin.github.io/ClimoCal/calendars/shanghai.ics`
+Or subscribe directly: `webcal://climocal.johnnyhockin.com/calendars/<city>.ics`, e.g. `toronto`, `los-angeles`, `new-york`, `london`, `tokyo`. The full list is in [`data/locations.json`](data/locations.json).
 
 *Need another city? [Open an issue](https://github.com/johockin/ClimoCal/issues) and I'll add it.*
 
@@ -69,11 +55,12 @@ I just wanted to glance at next Tuesday and see if it's going to rain. So I buil
 
 ## 🔧 Technical Details
 
-- **Weather Data**: [Open-Meteo](https://open-meteo.com) (free, no API key needed)
+- **Weather Data**: [Open-Meteo](https://open-meteo.com) forecast + ERA5 history (free, no API key needed)
 - **Updates**: GitHub Actions runs daily at 10:00 UTC (6 AM Toronto)
 - **Format**: Standard iCalendar (.ics) files
 - **Hosting**: GitHub Pages (free, fast, reliable)
-- **Code**: ~50 lines of JavaScript, completely open source
+- **Code**: a few hundred lines of JavaScript, one dependency (`ical-generator`)
+- **Add a city**: add it to `data/city-seed.json`, run `npm run locations`; typical weather fills in on the next daily run
 
 ## 🤝 Contributing
 

@@ -259,6 +259,15 @@ ClimoCal embodies raw documentation over visual polish. This isn't minimalism fo
 
 ## 📒 CHANGELOG (REVERSE CHRONOLOGICAL)
 
+### 2026-10-27 - Revival: 110 cities, typical weather, new landing page 🌍
+- **Reliability**: keepalive job re-enables the workflow daily (GitHub's 60-day inactivity rule froze feeds Dec 2025 → Oct 2026). Forecasts fetched in batches of 50 with retries; a run with any short feed fails before deploy, so Pages keeps the last good set. Actions moved to Node 24.
+- **Feed correctness**: stable per-day UIDs (`id`, not `uid`, in ical-generator v7), all-day DTEND = next day, dates pinned to UTC midnight, °F/mph/inches converted before rounding, days with null data dropped.
+- **Richer events**: 💧NN% in the title at 40%+ chance; sunrise/sunset in the description.
+- **Cities**: 110, from `data/city-seed.json` geocoded by `scripts/build-locations.js`.
+- **Typical weather (≈)**: every day after the forecast out to 12 months, from 10 years of ERA5 (Open-Meteo archive), ±7-day pooled. Built by `scripts/build-normals.js`, resumable because of the free-tier quota; `build-normals.yml` finishes the backfill and fills new cities.
+- **Landing page**: rebuilt to be quiet and immediate: live week preview, then two numbered steps (calendar app → city) with exact per-app instructions, city search, FAQ with structured data. Right-click-only copy removed (broken on phones).
+- **Decisions**: generated feeds are no longer committed (CI builds them); `serve` devDependency removed; story copy lightly trimmed.
+
 ### 2026-10-27 - Los Angeles + Shanghai, two label bugs fixed 🌴
 - **Added**: Los Angeles (LAX, °F, America/Los_Angeles) after a user request; Shanghai (PVG, Asia/Shanghai) from GitHub issue #1. 8 live cities.
 - **Fixed**: Sunday city tag landed on Monday. `new Date('YYYY-MM-DD')` is UTC midnight, so `getDay()` in Toronto time returned the previous day. Now `getUTCDay()`; verified under TZ=America/Toronto, UTC, Asia/Tokyo.

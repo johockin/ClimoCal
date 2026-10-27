@@ -1,0 +1,43 @@
+name: Build Typical Weather
+
+# Fills data/climate-normals.json for any city that doesn't have typical
+# weather yet (new cities, or the initial backfill). Ten years of history cost
+# ~261 Open-Meteo calls per city against a 10,000/day free limit, so each run
+# does what today's budget allows and commits it; once every city is done it
+# finishes in seconds with nothing to commit. Runs an hour before the daily
+# calendar build, which picks the new data up.
+
+on:
+  schedule:
+    - cron: '0 9 * * *'
+  workflow_dispatch:
+
+jobs:
+  normals:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+
+      - name: Fetch missing typical weather
+        run: node scripts/build-normals.js --budget 8000
+
+      - name: Commit new data
+        run: |
+          if git diff --quiet -- data/climate-normals.json; then
+            echo "Nothing new."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/climate-normals.json
+          git commit -m "Typical weather: $(node -e "const s=require('./data/climate-normals.json');console.log(Object.keys(s.cities).length)") cities"
+          git push

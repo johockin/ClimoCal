@@ -1,31 +1,34 @@
 # ClimoCal — hub
 
 ## Status
-- Live at https://climocal.johnnyhockin.com (GitHub Pages, custom domain; also johockin.github.io/ClimoCal). Main search-traffic source for johnnyhockin.com ("add weather to apple calendar").
-- **Feeds frozen since 2025-12-27**: GitHub disabled the daily workflow for inactivity (`disabled_inactivity`). Site serves, forecasts are 10 months stale.
-- 2026-10-27: Los Angeles + Shanghai added locally (8 cities), Sunday-tag and city-name bugs fixed. Committed, **not pushed**: a push to `main` deploys live, so it waits on johnny's go.
+- Live at https://climocal.johnnyhockin.com (GitHub Pages, HTTPS enforced). Main search-traffic source for johnnyhockin.com ("add weather to apple calendar").
+- Daily build re-enabled 2026-10-27 after 10 months frozen (`disabled_inactivity`); a keepalive job now prevents that.
+- 2026-10-27 revival (branch `revival`): 110 cities, feed fixes, typical weather (≈) to 12 months, quieter landing page with a two-step subscribe flow. Awaiting johnny's go to merge to `main` (= deploy).
+- Typical-weather backfill: ~38 cities/day (Open-Meteo quota); the `Build Typical Weather` workflow finishes the rest by itself.
 
 ## Next
-- [ ] johnny's go → push `main`, `gh workflow enable`, confirm deploy, close issue #1 (Shanghai)
-- [ ] Stop the 60-day auto-disable recurring (keepalive or move off GitHub cron)
-- [ ] johnny picks from the improvement list (LOG.md, 2026-10-27)
+- [ ] johnny's go → merge `revival` into `main`, watch deploy, spot-check feeds
+- [ ] After the first scheduled run: confirm the keepalive job passed and the normals job committed
+- [ ] Check Google Calendar one-click add with a signed-in account (link pattern is standard, not yet clicked through)
 
 ## Map
-- `scripts/generate-calendars.js` — builds one `.ics` per city + `public/status.json`
-- `scripts/weather-api.js` — Open-Meteo forecast fetch (no key) · `scripts/emoji-mapper.js` — WMO code → emoji
-- `data/locations.json` — city list (order = order on the page; `country: "usa"` → °F)
-- `public/` — the site (`index.html`, `app.js`) + generated `calendars/`; deployed as-is
-- `.github/workflows/generate-calendars.yml` — daily 10:00 UTC + on push: generate → deploy Pages
-- `PROJECT_SPEC.md` — full spec, design philosophy, changelog to 2025-08 (deep dive; read on demand)
-- `LOG.md` — dated log, newest first
+- `scripts/generate-calendars.js` — one `.ics` per city + `public/status.json` + the city list inside `public/index.html`
+- `scripts/weather-api.js` — batched Open-Meteo forecast fetch with retries
+- `scripts/build-locations.js` — `data/city-seed.json` → `data/locations.json` via Open-Meteo geocoder
+- `scripts/build-normals.js` — 10-yr ERA5 → `data/climate-normals.json` (resumable, quota-paced)
+- `scripts/emoji-mapper.js` — WMO code → emoji
+- `public/` — the site (`index.html`, `app.js`, `og.jpg`, robots/sitemap); `calendars/` + `status.json` are generated, not committed
+- `.github/workflows/` — `generate-calendars.yml` (daily 10:00 UTC + push: build → deploy, keepalive), `build-normals.yml` (daily 09:00 UTC)
+- `PROJECT_SPEC.md` — full spec + changelog (deep dive) · `LOG.md` — dated log
 
 ## Gotchas
-- Pushing `main` = deploying live. Never push without johnny's go.
-- GitHub disables scheduled workflows in public repos after 60 days without a commit.
-- `new Date('YYYY-MM-DD')` is UTC midnight; use `getUTCDay()` for weekdays.
-- `calgary.ics`/`ottawa.ics` are orphans (not in `locations.json`), served frozen at Aug-2025 data.
-- Supply-chain cooldown (`~/.npmrc` `min-release-age=7`) stays on; `npm ci` works with the lockfile.
-- Licence: README says MIT but there's no LICENSE file; johnny's call (Planning row `johnny-brand-opensource-repos`).
-- Local preview: `npx serve public` (or `.claude/launch.json` "climocal", untracked).
+- Pushing `main` = deploying live. Never push `main` without johnny's go.
+- GitHub disables scheduled workflows after 60 days without repo activity; the keepalive job re-enables daily.
+- All-day dates must be UTC midnight (`utcDate`); local midnight shifts days east of UTC.
+- Open-Meteo counts history by length: 10 years ≈ 261 calls/city; free limit 10,000/day, 600/min.
+- `index.html` city list sits between `CITIES:START/END` markers; the generator owns it.
+- Supply-chain cooldown (`~/.npmrc` `min-release-age=7`) stays on.
+- Licence: README says MIT but no LICENSE file; johnny's call (Planning row `johnny-brand-opensource-repos`).
+- Local preview: `npm run dev` (generates, then serves `public/` on :4317).
 
 Log: LOG.md · Deep dives: PROJECT_SPEC.md

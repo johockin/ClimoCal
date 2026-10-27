@@ -5,8 +5,10 @@ export function weatherEmoji(code) {
   // Clear sky
   if (code === 0) return '☀️';
   
-  // Mainly clear, partly cloudy, and overcast
-  if (code >= 1 && code <= 3) return '⛅';
+  // Mainly clear, partly cloudy, overcast
+  if (code === 1) return '🌤️';
+  if (code === 2) return '⛅';
+  if (code === 3) return '☁️';
   
   // Fog and depositing rime fog
   if (code >= 45 && code <= 48) return '🌫️';

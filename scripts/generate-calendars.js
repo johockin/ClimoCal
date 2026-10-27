@@ -38,10 +38,11 @@ async function generateCalendars() {
         throw new Error(`${location.name}: only ${forecast?.length ?? 0} forecast days`);
       }
       writeLocationCalendar(location, forecast, normals[location.slug]);
-      summaries.push(summarize(location, forecast[0], Boolean(normals[location.slug])));
+      summaries.push(summarize(location, forecast, Boolean(normals[location.slug])));
     }
 
     generateStatusFile(summaries);
+    renderCityList(locations);
     console.log(`✅ All ${locations.length} calendars generated successfully!`);
 
   } catch (error) {
@@ -195,21 +196,24 @@ function buildNormalDescription([tmax, tmin, wetPct], years, location) {
 
 // --- Status file -----------------------------------------------------------
 
-function summarize(location, today, hasNormals) {
+// One entry per city in status.json: the page uses it for the city list's
+// live week preview (7 days, numbers already in the city's units).
+function summarize(location, forecast, hasNormals) {
+  const degrees = c => Math.round(isImperial(location) ? c * 9 / 5 + 32 : c);
   return {
     name: location.name,
     slug: location.slug,
-    country: location.country,
     region: location.region,
     timezone: location.timezone,
-    calendarUrl: `${SITE}/calendars/${location.slug}.ics`,
+    unit: isImperial(location) ? 'F' : 'C',
     normals: hasNormals,
-    today: {
-      date: today.date,
-      emoji: weatherEmoji(today.weatherCode),
-      high: temp(today.tempMax, location),
-      low: temp(today.tempMin, location)
-    }
+    week: forecast.slice(0, 7).map(day => ({
+      date: day.date,
+      emoji: weatherEmoji(day.weatherCode),
+      high: degrees(day.tempMax),
+      low: degrees(day.tempMin),
+      rain: day.precipitationProbability >= RAIN_TAG_THRESHOLD ? Math.round(day.precipitationProbability) : 0
+    }))
   };
 }
 
@@ -224,6 +228,44 @@ function generateStatusFile(locations) {
 
   writeFileSync('public/status.json', JSON.stringify(status));
   console.log('📊 Status file generated');
+}
+
+// --- City list in index.html -------------------------------------------------
+
+// The page's city list is static HTML between two markers, so it renders
+// instantly, works without JavaScript, and is readable by search engines.
+// Output depends only on locations.json, so the file changes only when the
+// city list does.
+function renderCityList(locations) {
+  const escape = text => text.replace(/&/g, '&amp;').replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  const regions = new Map();
+  for (const location of locations) {
+    if (!regions.has(location.region)) regions.set(location.region, []);
+    regions.get(location.region).push(location);
+  }
+
+  const html = [...regions].map(([region, cities]) => [
+    `<div class="region" data-region="${escape(region)}">`,
+    `  <h3>${escape(region)}</h3>`,
+    `  <div class="region-cities">`,
+    ...cities.map(c =>
+      `    <a class="city" href="webcal://climocal.johnnyhockin.com/calendars/${c.slug}.ics" ` +
+      `data-slug="${c.slug}" data-name="${escape(c.name)}">${escape(c.name)}</a>`),
+    `  </div>`,
+    `</div>`
+  ].join('\n')).join('\n');
+
+  const file = 'public/index.html';
+  const page = readFileSync(file, 'utf8');
+  const updated = page
+    .replace(/(<!-- CITIES:START[^>]*-->\n)[\s\S]*?(<!-- CITIES:END -->)/, `$1${html}\n$2`)
+    .replace(/(id="city-count">)\d+(<)/, `$1${locations.length}$2`);
+  if (!updated.includes('<!-- CITIES:END -->')) throw new Error('City list markers missing from index.html');
+  if (updated !== page) {
+    writeFileSync(file, updated);
+    console.log('🗺️  City list in index.html updated');
+  }
 }
 
 // Handle graceful shutdown
