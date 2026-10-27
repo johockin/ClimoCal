@@ -1,5 +1,10 @@
 # ClimoCal — log (newest first)
 
+## 2026-10-27 (evening) — Deployed
+- `revival` merged to `main` (7c8ef19), deploy green, spot-checked live: page, status (110 cities), Toronto/LA/Calgary/Auckland feeds (UID date = DTSTART; ≈ events present where backfilled).
+- johnny saw a dead page right after deploy: his browser ran cached old `app.js` with the new HTML. Fixed for good by fingerprinting the script URL. Added "DM me on Instagram" (@johnnystagram) feedback links (deployed).
+- Drafted a refresh of johnnyhockin.com's ranking post (same URL, updated Oct 27, New/Improved/Fixed labels, how-to sections per app, 7 FAQs). Draft only. Found: the live post's OG image (`/images/writing/hedge-pricing-og.jpg`) is a 404.
+
 ## 2026-10-27 (later) — Revival batch: items 2–8
 - Live: pushed LA + Shanghai to `main`, re-enabled the workflow, deploy green, issue #1 closed. HTTPS enforced on Pages.
 - On `revival` (not deployed): keepalive job; Node 24 actions; batched forecast fetch with retries; stable UIDs, exclusive DTEND, UTC dates, units converted before rounding, mph/inches for US, null day-16 dropped; rain % and sunrise/sunset; 110 cities from a geocoded seed; typical weather (≈) to 12 months from 10-yr ERA5 with a self-finishing backfill workflow; generated feeds no longer committed; `serve` dropped (0 audit findings).

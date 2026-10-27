@@ -2,14 +2,14 @@
 
 ## Status
 - Live at https://climocal.johnnyhockin.com (GitHub Pages, HTTPS enforced). Main search-traffic source for johnnyhockin.com ("add weather to apple calendar").
-- Daily build re-enabled 2026-10-27 after 10 months frozen (`disabled_inactivity`); a keepalive job now prevents that.
-- 2026-10-27 revival (branch `revival`): 110 cities, feed fixes, typical weather (≈) to 12 months, quieter landing page with a two-step subscribe flow. Awaiting johnny's go to merge to `main` (= deploy).
-- Typical-weather backfill: ~38 cities/day (Open-Meteo quota); the `Build Typical Weather` workflow finishes the rest by itself.
+- 2026-10-27 revival deployed: 110 cities, typical weather (≈) to 12 months, two-step landing page, Instagram feedback links, keepalive. Feeds verified live.
+- Typical weather: 30/110 cities; `Build Typical Weather` adds ~18/day until done (~5 days).
+- Blog refresh drafted (not published): `drafts/2026-10-27-climocal-post.json` (untracked; johnnyhockin.com `data/writing.json` format), awaiting johnny's verdict.
 
 ## Next
-- [ ] johnny's go → merge `revival` into `main`, watch deploy, spot-check feeds
-- [ ] After the first scheduled run: confirm the keepalive job passed and the normals job committed
-- [ ] Check Google Calendar one-click add with a signed-in account (link pattern is standard, not yet clicked through)
+- [ ] johnny's verdict on the blog draft → apply to johnnyhockin.com `data/writing.json` + regenerate page + add `images/writing/climocal-og.jpg`
+- [ ] After tomorrow's runs: confirm keepalive passed and the normals job committed
+- [ ] Click through Google Calendar one-click add with a signed-in account
 
 ## Map
 - `scripts/generate-calendars.js` — one `.ics` per city + `public/status.json` + the city list inside `public/index.html`
@@ -23,6 +23,7 @@
 
 ## Gotchas
 - Pushing `main` = deploying live. Never push `main` without johnny's go.
+- `app.js` is fingerprinted (`app.js?v=hash`) by the generator; never hand-edit the `?v=`. Pages caches 10 min.
 - GitHub disables scheduled workflows after 60 days without repo activity; the keepalive job re-enables daily.
 - All-day dates must be UTC midnight (`utcDate`); local midnight shifts days east of UTC.
 - Open-Meteo counts history by length: 10 years ≈ 261 calls/city; free limit 10,000/day, 600/min.
