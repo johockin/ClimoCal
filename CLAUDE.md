@@ -4,10 +4,10 @@
 - Live at https://climocal.johnnyhockin.com (GitHub Pages, HTTPS enforced). Main search-traffic source for johnnyhockin.com ("add weather to apple calendar").
 - 2026-10-27 revival deployed: 110 cities, typical weather (≈) to 12 months, two-step landing page, Instagram feedback links, keepalive. Feeds verified live.
 - Typical weather: 30/110 cities; `Build Typical Weather` adds ~18/day until done (~5 days).
-- Blog refresh + new writing template built on johnnyhockin.com branch `writing-template` (pushed, not merged/live).
+- Blog refresh + new writing template live on johnnyhockin.com (7b533b6, 2026-10-27): https://johnnyhockin.com/writing/
 
 ## Next
-- [ ] johnny's go to merge johnnyhockin.com branch `writing-template` (new writing template + index + refreshed post, all built) into main = Netlify deploy
+- [ ] johnnyhockin.com: add the writing-template changelog entry to its `PROJECT_SPEC.md` once the other session's uncommitted edit there is committed
 - [ ] After tomorrow's runs: confirm keepalive passed and the normals job committed
 - [ ] Click through Google Calendar one-click add with a signed-in account
 
