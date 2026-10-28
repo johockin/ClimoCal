@@ -2,7 +2,7 @@
 
 ## 2026-10-27 — Writing template + blog refresh
 - johnnyhockin.com branch `writing-template` (7b533b6, pushed, not merged): typed-lab-note template site-wide on writing pages, image-led index, ClimoCal post refresh with two screen grabs, `scripts/build-writing.js`.
-- johnny said go: fast-forwarded johnnyhockin.com main to 7b533b6, Netlify live in ~30s. Spot-checked live: index, post, both unlisted posts, `styles.css?v=2026-10-27`, both images, sitemap lastmod; desktop + 375px, no sideways scroll, button hit-target is the link. Figure images have no width/height, so they collapse until lazy-loaded (layout shift).
+- johnny said go: fast-forwarded johnnyhockin.com main to 7b533b6, Netlify live in ~30s. Spot-checked live: index, post, both unlisted posts, `styles.css?v=2026-10-27`, both images, sitemap lastmod; desktop + 375px, no sideways scroll, button hit-target is the link. Figure images had no width/height and collapsed until lazy-loaded (layout shift); fixed in 701c78d (generator reads each local JPEG/PNG's size; CSS 3:2 fallback), live-verified. johnnyhockin.com branch `writing-ascii` (another session, unpushed) branches from 7b533b6: rebase it and rerun `TZ=UTC node scripts/build-writing.js` to settle the generated HTML.
 
 ## 2026-10-27 (evening) — Deployed
 - `revival` merged to `main` (7c8ef19), deploy green, spot-checked live: page, status (110 cities), Toronto/LA/Calgary/Auckland feeds (UID date = DTSTART; ≈ events present where backfilled).
