@@ -1,7 +1,7 @@
 # ClimoCal — log (newest first)
 
 ## 2026-10-29 — Session closed
-- JH (Johnny-Brand) session took over the johnnyhockin.com writing template (main 1197a7e, includes 701c78d). Earlier `writing-ascii` rebase note is moot. ClimoCal `main` is 4 docs-only commits ahead of origin, unpushed (push = deploy).
+- JH (Johnny-Brand) session took over the johnnyhockin.com writing template (main 1197a7e, includes 701c78d). Earlier `writing-ascii` rebase note is moot. johnny said push: ClimoCal `main` pushed (fbf2def), deploy green, 110 cities live. Oct 28 + 29 scheduled runs all green (keepalive, generate, deploy, typical weather now 66/110).
 
 ## 2026-10-27 — Writing template + blog refresh
 - johnnyhockin.com branch `writing-template` (7b533b6, pushed, not merged): typed-lab-note template site-wide on writing pages, image-led index, ClimoCal post refresh with two screen grabs, `scripts/build-writing.js`.
