@@ -3,12 +3,12 @@
 ## Status
 - Live at https://climocal.johnnyhockin.com (GitHub Pages, HTTPS enforced). Main search-traffic source for johnnyhockin.com ("add weather to apple calendar").
 - 2026-10-27 revival deployed: 110 cities, typical weather (≈) to 12 months, two-step landing page, Instagram feedback links, keepalive. Feeds verified live.
-- Typical weather: 30/110 cities; `Build Typical Weather` adds ~18/day until done (~5 days).
-- Blog refresh + new writing template live on johnnyhockin.com (7b533b6, 2026-10-27): https://johnnyhockin.com/writing/
+- Typical weather: 30/110 cities as of 2026-10-27; `Build Typical Weather` adds ~18/day until done (~2026-11-01).
+- Blog refresh live at https://johnnyhockin.com/writing/ (2026-10-27; figure-size fix 701c78d). The writing template is now owned by the JH (Johnny-Brand) session (main 1197a7e); don't edit johnnyhockin.com writing files from here without checking with it.
 
 ## Next
-- [ ] johnnyhockin.com: add the writing-template changelog entry to its `PROJECT_SPEC.md` once the other session's uncommitted edit there is committed
-- [ ] After tomorrow's runs: confirm keepalive passed and the normals job committed
+- [ ] Push ClimoCal `main` (4 docs-only hub/log commits; pushing redeploys the site, so needs johnny's go)
+- [ ] Confirm the 2026-10-28/29 runs: keepalive passed and `Build Typical Weather` committed new cities
 - [ ] Click through Google Calendar one-click add with a signed-in account
 
 ## Map
